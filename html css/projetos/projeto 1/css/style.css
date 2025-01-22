@@ -1,0 +1,68 @@
+html{
+    font-family: Helvetica, sans-serif;
+    background-color: #ddd;
+}
+.container{
+    max-width: 1100px;
+    background-color: white;
+    position: relative;
+    margin: 50px auto;
+    padding: 20px 50px;
+}
+.bold{
+    font-weight: bold;
+}
+.header{
+    text-align: center;
+}
+.maintitle{
+    font-size: 40px;
+}
+.mainparagraph{
+    font-style: italic;
+}
+.img{
+    text-align: center;
+    margin-top: 50px;
+}
+.biocont{
+    padding: 35px 0;
+    margin: 25px 0;
+    border-top: 1px dashed #ddd;
+    border-bottom: 1px dashed #ddd;
+}
+.quotecont{
+    background-color: #ddd;
+    padding: 30px;
+}
+.quotecont blockquote{
+    font-weight: bold;
+    font-size: 30px;
+}
+.quotecont p{
+    font-style: italic;
+}
+.curicont{
+    padding: 25px 0;
+    margin: 25px 0;
+    border-top: 1px dashed #ddd;
+    border-bottom: 1px dashed #ddd;
+}
+.curicont li{
+    height: 35px;
+}
+.imgbold{
+    font-weight: bold;
+    text-align: center;
+}
+.moreinfocont{
+    text-align: center;
+}
+.moreinfocont a{
+    text-decoration: none;
+    color: blue;
+}
+.moreinfocont a:hover{
+    text-decoration: none;
+    color: rgb(11, 139, 182);
+}

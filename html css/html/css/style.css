@@ -1,0 +1,134 @@
+.rgba-opacity{
+    background-color: rgba(90, 120, 20, 0.2);
+    color: #000;
+}
+.bgimage{
+    background-image: url("../img/imagem1.jpg");
+    padding: 10px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+}
+
+.semborderbox{
+    background-color: #444;
+    color: white;
+    padding: 50px;
+    width: 4000px;
+}
+.borderbox{
+    background-color: #666;
+    color: white;
+    width: 400px;
+    padding: 50px;
+    box-sizing: border-box;
+}
+
+.maisc{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: underline red;
+}
+.minus{
+    text-transform: lowercase;
+    letter-spacing: 2px;
+    text-decoration: underline red;
+}
+
+.relative{
+    position: relative;
+    background-color: aquamarine;
+    color: black;
+    width: 100px;
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.absolute{
+    position: absolute;
+    background-color: bisque;
+    color: black;
+    width: 100px;
+    height: 100px;
+    top: 2px;
+    right: 2px;
+}
+
+.fixed{
+    position: fixed;
+    background-color: darkblue;
+    border: 1px solid blue;
+    color: white;
+    width: 100px;
+    height: 100px;
+    top: 50px;
+    right: 100px;
+}
+
+.relativecont{
+    width: 300px;
+    height: 300px;
+    border: 1px solid red;
+    margin-top: 120px;
+    position: relative;
+}
+.absolute1,
+.absolute2{
+    width: 50px;
+    height: 50px;
+    background-color: brown;
+    position: absolute;
+}
+
+.absolute1{
+    top: 10px;
+    left: 10px;
+}
+.absolute2{
+    bottom: 10px;
+    right: 10px;
+}
+
+.sticky{
+    position: sticky;
+    background-color: yellow;
+    border: 1px solid green;
+    color: white;
+    width: 100px;
+    height: 100px;
+    top: 10px;
+}
+.reltcont{
+    width: 300px;
+    height: 300px;
+    border: 1px solid red;
+    margin-top: 120px;
+    position: relative;
+}
+
+.abso3,
+.abso4, .abso5{
+    width: 50px;
+    height: 50px;
+    background-color: #123;
+    position: absolute;
+}
+.abso3{
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+.abso4{
+    top: 10px;
+    left: 10px;
+    background-color: #246;
+    z-index: 2;
+}
+.abso5{
+    top: 40px;
+    left: 40px;
+    background-color: #253;
+    z-index: 1;
+}
