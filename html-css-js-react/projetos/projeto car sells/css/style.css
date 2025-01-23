@@ -64,16 +64,61 @@
         width: 100%;
         padding: 10rem 0;
         }
-        .mainbanner p, h1{
-            color: rgba(255, 255, 255, 0.932);
-            text-align: center;
-            font-weight: bold;
-            text-shadow: black 3px 2px 3px;
-        }
-        .mainbanner h1{
-            font-size: 3em;
-        }
-        .mainbanner p{
-            font-size: 1.5em;
-        }
-      
+    .mainbanner p, h1{
+        color: rgba(255, 255, 255, 0.932);
+        text-align: center;
+        font-weight: bold;
+        text-shadow: black 3px 2px 3px;
+    }
+    .mainbanner h1{
+        font-size: 3em;
+    }
+    .mainbanner p{
+        font-size: 1.5em;
+    }
+    .servcont{
+        padding: 2rem 0;
+        margin: 7px;
+    }
+    .servitems{
+        display: flex;
+        justify-content: center;
+    }
+    .servitems li{
+        text-align: center;
+        text-decoration: none;
+        flex: 1 1 200px;
+        list-style: none;
+    }
+    img{
+        border-radius: 5px;   
+    }
+    .servitems li a{
+      text-decoration: none;
+    }
+    .link:hover{
+        text-decoration: underline;
+    }
+    .ofertas{
+        display: flex;
+        justify-content: center;
+        background-color: rgb(240, 240, 240);
+        padding: 7px;
+        margin: 7x;
+    }
+    .ofertas a{
+        text-decoration: none;
+    }
+    .ofertas a:hover{
+        text-decoration: underline; 
+    }
+
+    .contprod{
+        padding: 2rem 0;
+        margin: 25px;
+    }
+
+    #subtit{
+        color: rgb(51, 51, 51);
+        text-align: center;
+    }
