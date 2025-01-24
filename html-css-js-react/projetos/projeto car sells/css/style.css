@@ -489,7 +489,9 @@
     }
 
     @media (max-width: 415px){
-        
+        html, body{
+            overflow-x: hidden;
+        }
 
         .servitems img{
             width: 95px;
@@ -569,7 +571,9 @@
     }
 
     @media (max-width: 390px){
-        
+        html, body{
+            overflow-x: hidden;
+        }
         
         .servitems img{
             width: 80px;
@@ -604,10 +608,10 @@
         }
 
         .msgcont h2{
-            font-size: 15px;
+            font-size: 17px;
         }
         .msgcont p{
-            font-size: 10px;
+            font-size: 12px;
         }
 
         .msgcont textarea{
