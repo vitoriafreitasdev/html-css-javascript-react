@@ -5,9 +5,6 @@
         font-family: Helvetica, sans-serif;
         box-sizing: border-box;
     }
-    h1, h2, h3{
-        color: rgba(255, 255, 255, 0.932);
-    }
     p{
         color: #70747a;
     }
@@ -51,10 +48,12 @@
         padding: 15px 20px;
         background-color: #366d4c;
         border-radius: 5px;
+    
     }
     .defaultbtn:hover{
-        background-color: #4b8663;
+        background-color: #3f9160;
         color: white;
+        
     }
     .mainbanner{
         background-image: url("../img/carrofundo.jpg");
@@ -71,7 +70,7 @@
         text-shadow: black 3px 2px 3px;
     }
     .mainbanner h1{
-        font-size: 3em;
+        font-size: 3.5em;
     }
     .mainbanner p{
         font-size: 1.5em;
@@ -90,11 +89,13 @@
         flex: 1 1 200px;
         list-style: none;
     }
-    img{
-        border-radius: 5px;   
-    }
     .servitems li a{
       text-decoration: none;
+    }
+
+    .servcont img{
+        border-radius: 5px;
+    
     }
     .link:hover{
         text-decoration: underline;
@@ -102,7 +103,6 @@
     .ofertas{
         display: flex;
         justify-content: center;
-        background-color: rgb(240, 240, 240);
         padding: 7px;
         margin: 7x;
     }
@@ -116,9 +116,529 @@
     .contprod{
         padding: 2rem 0;
         margin: 25px;
+        background-color: rgba(248, 245, 245, 0.952);
+        border-radius: 5px;
     }
 
-    #subtit{
+    h2{
         color: rgb(51, 51, 51);
         text-align: center;
     }
+
+    .searchcont{
+        margin-top: 25px;
+        background-color: rgb(151, 77, 33);
+        text-align: center;
+        padding: 5rem 0;
+        margin-bottom: 0px;
+    }    
+    .searchcont h2{
+        color: black;
+        text-shadow: rgba(248, 245, 245, 0.158) 3px 2px 3px;
+        font-size: 2.5em;
+        margin-bottom: 15px;
+    } 
+    
+    .searchcont input{
+        display: block;
+        border: none;
+        border-radius: 5px;
+        margin: 0 auto;
+    }
+    .searchcont input[type="text"]{
+        width: 60%;
+        padding: 20px;
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    .searchcont input[type="submit"]{
+        background-color: #366d4c;
+        color: #fff;
+        padding: 15px 30px;
+        font-size: 20px;
+        cursor: pointer;
+        opacity: .8;
+    }
+    .searchcont input[type="submit"]:hover{
+        background-color: #366d4c;
+        color: #fff;
+        padding: 15px 30px;
+        font-size: 20px;
+        cursor: pointer;
+        opacity: 1;
+    }
+
+    .contform{
+        background-color: rgb(212, 127, 78);
+    }
+    
+    .contform h2, h3, h4, h5{
+        color: #504f4f;
+    }
+
+    .contform h1{
+        color: rgb(59, 53, 53);
+        text-shadow: none;
+    }
+    
+    .contform p, label{
+        color: #444;
+    }
+    
+    .contform input{
+        border: none;
+        border-bottom: 1px solid #ccc;
+        padding: 10px 0;
+    }
+    
+    .contform input[type="text"], input[type="number"], input[type="date"], input[type="file"]{
+        width: 400px;
+    }
+    
+    .contform textarea{
+        padding: 10px 5px;
+        width: 400px;
+        
+    }
+    .header{
+        height: 160px;
+        padding: 20px;
+        
+    }
+    .header h3{
+        color: black;
+        text-shadow: #ccc;
+        text-align: center;
+    }
+    .formcont{
+        background-color: #fdfdfd;
+        width: 60%;
+        margin: 0 auto;
+        position: relative;
+        top: -80px;
+    }
+    .formheader{
+        border-bottom: 1px solid #dfdfdf;
+        height: 45px;
+    }
+    .formheader p{
+        color: rgb(209, 113, 57);
+        border-bottom: 2px solid  rgb(212, 127, 78);
+        width:  100px;
+        text-align: center;
+        margin: 0 auto;
+        text-transform: uppercase;
+        height: 45px;
+        line-height: 45px;
+    }
+    .formbody{
+        padding: 30px;
+    }
+    .formtittle{
+        margin-bottom: 15px;
+    }
+    .formbody p{
+        margin-bottom: 20px;
+    }
+    
+    .requiredfield{
+        color: red;
+    }
+    
+    .boxinput{
+        margin-bottom: 35px;
+    }
+    
+    .block{
+        display: block;
+    }
+    
+    .opbox{
+        display: inline-block;
+        margin-right: 30px ;
+        margin-bottom: 10px;
+        
+    }
+    .oplist{
+        list-style: none;
+    }
+    .boxinput p{
+        margin-bottom: 15px;
+    }
+    
+    .btnsubmit{
+        background-color: rgb(212, 127, 78);
+        color: white;
+        border: 2px solid transparent;
+        width: 150px;
+        height: 50px;
+        cursor: pointer;
+        text-transform: uppercase;
+        transition: 0.5s;
+    }
+    
+    .btnsubmit:hover{
+        background-color: #fff;
+        border-color: rgb(212, 127, 78) ;
+        color: rgb(212, 127, 78);
+    }
+
+    .msgcont{
+        background-color: #fdfdfd;
+        text-align: center;
+        padding: 5rem 0 2rem 0;
+        margin-bottom: 15px;
+    }
+
+    .msgcont h2{
+        font-size: 36px;
+    }
+    .msgcont p{
+        font-size: 36px;
+        margin-bottom: 40px;
+    }
+
+    .msgcont input, .msgcont textarea{
+        width: 200px;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin: 0 10px 20px;
+    }
+
+    .msgcont textarea{
+        display: block;
+        margin: 0 auto 20px;
+        width: 450px;
+        height: 150px;
+    }
+
+    .msgcont input[type="submit"]{
+        display: block;
+        margin: 0 auto;
+        background-color: rgb(212, 127, 78);
+        color: #fff;
+        cursor: pointer;
+    }
+    footer{
+        text-align: center;
+        font-weight: bold;
+        background-color: rgb(151, 77, 33);
+        padding: 7px;
+    }
+    footer p{
+        color: black;
+    }
+    footer a{
+        text-decoration: none;
+        color: #fff;
+    }
+    footer a:hover{
+        text-decoration: none;
+        color: #8b8b8b;
+    }
+
+    /*Responsividade */
+
+    /*laptops*/
+
+    @media (max-width: 1030px) {
+        .servitems img{
+            width: 200px;
+        }
+
+        .ofertas img{
+            width: 200px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .servitems img{
+            width: 150px;
+        }
+
+        .ofertas img{
+            width: 150px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .servitems img{
+            width: 150px;
+        }
+
+        .ofertas img{
+            width: 125px;
+        }
+
+        .ofertas p{
+            font-size: 12.5px;
+        }
+
+        .boxinput > input{
+            width: 150px;
+        }
+
+        .boxinput textarea{
+            width: 200px;
+        }
+
+        .contform input[type="text"]{
+            width: 250px;
+        }
+        .contform input[type="radio"]{
+            width: 220px;
+            
+        }
+
+        .msgcont h2{
+            font-size: 30px;
+        }
+        .msgcont p{
+            font-size: 25px;
+        }
+
+        .navcont a{
+            font-size: 8px;
+        }
+        .mainbanner h1{
+            font-size: 50px;
+        }
+        .mainbanner p{
+            font-size: 25px;
+        }
+    }
+
+    @media (max-width: 500px){
+        
+
+        .servitems img{
+            width: 90px;
+        }
+
+        .ofertas img{
+            width: 95px;
+        }
+
+        .servitems p{
+            font-size: 12px;
+        }
+
+        .ofertas p{
+            font-size: 10.5px;
+        }
+
+        .boxinput > input{
+            width: 150px;
+        }
+
+        .boxinput textarea{
+            width: 200px;
+        }
+
+        .contform input[type="text"]{
+            width: 200px;
+        }
+        .contform input[type="radio"]{
+            width: 220px;
+            
+        }
+
+        .msgcont h2{
+            font-size: 30px;
+        }
+        .msgcont p{
+            font-size: 25px;
+        }
+
+        .navcont a{
+            font-size: 8px;
+        }
+        .navcont img{
+            width: 40px;
+            margin: 10px;
+            
+        }
+        .mainbanner h1{
+            font-size: 50px;
+        }
+        .mainbanner p{
+            font-size: 25px;
+        }
+        .searchcont h2{
+            font-size: 30px;
+        }
+        .searchcont input[type="text"]{
+            height: 50px;
+        }
+        .formtitle{
+            font-size: 20px;
+        }
+        .formbody p{
+            font-size: 15px;
+        }
+    }
+
+    @media (max-width: 415px){
+        
+
+        .servitems img{
+            width: 95px;
+        }
+
+        .ofertas img{
+            width: 95px;
+        }
+
+        .servitems p{
+            font-size: 12px;
+        }
+
+        .ofertas p{
+            font-size: 10.5px;
+        }
+
+        .boxinput > input{
+            width: 150px;
+        }
+
+        .boxinput textarea{
+            width: 200px;
+        }
+
+        .contform input[type="text"]{
+            width: 200px;
+        }
+        .contform input[type="radio"]{
+            width: 220px;
+            
+        }
+
+        .msgcont h2{
+            font-size: 20px;
+        }
+        .msgcont p{
+            font-size: 15px;
+        }
+
+        .msgcont textarea{
+            width: 150px;
+        }
+
+        .msgcont{
+            margin-top: 10px;
+        }
+        .navcont a{
+            font-size: 5px;
+        }
+        .navcont img{
+            width: 40px;
+            margin: 10px;
+            
+        }
+        .mainbanner h1{
+            font-size: 35px;
+        }
+        .mainbanner p{
+            font-size: 20px;
+        }
+        .searchcont h2{
+            font-size: 30px;
+        }
+        .searchcont input[type="text"]{
+            height: 50px;
+        }
+        .formtitle{
+            font-size: 20px;
+        }
+        .formbody p{
+            font-size: 15px;
+        }
+    }
+
+    @media (max-width: 390px){
+        
+        
+        .servitems img{
+            width: 80px;
+        }
+
+        .ofertas img{
+            width: 80px;
+        }
+
+        .servitems p{
+            font-size: 12px;
+        }
+
+        .ofertas p{
+            font-size: 10px;
+        }
+
+        .boxinput > input{
+            width: 150px;
+        }
+
+        .boxinput textarea{
+            width: 150px;
+        }
+
+        .contform input[type="text"]{
+            width: 150px;
+        }
+        .contform input[type="radio"]{
+            width: 135px;
+            
+        }
+
+        .msgcont h2{
+            font-size: 15px;
+        }
+        .msgcont p{
+            font-size: 10px;
+        }
+
+        .msgcont textarea{
+            width: 150px;
+        }
+
+        .msgcont{
+            margin-top: 10px;
+        }
+        .navcont a{
+            font-size: 5px;
+        }
+        .navcont img{
+            width: 40px;
+            margin: 10px;
+            
+        }
+        .mainbanner h1{
+            font-size: 32px;
+        }
+        .mainbanner p{
+            font-size: 17px;
+        }
+        .searchcont h2{
+            font-size: 25px;
+        }
+        .searchcont input[type="text"]{
+            height: 40px;
+            width: 260px;
+        }
+        .formtitle{
+            font-size: 20px;
+        }
+        .formbody p{
+            font-size: 15px;
+        }
+
+        footer{
+            padding: 5px;
+        }
+    }
+
+
+
+
+    
