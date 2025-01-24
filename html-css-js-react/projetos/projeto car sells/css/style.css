@@ -407,6 +407,9 @@
         .mainbanner p{
             font-size: 25px;
         }
+        footer{
+            padding: 5px;
+        }
     }
 
     @media (max-width: 500px){
@@ -433,7 +436,7 @@
         }
 
         .boxinput textarea{
-            width: 200px;
+            width: 100px;
         }
 
         .contform input[type="text"]{
@@ -445,10 +448,13 @@
         }
 
         .msgcont h2{
-            font-size: 30px;
+            font-size: 20px;
         }
         .msgcont p{
-            font-size: 25px;
+            font-size: 15px;
+        }
+        .msgcont textarea{
+            width: 150px;
         }
 
         .navcont a{
@@ -476,6 +482,9 @@
         }
         .formbody p{
             font-size: 15px;
+        }
+        footer{
+            padding: 5px;
         }
     }
 
@@ -553,6 +562,9 @@
         }
         .formbody p{
             font-size: 15px;
+        }
+        footer{
+            padding: 5px;
         }
     }
 
@@ -634,7 +646,7 @@
         }
 
         footer{
-            padding: 5px;
+            padding: 2px;
         }
     }
 
