@@ -1,0 +1,194 @@
+body{
+    padding-bottom: 500px;
+}
+
+/*flex*/
+
+.flex{
+    display: flex;
+    margin-bottom: 20px;
+    background-color: #ddd;
+}
+
+/*column*/
+
+.flexcolumn{
+    display: flex;
+    background-color: #ccc;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+/*wrap*/
+
+.wrap{
+    display: flex;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.box{
+    height: 40px;
+    width: 33%;
+    border: 1px solid red;
+}
+
+/*justify content*/
+
+.center, .around, .between, .end{
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.center .box, .around .box, .between .box, .end .box{
+    width: 50px;
+}
+
+.center{
+    justify-content: center;
+}
+
+.around{
+    justify-content: space-around;
+}
+
+.between{
+    justify-content: space-between;
+}
+
+.end{
+    justify-content: end;
+}
+
+/*align items*/
+
+.Acenter, .flexend, .stretch{
+    display: flex;
+    margin-bottom: 20px;
+    height: 200px;
+    border: 1px solid blue;
+}
+
+.Acenter .box, .flexend .box, .stretch .box{
+    width: 50px;
+}
+
+.Acenter{
+    align-items: center;
+}
+.flexend{
+    align-items: end;
+}
+.stretch{
+    align-items: stretch;
+}
+
+.stretch .box{
+    height: auto;
+}
+
+/*gap*/
+
+.gap{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 1px solid green;
+    gap: 10px;
+}
+
+.gap .box{
+    width: 32%;
+}
+
+/*order*/
+
+.order{
+    display: flex;
+}
+
+#one{
+    order: 1;
+}
+
+#two{
+    order: 2;
+}
+
+#three{
+    order: 3;
+}
+
+/*grow*/
+
+.grow{
+    display: flex;
+}
+
+.grow .box{
+    flex: 1;
+}
+
+.grow #big{
+    flex: 2;
+}
+
+/*basis*/
+
+
+.basis{
+    display: flex;
+}
+
+.basis .box{
+    flex-basis: 20px;
+}
+
+.basis #big{
+    flex-grow: 1;
+}
+
+/*shrink*/
+
+.shrink{
+    display: flex;
+}
+
+.shrink .box{
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 250px;
+    width: auto;
+}
+
+#small{
+    flex-shrink: 2;
+}
+
+/*shorthand*/
+
+.shorthand{
+    display: flex;
+}
+
+.shorthand .box{
+    width: auto;
+    flex: 1 1 50px;
+}
+
+#different{
+    flex: 3 1 400px;
+}
+
+/*auto alinhamento*/
+
+.self{
+    height: 300px;
+    display: flex;
+    align-items: flex-end;
+    border: 1px solid purple;
+}
+
+.self .different{
+    align-self: center;
+}
