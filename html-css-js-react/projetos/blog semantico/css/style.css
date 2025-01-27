@@ -1,0 +1,142 @@
+@charset "UTF-8";
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+ul{
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #444;
+    transition: 0.4s;
+}
+
+a:hover{
+    color: #37a1f7;
+}
+
+#navbar{
+    padding: 1.5rem 2.5rem;
+    border-bottom: 2px solid #ddd;
+}
+
+#navbarinner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#navlinks{
+    display: flex;
+    gap: 1rem;
+}
+
+.cont {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#postscont{
+    flex: 3 1 0;
+}
+ 
+.post {
+    margin-bottom: 2.5rem;
+}
+
+.post img {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.title, .description, .author{
+    margin-bottom: 1rem;
+
+}
+
+.title{
+    font-size: 2rem;
+}
+
+.author {
+    color: #333;
+    font-weight: bold;
+}
+
+#asidebar {
+    flex: 1 1 0;
+}
+
+#searchbar, #categories, #tags{
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    margin-bottom: 1rem;
+}
+
+#searchbar h4, #categories h4, #tags h4{
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+}
+
+#searchbar form{
+    display: flex;
+}
+
+#search-bar form{
+    display: flex;
+}
+
+input{
+    padding: .5rem 1rem;
+    border: 1px solid #ddd;
+}
+
+input[type="submit"]{
+    cursor: pointer;
+    background-color: #37a1f7;
+    color: #fff;
+    border: none;
+}
+
+#categories li{
+    margin-bottom: 1rem;
+}
+
+
+#tagscont{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+#tagscont a{
+    background-color: #ddd;
+    padding: 0.5rem 0.7rem;
+    border-radius: 0.3rem;
+}
+
+#footer{
+    border-top: 2px solid #ddd;
+    padding: 3rem;
+    text-align: center; 
+}
+
+#footer h2, #footer p{
+    margin-bottom: 1rem;
+}
+
+@media(max-width: 450px){
+    .cont{
+        flex-wrap: wrap;
+    }
+}
