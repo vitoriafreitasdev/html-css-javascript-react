@@ -144,7 +144,7 @@ for( let t = 1; t <= 10; t++){
 */
 
 // identação 
-
+/*
 for (let u = 0; u < 10; u++){
     if(u * 2 > 10) {
         console.log(`maior que 10! ${u}`)
@@ -156,8 +156,70 @@ for (let u = 0; u < 10; u++){
         
 }
 
+// break 
 
+for (let g = 20; g > 10; g--){
+     console.log(`O valor de g é: ${g}`)
 
+     if (g === 15){
+        console.log("O g é 15!")
+        break
+     }
+}
+*/
 
+// continue
 
+/*
+
+for(let s = 0; s < 10; s = s + 1){
+    if (s % 2 === 0){
+        console.log("Número par!")
+        continue
+    }
+
+    console.log(s)
+}
+*/
+
+// switch
+/*
+const job = prompt("Qual é sua profissão?")
+
+switch (job){
+    case "Programador":
+        alert("voce é um programador")
+        break
+    case "Advogado":
+        alert("voce é um advogado")
+        break
+    case "Engenheiro":
+        alert("voce é um engenheiro")
+        break
+    default:
+        alert("Profissão não encontrada.")
+}
+*/
+
+const nota = prompt("Digite sua nota (A, B, C, D, E, F)")
+
+switch (nota){
+    case "A":
+        alert("Excelente! Parabéns!")
+        break
+    case "B":
+        alert("Muito bom! Continue assim!")
+        break
+    case "C":
+        alert("Bom, mas há espaço para melhorar.")
+        break
+    case "D":
+        alert("Você passou, mas precisa estudar mais.")
+        break 
+    case "F":
+        alert("Reprovado. Precisa se esforçar mais.")
+        break
+    default:
+        alert("Nota invalida.")
+}
 
