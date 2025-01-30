@@ -310,9 +310,8 @@ function criarMensagem(tipo) {
 const logErro = criarMensagem("erro");
 const logSucesso = criarMensagem("sucesso");
 
-logErro("Arquivo não encontrado"); 
-logSucesso("Cadastro realizado com sucesso!"); 
-
+logErro("Arquivo não encontrado"); // [ERRO]: Arquivo não encontrado
+logSucesso("Cadastro realizado com sucesso!"); // [SUCESSO]: Cadastro realizado com sucesso!
 
 function delayMensagem(mensagem, tempo) {
     return function () {
@@ -325,6 +324,16 @@ function delayMensagem(mensagem, tempo) {
 const mensagemAtrasada = delayMensagem("Isso será exibido depois!", 2000);
 mensagemAtrasada(); // Exibe após 2 segundos
 
+
+// recursao
+
+function soma(n) {
+    if (n === 0) return 0; // Caso base
+
+    return n + soma(n - 1); // Chama a si mesma somando (n-1)
+}
+
+console.log(soma(5)); // 5 + 4 + 3 + 2 + 1 + 0 = 15
 */
 /*
 function criarSaudacao(base){
@@ -362,102 +371,37 @@ cont.incrementar()
 cont.reset()
 cont.incrementar() */
 
-// usa closure
-/*
-function gerenciador(saldoIni){
-   let saldo = saldoIni
 
-    return{
-        adiDespesa: function(valor){
-            if (valor > saldo){
-                console.log("Voce esta sem saldo")
-            } else{
-                saldo -= valor
-                console.log(`despesa de ${valor.toFixed(2)} adionada`)
+function criarTemporizador() {
+    let tempo = 0;
+    let intervalo = null;
+
+    return {
+        iniciar: function() {
+            if (!intervalo) {
+                intervalo = setInterval(() => {
+                    tempo++;
+                    console.log(`Tempo: ${tempo} segundos`);
+                }, 1000);
             }
         },
-        verificarSaldo: function(){
-            console.log(`seu saldo agora é ${saldo.toFixed(2)}`)
+        parar: function() {
+            if (intervalo) {
+                clearInterval(intervalo);
+                intervalo = null;
+                console.log("Temporizador pausado.");
+            }
+        },
+        resetar: function() {
+            tempo = 0;
+            console.log("Temporizador resetado.");
+        },
+        obterTempo: function() {
+            return tempo;
         }
-    }
+    };
 }
 
-const orcamento = gerenciador(1000)
-orcamento.verificarSaldo()
-orcamento.adiDespesa(200)
-orcamento.verificarSaldo()
-
-
-    // recursao
-
-    
-function soma(n) {
-    if (n === 0) return 0; // Caso base
-
-    return n + soma(n - 1); // Chama a si mesma somando (n-1)
-}
-
-console.log(soma(5)); // 5 + 4 + 3 + 2 + 1 + 0 = 15
-*/
-
-/*
-function contarOcorrencias(texto, palavra){
-   let index = texto.indexOf(palavra)
-   if (index === -1){
-    return 0
-   }
-
-   return 1 + contarOcorrencias(texto.slice(index + palavra.length), palavra)
-}
-
-console.log(contarOcorrencias("oi oi tudo bem oi", "oi")); 
-console.log(contarOcorrencias("gato cachorro gato gato", "gato")); 
-console.log(contarOcorrencias("javascript é legal", "python")); 
-
-
-function converterParaBinario(n){
-    if (n === 0) return 0
-    if (n === 1) return 1
-
-    return converterParaBinario(Math.floor(n / 2)) + (n % 2).toString()
-    
-}
-
-console.log(converterParaBinario(10))
-*/
-
-// closure
-
-let x = 1;
-
-const parentFunction = () => {
-    let myValue = 2
-    console.log(x)
-    console.log(myValue)
-
-    const childFunction = () => {
-        console.log(x += 5)
-        console.log(myValue += 1)
-    }
-
-    return childFunction
-}
-
-const result = parentFunction()
-console.log(result)
-result()
-result()
-
-const credits = ((num) => {
-    let credits = num
-    console.log(`initial credits value: ${credits}`)
-    return () => {
-        credits = -1
-        if(credits > 0) console.log(`playing game, ${credits} credits(s)remaining`)
-        if (credits <= 0) console.log(`not enough credits`)
-    }
-})(3)
-
-credits()
-credits()
-credits()
+// Exemplo de uso:
+const meuTemporizador = criarTemporizador();
+meuTemporizador.iniciar();
