@@ -257,7 +257,7 @@ untilTen(100, 7)
 
 // infite recursion
 // function run(){
-//   console.log("Executando")
+//  console.log("Executando")
 //  run()
 //}
 
@@ -340,27 +340,7 @@ const saudarcombomdia = criarSaudacao("bom dia")
 console.log(saudarcombomdia("maria"))
 
 
-function criarContador(){
-    let cont = 0
-
-    return {
-        incrementar: function() {
-            cont++
-            console.log(`tarefas concluidas ${cont}`)
-        },
-        reset: function() {
-            cont = 0
-            console.log(`contador resetado`)
-        }
-    }
-}
-
-const cont = criarContador()
-cont.incrementar()
-cont.incrementar()
-cont.incrementar()
-cont.reset()
-cont.incrementar() */
+ */
 
 // usa closure
 /*
@@ -427,10 +407,13 @@ console.log(converterParaBinario(10))
 */
 
 // closure
+// global scope
+/*
 
 let x = 1;
 
 const parentFunction = () => {
+    // local scope
     let myValue = 2
     console.log(x)
     console.log(myValue)
@@ -460,4 +443,153 @@ const credits = ((num) => {
 
 credits()
 credits()
-credits()
+credits() 
+
+*/
+/*
+
+function criarGerenciadorDeDescontos(){
+    let desconto = 0; // Estado mantido pelo closure
+    let primeiraCompra = true; // Controla se é a primeira vez que a função é chamadaf
+    let valorOriginal = 0; // Armazena o valor original do produto
+
+    return function(valor){
+
+        if (primeiraCompra) {
+            valorOriginal = valor; // Armazena o preço original na primeira chamada
+            primeiraCompra = false;
+            console.log(`Primeira compra: Sem desconto. Valor: R$ ${valorOriginal.toFixed(2)}`);
+            return valorOriginal;
+        }
+
+        // Aumenta o desconto em 2% até o máximo de 10%
+
+        if(desconto < 10){
+            desconto =+ 2
+        }
+        let valorComDesconto = valor - (valor * desconto) / 100;
+        
+        console.log(`Desconto aplicado: ${desconto}% | Valor final: R$ ${valorComDesconto.toFixed(2)}`);
+        return valorComDesconto;
+    }
+}
+
+const aplicarDesconto = criarGerenciadorDeDescontos();
+aplicarDesconto(100)
+aplicarDesconto(100)*/
+/*
+
+function calcularDesconto(preco, desconto){
+
+    if (desconto >= 100 || desconto <= 0){
+        console.log("valor inválido")
+    }
+
+    let valorFinal = preco - (preco * desconto) / 100
+    console.log(`Valor final: ${valorFinal}`)
+}
+
+calcularDesconto(100, 2)
+
+
+function validarCPF(cpf){
+    cpf = cpf.replace(/\D/g, '');
+    if (cpf.length !== 11 ){
+        console.log("CPF invalido")
+    }
+
+    return `CPF valido`
+}
+
+console.log(validarCPF("12345678909")); // true
+console.log(validarCPF("12345678"));    // false
+console.log(validarCPF("123abc78909")); // false
+console.log(validarCPF(""));            // false
+
+
+const multiplication = (num1, num2) => num1 * num2
+
+const mult = multiplication(2, 5)
+console.log(mult)
+
+*/
+/*
+function criarContador(valorIni){
+    let cont = valorIni
+
+    return{
+        incrementar: function(){
+             cont ++
+             console.log(`${cont}`)
+         },
+         decrementar: function(){
+             cont --
+             console.log(`${cont}`)
+         },
+         valorAtual: function(){
+             return cont
+         }
+     }
+    
+}
+
+const contador = criarContador(10)
+contador.incrementar()
+contador.incrementar()
+contador.incrementar()
+contador.decrementar()
+contador.valorAtual() 
+
+function createCounter(){
+    let count = 0
+
+    function increment(){
+        count++
+        console.log(`Count increased to ${count}`)
+    }
+
+    function getCount(){
+        return count
+    }
+
+    return{increment, getCount}
+
+}
+
+const counter = createCounter()
+counter.increment()
+counter.increment()
+console.log(`${counter.getCount()}`)
+
+*/
+
+function createUser(name, password){
+    let pass = password
+    return{
+        login: function(pass){
+            if(pass === password){
+                return `Login bem sucedido.`
+            } else {
+                return `Senha incorreta`
+            }
+        },
+        changePassword: function(oldPass, newPass){
+            if(oldPass === pass) {
+                return `Login bem sucedido. Senha alterada`
+            } else {
+                return `Senha incorreta`
+            }
+        }    
+    }
+
+}
+
+const user = createUser("Carlos", "12345")
+
+console.log(user.login("errado")); 
+console.log(user.login("12345"));  
+
+console.log(user.changePassword("errado", "novaSenha123"));
+console.log(user.changePassword("12345", "novaSenha123"));
+
+
