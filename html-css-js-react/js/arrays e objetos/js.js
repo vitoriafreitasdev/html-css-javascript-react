@@ -292,7 +292,6 @@ console.log(myElements[myElements.indexOf("Abacate")])
 console.log(myElements.lastIndexOf("Abacate"))
 console.log(myElements.lastIndexOf("Mamão")) // retorna -1
 console.log(myElements.indexOf("Mamão")) // retorna -1
-*/
 
 // slice
 /*
@@ -320,7 +319,7 @@ console.log(subArray4) */
 // exercicio pratico slice
 
 // Exercício: Pegando Parte de uma Frase
-
+/*
 const frase = "JavaScript é muito divertido!"
 
 const primeiraPalavra = frase.slice(0, 10)
@@ -341,3 +340,151 @@ console.log(indice4a7)
 
 const ultimos = numeros.slice(-3) // (7, 10)
 console.log(ultimos)
+
+*/
+
+// forEach
+/*
+const nums = [1, 2, 3, 4, 5]
+
+nums.forEach((numero) =>{
+    console.log(`O número é ${numero}`)
+})
+
+const posts = [
+    {title: "Primeiro post", category: "PHP"},
+    {title: "Segundo post", category: "JavaScript"},
+    {title: "Terceiro post", category: "Python"},
+]
+
+posts.forEach((post) => {
+    console.log(`Exibindo post ${post.title}, da categoria: ${post.category}`)
+})
+
+/*  posts.forEach(function(post) {
+    console.log("Exibindo post " + post.title + ", da categoria: " + post.category);
+});*/
+/*
+//  usando o for
+const p = [ 
+    {title: "Quarto post", category: "Java"},
+    {title: "Quinto post", category: "Ruby"},
+    {title: "Sexto post", category: "C#"},
+];
+
+for (var i = 0; i < p.length; i++) {
+    console.log("Exibindo post " + p[i].title + ", da categoria: " + p[i].category);
+}
+*/
+
+// includes
+/*
+const brands = ["BMW", "VW", "Fiat"]
+
+console.log(brands.includes("Fiat"))
+console.log(brands.includes("KIA"))
+
+if (brands.includes("BMW")){
+    console.log("Há carros da marca BMW")
+}
+
+// exercicio pratico
+
+const frase = "Ola, tudo bem?"
+const palavra = "Ola,"
+
+const palavraEncontrada = frase.includes(palavra)
+console.log(frase.includes(palavra))
+
+if (palavraEncontrada){
+    console.log(`A palavra "${palavra}" foi encontrada na frase`)
+} else {
+    console.log(`A palavra "${palavra}" não foi encontrada na frase`)
+}
+
+console.log("/n")
+
+const lista = ["Ruby", "Java", "Python"]
+
+const linguagem = "Go"
+
+const linguagemEncontrada = lista.includes(linguagem)
+
+if (linguagemEncontrada){
+    console.log(`Linguagem ${linguagem} foi  encontrada `)
+} else {
+    console.log(`Linguagem ${linguagem} não foi  encontrada `)
+}
+*/
+
+// reverse
+/*
+const reverseTest = [1, 2, 3, 4, 5]
+
+reverseTest.reverse()
+
+console.log(reverseTest)
+*/
+
+
+
+// sobre os métodos de string f
+
+// trim
+/*
+const trimTest = " testando \n"
+
+console.log(trimTest)
+
+console.log(trimTest.trim())
+
+console.log(trimTest)
+
+console.log(trimTest.length)
+console.log(trimTest.trim().length)
+
+// padStart
+
+const testePadStart = "1"
+
+const newNumber = testePadStart.padStart(4, "0")
+
+console.log(testePadStart)
+console.log(newNumber)
+
+const testePadEnd = newNumber.padEnd(10, "0")
+console.log(testePadEnd)
+
+// split
+
+const frase = "O rato roeu a roupa do rei de roma"
+const arrayDaFrase = frase.split(" ")
+
+console.log(arrayDaFrase)
+
+*/
+
+// exercicios praticos padStart
+
+let num = "5"
+let newNum = num.padStart(5, 0)
+console.log(newNum)
+let newNumEnd = num.padEnd(5, 0)
+console.log(newNumEnd)
+
+// padStart e split
+
+const data = "5/2/2025"
+
+// Divide a data em dia, mês e ano
+const partes = data.split("/");
+
+// Usa padStart para garantir dois dígitos no dia e no mês
+const diaFormatado = partes[0].padStart(2, "0");
+const mesFormatado = partes[1].padStart(2, "0");
+const ano = partes[2]; // O ano já está correto
+
+// Junta tudo no formato DD/MM/AAAA
+const dataFormatada = `${diaFormatado}/${mesFormatado}/${ano}`;
+
+console.log(`Data formatada: ${dataFormatada}`);
