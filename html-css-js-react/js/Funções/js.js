@@ -573,7 +573,7 @@ function createUser(name, password){
                 return `Senha incorreta`
             }
         },
-        changePassword: function(oldPass, newPass){
+        changePassword: function(oldPass){
             if(oldPass === pass) {
                 return `Login bem sucedido. Senha alterada`
             } else {

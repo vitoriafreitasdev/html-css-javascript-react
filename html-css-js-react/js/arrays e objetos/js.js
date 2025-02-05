@@ -646,3 +646,124 @@ const pedidos = criarContadorDeVendas("short", "camisa", "camiseta", "tenis", "p
 console.log("Total de vendas:", pedidos.incrementar())
 console.log("Produtos:", pedidos.mostrarProdutos())
 */
+// foreach e push
+/*
+const numeros = [1, 4, 5 , 6, 8]
+const resultados = []
+numeros.forEach(function(numeros){
+   const resultado = numeros + 10
+
+    resultados.push(resultado)
+}) 
+
+console.log("Array original:", numeros)
+console.log("Array com resultado", resultados)
+
+
+function soma10(...num){
+    let resultado = []
+    for(i = 0; i < num.length; i++){
+        resultado.push(num[i] + 10)
+    }
+
+    return resultado
+    
+}
+
+const soma1 = soma10(8, 5, 7 , 2, 4)
+console.log(soma1)
+*/
+
+// for...of
+/*
+const somaInfinita2 = (...args) => {
+    let total = 0
+
+    for (num of args) {
+        total += num
+    }
+
+    return total
+}
+
+console.log(somaInfinita2(1, 2, 4))
+console.log(somaInfinita2(5, 6, 1, 23))
+*/
+/*
+function produtoEstoque(...produtos){
+    for(let i = 0; i < produtos.length; i++){
+        console.log(produtos[i])
+    }
+    return produtos
+}
+produtoEstoque("Sabão", "Lençol", "Vasilha")
+*/
+
+/*
+function produtoEstoque(...produtos) {
+    const estoqueUnico = new Set(produtos); // Remove duplicatas
+    for (const produto of estoqueUnico) {
+        console.log(produto);
+    }
+    return Array.from(estoqueUnico); // Retorna os produtos únicos como array
+}
+
+const prods = produtoEstoque("Sabão", "Lençol", "Vasilha", "Sabão", "Vasilha");
+console.log(prods); // Exibe ["Sabão", "Lençol", "Vasilha"]
+
+*/
+/*
+// destructuring em objetos
+
+const userDetails = {
+    firstName: "Matheus",
+    lastName: "Battisti",
+    job: "Progrmador"
+}
+
+const {firstName, lastName, job} = userDetails
+
+console.log(firstName, lastName, job)
+
+// renomear variaveis
+
+const {firstName: primeiroNome} = userDetails
+
+console.log(primeiroNome) 
+
+// destructuring em array
+
+const myList = ["Avião", "Submarino", "Carro"]
+
+const [veiculoA, veiculoB, veiculoC] = myList
+
+console.log(veiculoA, veiculoB, veiculoC)
+*/
+// JSON
+
+const myJson = '{"name": "matheus", "age": 31, "skills": ["PHP", "JavaScript", "Python"]}'
+
+console.log(myJson)
+console.log(typeof myJson)
+
+const myObject = JSON.parse(myJson)
+
+console.log(myObject)
+console.log(myObject.name)
+console.log(typeof myObject)
+
+// json invalido
+
+const badJson = '{"name": Matheus, "age": 31}'
+
+// const myBadObject = JSON.parse(badJson)
+
+myObject.isOpenToWork = true
+
+console.log(myObject)
+
+const myNewJson = JSON.stringify(myObject)
+
+console.log(myNewJson)
+
+console.log(typeof myNewJson)
