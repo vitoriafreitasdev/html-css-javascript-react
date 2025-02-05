@@ -97,7 +97,7 @@ Object.assign(obj2, obj)
 console.log(obj2)
 
 
-// conhecendo melhor os objetos
+//conhecendo melhor os objetos
 
 console.log(Object.keys(obj))
 console.log(Object.keys(obj2))
@@ -428,7 +428,7 @@ console.log(reverseTest)
 
 
 
-// sobre os métodos de string f
+// sobre os métodos de string 
 
 // trim
 /*
@@ -463,7 +463,7 @@ const arrayDaFrase = frase.split(" ")
 console.log(arrayDaFrase)
 
 */
-
+/*
 // exercicios praticos padStart
 
 let num = "5"
@@ -488,3 +488,161 @@ const ano = partes[2]; // O ano já está correto
 const dataFormatada = `${diaFormatado}/${mesFormatado}/${ano}`;
 
 console.log(`Data formatada: ${dataFormatada}`);
+
+*/
+/*
+const frase = "O rato roeu a roupa do rei de roma"
+const arrayDaFrase = frase.split(" ")
+console.log(arrayDaFrase)
+
+// join
+
+const fraseDeNovo = arrayDaFrase.join(" ")
+console.log(fraseDeNovo)
+
+const itensParaComprar = ["Mouse", "Teclado", "Monitor"]
+
+const fraseDeCompra = `Precisamos comprar: ${itensParaComprar.join(", ")}.`
+
+console.log(fraseDeCompra)
+
+// repeat
+
+const palavra = "Testando "
+
+console.log(palavra.repeat(5))
+*/
+// rest operator 
+/*
+const somaInfinita = (...args) =>{
+    let total = 0
+
+    for(let i = 0; i < args.length; i++){
+        total += args[i]  
+    }
+
+    return total
+}
+
+console.log(somaInfinita(1, 2, 3))
+
+console.log(somaInfinita(10, 2000, 3435, 1234, 12, 167, 222))
+*/
+
+// exercicios usando o metodo assign, keys, entries
+// gerenciamneto de biblioteca
+/*
+const livro = {
+    titulo: "JavaScript, o guia definitivo",
+    autor: "David Flanagan",
+    anoPublicado: 1996,
+    disponivel: true
+}
+
+const InformaçõesAdicionais = {
+    genero: "Informativo",
+    paginas: 1080 
+}
+
+const livroCompleto = Object.assign(livro, InformaçõesAdicionais)
+console.log(livroCompleto)
+
+const livroKeys = Object.keys(livroCompleto)
+console.log(livroKeys)
+
+const livroEntries = Object.entries(livroCompleto)
+console.log(livroEntries)
+
+function verificarDisponibilidade(livro){
+
+    if(livro.disponivel){
+        return `Livro ${livro.titulo }disponível`
+    } else {
+        return`Livro ${livro.titulo} indisponível`
+    }
+}
+
+console.log(verificarDisponibilidade(livroCompleto));
+*/
+/*
+// Exercício: Manipulando Dados de Cliente
+
+const dados = {
+    nome: "Miguel Santos",
+    idade: 23,
+    email: "miguelS@gmail.com",
+    endereco: "Rua das Flores"
+}
+
+const novosDados = {
+    emailNovo: "miguelSantos@gmail.com",
+    numero: 123456
+}
+
+const tudoJunto = Object.assign(dados, novosDados)
+const chaves = Object.keys(tudoJunto)
+//const entradas = Object.entries(tudoJunto)
+
+console.log(tudoJunto)
+console.log(chaves)
+//console.log(entradas)
+
+console.log("Pares chave-valor:");
+Object.entries(tudoJunto).forEach(([chave, valor]) => {
+    console.log(`${chave}: ${valor}`);
+})
+*/
+/*
+function calcularMedia(...valores){
+    let soma = 0
+    for (i = 0; i < valores.length; i++){
+        soma = soma + valores[i]
+    }
+    const media = soma / valores.length
+    return media
+}
+
+const media1 = calcularMedia(7, 8, 9)
+const media2 = calcularMedia(10, 7, 4)
+const media3 = calcularMedia(12, 12, 6)   
+
+console.log(media1)
+console.log(media2)
+console.log(media3)
+
+function registrarPedido(nome, ...pedido){
+    console.log(`Pedido registrado para: ${nome}`)
+
+    if (pedido.length === 0){
+        console.log("Nenhum pedido registrado.")
+    } else {
+        for(let i = 0; i < pedido.length; i++){
+            console.log(`Produto ${i + 1}: ${pedido[i]}`)
+        }
+    }
+}
+
+registrarPedido("Vitor", "Camisa", "Tenis", "Blusa")
+console.log("------");
+registrarPedido("João"); // Nenhum produto
+*/
+/*
+function criarContadorDeVendas(...produtos){
+    totalVendas = 0
+    return{
+        incrementar: function(){
+            for(let i = 0; i <= produtos.length; i++){
+                totalVendas = i
+            }
+            return totalVendas
+        },
+        mostrarProdutos: function(){
+            return produtos.join(", ")
+        }
+    }
+}
+
+const pedidos = criarContadorDeVendas("short", "camisa", "camiseta", "tenis", "pulseira")
+console.log("Total de vendas:", pedidos.incrementar())
+console.log("Produtos:", pedidos.mostrarProdutos())
+*/
