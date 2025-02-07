@@ -625,8 +625,8 @@ function registrarPedido(nome, ...pedido){
 registrarPedido("Vitor", "Camisa", "Tenis", "Blusa")
 console.log("------");
 registrarPedido("João"); // Nenhum produto
-*/
-/*
+*//*
+
 function criarContadorDeVendas(...produtos){
     totalVendas = 0
     return{
@@ -739,31 +739,110 @@ const [veiculoA, veiculoB, veiculoC] = myList
 
 console.log(veiculoA, veiculoB, veiculoC)
 */
-// JSON
-
+// JSON 
+/*
 const myJson = '{"name": "matheus", "age": 31, "skills": ["PHP", "JavaScript", "Python"]}'
-
 console.log(myJson)
 console.log(typeof myJson)
-
 const myObject = JSON.parse(myJson)
-
 console.log(myObject)
 console.log(myObject.name)
 console.log(typeof myObject)
-
 // json invalido
-
 const badJson = '{"name": Matheus, "age": 31}'
-
 // const myBadObject = JSON.parse(badJson)
-
 myObject.isOpenToWork = true
-
 console.log(myObject)
-
 const myNewJson = JSON.stringify(myObject)
-
 console.log(myNewJson)
-
 console.log(typeof myNewJson)
+*/
+
+// 1. Criar um objeto JSON
+// roda apenas no console do navegador localStorage é um recurso exclusivo dos navegadores.
+/*
+const usuario = {
+    nome: "Carlos Silva",
+    idade: 30,
+    email: "carlos@email.com",
+    endereco: {
+        cidade: "São Paulo",
+        estado: "SP"
+    }
+};
+
+// 2. Converter o objeto para uma string JSON
+const usuarioJSON = JSON.stringify(usuario);
+console.log("JSON String:", usuarioJSON);
+
+// 3. Salvar no localStorage
+localStorage.setItem("usuario", usuarioJSON);
+
+// 4. Recuperar a string JSON do localStorage
+const usuarioSalvo = localStorage.getItem("usuario");
+
+// 5. Converter de volta para objeto
+const usuarioObjeto = JSON.parse(usuarioSalvo);
+console.log("Objeto Recuperado:", usuarioObjeto);
+
+// Exibir o nome do usuário
+console.log("Nome do usuário:", usuarioObjeto.nome);
+*/
+
+
+// codigo para o nodeJS
+/*
+const fs = require('fs');
+
+// 1. Criar um objeto JSON
+const usuario = {
+    nome: "Carlos Silva",
+    idade: 30,
+    email: "carlos@email.com",
+    endereco: {
+        cidade: "São Paulo",
+        estado: "SP"
+    }
+};
+
+// 2. Converter para string JSON
+const usuarioJSON = JSON.stringify(usuario, null, 2); // Indentação para facilitar a leitura
+
+// 3. Salvar em um arquivo JSON
+fs.writeFileSync("usuario.json", usuarioJSON);
+console.log("Usuário salvo em usuario.json");
+
+// 4. Ler o arquivo JSON
+const usuarioSalvo = fs.readFileSync("usuario.json", "utf-8");
+
+// 5. Converter de volta para objeto
+const usuarioObjeto = JSON.parse(usuarioSalvo);
+console.log("Objeto Recuperado:", usuarioObjeto);
+
+// Exibir o nome do usuário
+console.log("Nome do usuário:", usuarioObjeto.nome);
+*/
+
+// exemplo 2
+
+// 1. Criar um array de objetos JSON (lista de produtos)
+const produtos = [
+    { id: 1, nome: "Teclado", preco: 30.0 },
+    { id: 2, nome: "Mouse", preco: 20.0 },
+    { id: 3, nome: "Monitor", preco: 450.0 },
+    { id: 4, nome: "Cadeira Gamer", preco: 750.0 },
+    { id: 5, nome: "Pendrive 32GB", preco: 45.0 }
+];
+
+// 2. Converter para uma string JSON
+const produtosJSON = JSON.stringify(produtos, null, 2);
+console.log("Lista de produtos (JSON String):", produtosJSON);
+
+// 3. Filtrar produtos com preço maior que 50
+const produtosCaros = produtos.filter(produto => produto.preco > 50);
+
+// 4. Exibir os produtos filtrados no console
+console.log("Produtos com preço acima de 50:", JSON.stringify(produtosCaros, null, 2));
+
+const NJSON = JSON.parse(produtosJSON)
+console.log(typeof NJSON)

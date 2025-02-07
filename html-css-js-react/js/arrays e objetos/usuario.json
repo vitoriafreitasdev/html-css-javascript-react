@@ -1,0 +1,9 @@
+{
+  "nome": "Carlos Silva",
+  "idade": 30,
+  "email": "carlos@email.com",
+  "endereco": {
+    "cidade": "São Paulo",
+    "estado": "SP"
+  }
+}
