@@ -562,7 +562,7 @@ counter.increment()
 console.log(`${counter.getCount()}`)
 
 */
-
+/*
 function createUser(name, password){
     let pass = password
     return{
@@ -592,4 +592,36 @@ console.log(user.login("12345"));
 console.log(user.changePassword("errado", "novaSenha123"));
 console.log(user.changePassword("12345", "novaSenha123"));
 
+*/
+
+// exercicio gerenciador de estoque usando closure
+
+function criarGerenciadorEstoque(produto, quantidadeInicial){
+    let estoque = quantidadeInicial
+
+    return{
+        adicionar: function(quantidade){
+            estoque =+ quantidade
+            console.log(`Quantidade ${quantidade} aumentada do produto ${produto}`)
+        },
+
+        retirar: function(quantidadeRetirada){
+            if(quantidadeRetirada > estoque){
+                console.log(`Quantidade esta acima da quantidade presente no estoque`)
+            } else {
+                estoque -= quantidadeRetirada
+            }
+        },
+
+        consultar: function(){
+            console.log(`Estoque atual do produto ${produto}: ${estoque}`)
+        }
+    }
+}
+
+const estoqueCamisetas = criarGerenciadorEstoque("Camisetas", 10)
+estoqueCamisetas.adicionar(5);  
+estoqueCamisetas.retirar(3);   
+estoqueCamisetas.consultar();   
+estoqueCamisetas.retirar(20);   
 

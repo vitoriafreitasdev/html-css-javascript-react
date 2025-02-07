@@ -34,7 +34,7 @@ console.log(pessoa.getNome())
 */
 
 // exercicio
-
+/*
 const carro = {
     marca: "fiat",
     velocidade: 0,
@@ -88,3 +88,83 @@ carro.acelerar(30);
 carro.acelerar(100)
 carro.ligarDesligar(); 
 carro.frear(50); 
+*/
+
+/*
+const contaBancaria = {
+    titular: "Vitória Freitas",
+    saldo: 2500.87,
+
+    depositar: function(valor){
+        this.saldo = this.saldo + valor
+    },
+
+    sacar: function(valorRetirado){
+        this.saldo = this.saldo - valorRetirado
+    },
+
+    verSaldo: function(){
+        console.log(`Saldo: ${this.saldo} reais`)
+    }
+
+}
+
+contaBancaria.depositar(200)
+contaBancaria.sacar(50)
+contaBancaria.verSaldo()
+*/
+
+// prototype
+// fallback
+/*
+const text = "asd"
+
+console.log(Object.getPrototypeOf(text))
+
+const bool = true
+
+console.log(Object.getPrototypeOf(bool))
+
+const arr = []
+
+console.log(arr.length)
+
+console.log(Object.getPrototypeOf(arr))
+
+// mais sobre prototype
+
+const myObject = {
+    a: "b"
+}
+
+console.log(Object.getPrototypeOf(myObject))
+
+console.log(Object.getPrototypeOf(myObject) === Object.prototype) 
+
+const mySecondObject = Object.create(myObject)
+
+console.log(mySecondObject)
+
+console.log(mySecondObject.a)
+
+console.log(Object.getPrototypeOf(mySecondObject) === myObject)
+*/
+
+// classes básicas
+
+const cachorro = {
+    raca: null,
+    patas: 4
+}
+
+const pastorAlemao = Object.create(cachorro)
+
+pastorAlemao.raca = "Pastor Alemão"
+
+console.log(pastorAlemao)
+console.log(pastorAlemao.patas)
+
+const bulldog = Object.create(cachorro)
+bulldog.raca = "Bulldog"
+
+console.log(bulldog)
