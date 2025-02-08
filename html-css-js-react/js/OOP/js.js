@@ -151,7 +151,7 @@ console.log(Object.getPrototypeOf(mySecondObject) === myObject)
 */
 
 // classes básicas
-
+/*
 const cachorro = {
     raca: null,
     patas: 4
@@ -168,3 +168,75 @@ const bulldog = Object.create(cachorro)
 bulldog.raca = "Bulldog"
 
 console.log(bulldog)
+*/
+// função como classe - função construtora
+/*
+function criarCachorro(nome, raca){
+    const cachorro = Object.create({})
+
+    cachorro.nome = nome
+    cachorro.raca = raca
+
+    return cachorro
+}
+
+const bob = criarCachorro("Bob", "Vira lata")
+
+console.log(bob)
+
+const jack = criarCachorro("Jack", "Poodle")
+
+console.log(jack)
+
+console.log(Object.getPrototypeOf(jack))
+*/
+// funções como classe
+/*
+function Cachorro(nome, raca){
+    this.nome = nome
+    this.raca = raca
+}
+
+const husky = new Cachorro("Ozzy", "Husky")
+
+console.log(husky)
+
+// metodos na função construtora
+Cachorro.prototype.uivar = function() {
+    console.log("Auuuu!")
+}
+
+console.log(Cachorro.prototype)
+
+husky.uivar()
+*/
+/*
+class CachorroClasse {
+    constructor(nome, raca){
+        this.nome = nome
+        this.raca = raca
+    }
+}
+
+const jeff = new CachorroClasse("Jeff", "Labrador")
+
+console.log(jeff)
+console.log(Object.getPrototypeOf(jeff))
+*/
+
+// função construtor 
+// exemplo como usaria com o DOM
+function SuperElement(type, content){
+    this.el = document.createElement(type)
+    this.el.innerText = content
+    document.body.append(this.el)
+    this.el.addEventListener('click', () => {
+        console.log(this.el)
+    })
+}
+
+const array = ['a', 'b', 'c']
+
+const myElements = array.map(item => {
+    return new SuperElement('p', item)
+})
