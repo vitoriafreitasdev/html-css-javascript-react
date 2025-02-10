@@ -224,19 +224,245 @@ console.log(jeff)
 console.log(Object.getPrototypeOf(jeff))
 */
 
-// função construtor 
-// exemplo como usaria com o DOM
-function SuperElement(type, content){
-    this.el = document.createElement(type)
-    this.el.innerText = content
-    document.body.append(this.el)
-    this.el.addEventListener('click', () => {
-        console.log(this.el)
-    })
+// funcao construtor exercicios
+/*
+function Carro(marca, modelo, ano){
+    this.marca = marca
+    this.modelo = modelo
+    this.ano = ano
 }
 
-const array = ['a', 'b', 'c']
+const carro1 = new Carro("Toyota", "Corolla", 2020)
+const carro2 = new Carro("Ford", "Mustang", 2018);
 
-const myElements = array.map(item => {
-    return new SuperElement('p', item)
-})
+console.log("Carro 1:")
+console.log(carro1)
+console.log("Marca: " + carro1.marca);
+console.log("Modelo: " + carro1.modelo);
+console.log("Ano: " + carro1.ano);
+
+console.log("\nCarro 2:")
+console.log(carro2)
+console.log("Marca: " + carro2.marca);
+console.log("Modelo: " + carro2.modelo);
+console.log("Ano: " + carro2.ano); 
+*/
+/*
+function Produto(nomeProduto, preco, categoria){
+ this.nomeProduto = nomeProduto
+ this.preco = preco
+ this.categoria = categoria
+
+ this.exibirInfo = function(){
+    console.log(`Nome do produto ${nomeProduto}, preço: ${preco}, categoria: ${categoria}`)
+ }
+}
+
+const produto1 = new Produto("Notebook", 3500, "Eletrônicos");
+const produto2 = new Produto("Camiseta", 59.90, "Vestuário");
+const produto3 = new Produto("Cadeira Gamer", 1200, "Móveis");
+
+// Chamando o método para exibir informações
+produto1.exibirInfo();
+produto2.exibirInfo();
+produto3.exibirInfo();
+*/
+/*
+class Usuario {
+    constructor(nome, email, tipo){
+        this.nome = nome
+        this.email = email
+        this.tipo = tipo
+    }
+
+    exibirInfo(){
+        console.log(`Nome: ${this.nome}, Email: ${this.email}, Tipo de usuário: ${this.tipo}`)
+      }
+}
+
+const usuario1 = new Usuario("Ana Souza", "ana@email.com", "Administrador");
+const usuario2 = new Usuario("Carlos Mendes", "carlos@email.com", "Cliente");
+const usuario3 = new Usuario("Mariana Lima", "mariana@email.com", "Funcionário");
+
+// Chamando o método exibirInfo() para exibir os dados no console
+usuario1.exibirInfo();
+usuario2.exibirInfo();
+usuario3.exibirInfo();
+*/
+/*
+
+
+// exemplos chat gpt
+class Pedido {
+    constructor(numeroPedido, ...itens) {
+        this.numeroPedido = numeroPedido;
+        this.itens = [...itens]
+    }
+
+    adicionarItem(item) {
+        this.itens.push(item); 
+        console.log(`Item "${item}" adicionado ao pedido ${this.numeroPedido}.`);
+    }
+
+
+    exibirPedido() {
+        console.log(`Pedido Nº: ${this.numeroPedido}`);
+        console.log(`Itens: ${this.itens.join(", ")}`);
+        console.log("----------------------");
+    }
+}
+
+const pedido1 = new Pedido(101, "Pizza", "Refrigerante");
+const pedido2 = new Pedido(102, "Hambúrguer", "Batata Frita");
+
+// Exibindo pedidos iniciais
+pedido1.exibirPedido();
+pedido2.exibirPedido();
+
+// Adicionando novos itens aos pedidos
+pedido1.adicionarItem("Sobremesa");
+pedido2.adicionarItem("Milkshake");
+
+// Exibindo pedidos após a adição dos itens
+pedido1.exibirPedido();
+pedido2.exibirPedido();
+
+*/
+/*
+class Carrinho {
+    constructor() {
+        this.itens = []; // Lista de produtos
+    }
+
+    // Método para adicionar um produto (nome e preço)
+    adicionarProduto(nome, preco) {
+        this.itens.push({ nome, preco });
+        console.log(`Produto "${nome}" adicionado ao carrinho.`);
+    }
+
+    // Método para remover um produto pelo nome
+    removerProduto(nome) {
+        const index = this.itens.findIndex(item => item.nome === nome);
+        if (index !== -1) {
+            this.itens.splice(index, 1);
+            console.log(`Produto "${nome}" removido do carrinho.`);
+        } else {
+            console.log(`Produto "${nome}" não encontrado no carrinho.`);
+        }
+    }
+
+    // Método para exibir os produtos e o total
+    exibirCarrinho() {
+        console.log("📦 Carrinho de Compras:");
+        this.itens.forEach((item, index) => {
+            console.log(`${index + 1}. ${item.nome} - R$ ${item.preco.toFixed(2)}`);
+        });
+
+        const total = this.itens.reduce((acc, item) => acc + item.preco, 0);
+        console.log(`💰 Total: R$ ${total.toFixed(2)}`);
+        console.log("----------------------");
+    }
+}
+
+// Criando um novo carrinho
+const meuCarrinho = new Carrinho();
+
+// Adicionando produtos
+meuCarrinho.adicionarProduto("Camisa", 50.00);
+meuCarrinho.adicionarProduto("Calça Jeans", 120.00);
+meuCarrinho.adicionarProduto("Tênis", 200.00);
+
+// Exibindo carrinho inicial
+meuCarrinho.exibirCarrinho();
+
+// Removendo um produto
+meuCarrinho.removerProduto("Calça Jeans");
+
+// Exibindo carrinho atualizado
+meuCarrinho.exibirCarrinho();
+*/
+/*
+class Pedido{
+    constructor(){
+        this.itens = []
+    }
+
+    adicionarProdutos(pedido, preco){
+        this.itens.push({pedido, preco})
+        console.log(`Pedidos adicionados: ${pedido}`)
+    }
+
+    removerPedido(pedido){
+        const index = this.itens.findIndex(item => item.pedido === pedido);
+        if (index !== -1) {
+            this.itens.splice(index, 1);
+            console.log(`Produto "${pedido}" removido do carrinho.`);
+        } else {
+            console.log(`Produto "${pedido}" não encontrado no carrinho.`);
+        }
+    }
+
+    exibirItens(){
+        console.log(`Itens no carrinho: `)
+        let total = 0
+        for (let i = 0; i < this.itens.length; i++) {
+            console.log(`${i + 1}. ${this.itens[i].pedido} - R$ ${this.itens[i].preco.toFixed(2)}`);
+            total += this.itens[i].preco;
+        }
+
+        console.log(`💰 Total: R$ ${total.toFixed(2)}`);
+        console.log("----------------------");
+    }
+}
+
+
+// Criando um novo pedido
+const meuPedido = new Pedido();
+
+// Adicionando itens ao pedido
+meuPedido.adicionarProdutos("Hambúrguer", 25.00);
+meuPedido.adicionarProdutos("Refrigerante", 8.00);
+meuPedido.adicionarProdutos("Batata Frita", 12.00);
+
+// Exibindo pedido inicial
+meuPedido.exibirItens();
+
+// Removendo um item do pedido
+meuPedido.removerPedido("Refrigerante");
+
+// Exibindo pedido atualizado
+meuPedido.exibirItens();
+*/
+
+// mais sobre classes
+
+class Caminhao {
+    constructor(eixos, cor){
+        this.eixos = eixos
+        this.cor = cor
+    }
+
+    descreverCaminhao(){
+        console.log(`Este caminhão tem ${this.eixos} e é da cor ${this.cor}`)
+    }
+}
+
+const scania = new Caminhao(6, "Vermelha")
+
+console.log(scania)
+
+scania.descreverCaminhao()
+
+Caminhao.motor = 4
+
+const c2 = new Caminhao(4, "Preta")
+
+console.log(c2)
+
+console.log(c2.motor)
+
+Caminhao.prototype.motor = 4.0
+
+const c3 = new Caminhao(6, "Azul")
+
+console.log(c3.motor)
