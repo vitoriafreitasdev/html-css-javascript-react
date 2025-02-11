@@ -293,39 +293,7 @@ usuario3.exibirInfo();
 
 
 // exemplos chat gpt
-class Pedido {
-    constructor(numeroPedido, ...itens) {
-        this.numeroPedido = numeroPedido;
-        this.itens = [...itens]
-    }
-
-    adicionarItem(item) {
-        this.itens.push(item); 
-        console.log(`Item "${item}" adicionado ao pedido ${this.numeroPedido}.`);
-    }
-
-
-    exibirPedido() {
-        console.log(`Pedido Nº: ${this.numeroPedido}`);
-        console.log(`Itens: ${this.itens.join(", ")}`);
-        console.log("----------------------");
-    }
-}
-
-const pedido1 = new Pedido(101, "Pizza", "Refrigerante");
-const pedido2 = new Pedido(102, "Hambúrguer", "Batata Frita");
-
-// Exibindo pedidos iniciais
-pedido1.exibirPedido();
-pedido2.exibirPedido();
-
-// Adicionando novos itens aos pedidos
-pedido1.adicionarItem("Sobremesa");
-pedido2.adicionarItem("Milkshake");
-
-// Exibindo pedidos após a adição dos itens
-pedido1.exibirPedido();
-pedido2.exibirPedido();
+ 
 
 */
 /*
@@ -434,8 +402,9 @@ meuPedido.removerPedido("Refrigerante");
 meuPedido.exibirItens();
 */
 
-// mais sobre classes
 
+// mais sobre classes
+/*
 class Caminhao {
     constructor(eixos, cor){
         this.eixos = eixos
@@ -466,3 +435,151 @@ Caminhao.prototype.motor = 4.0
 const c3 = new Caminhao(6, "Azul")
 
 console.log(c3.motor)
+
+*/
+
+/*
+// chat gpt exemplo
+
+class Pedido {
+    constructor(numeroPedido, ...itens) {
+        this.numeroPedido = numeroPedido;
+        this.itens = [...itens]
+    }
+
+    adicionarItem(item) {
+        this.itens.push(item); 
+        console.log(`Item "${item}" adicionado ao pedido ${this.numeroPedido}.`);
+    }
+
+
+    exibirPedido() {
+        console.log(`Pedido Nº: ${this.numeroPedido}`);
+        console.log(`Itens: ${this.itens.join(", ")}`);
+        console.log("----------------------");
+    }
+}
+
+const pedido1 = new Pedido(101, "Pizza", "Refrigerante");
+const pedido2 = new Pedido(102, "Hambúrguer", "Batata Frita");
+
+// Exibindo pedidos iniciais
+pedido1.exibirPedido();
+pedido2.exibirPedido();
+
+// Adicionando novos itens aos pedidos
+pedido1.adicionarItem("Sobremesa");
+pedido2.adicionarItem("Milkshake");
+
+// Exibindo pedidos após a adição dos itens
+pedido1.exibirPedido();
+pedido2.exibirPedido();
+*/
+/*
+class ReservaHotel {
+    constructor(){
+        this.reservas = []
+    }
+
+    reservarQuarto(numeroReserva, nomeHospede, quantidadeNoites){
+        this.reservas.push({numeroReserva, nomeHospede, quantidadeNoites})
+        console.log(`Reserva Nº ${numeroReserva} para ${nomeHospede} por ${quantidadeNoites} noites foi adicionada.`)
+    }
+
+    cancelarReserva(numeroReserva){
+        const index = this.reservas.findIndex(reserva => reserva.numeroReserva === numeroReserva);
+        if (index !== -1) {
+            this.reservas.splice(index, 1);
+            console.log(`Resevera Nº "${numeroReserva}" foi cancelada.`);
+        } else {
+            console.log(`Resevera Nº "${numeroReserva}" não encontrada.`);
+        }
+        console.log("----------------------");
+    }
+
+    exibirReservas(){
+        if(this.reservas.length === 0) {
+            console.log("Não há reservas ativas")
+        } else {
+            console.log("Reservas ativas:")
+            this.reservas.forEach(reserva => {
+                console.log(`Nº ${reserva.numeroReserva} - ${reserva.nomeHospede} - ${reserva.quantidadeNoites} noites`);
+            });
+        }
+    }
+}
+
+const hotel = new ReservaHotel()
+
+hotel.reservarQuarto(1, "Carlos", 3)
+hotel.reservarQuarto(2, "Mariana", 5)
+hotel.exibirReservas()
+
+hotel.cancelarReserva(1)
+hotel.exibirReservas()
+*/
+
+class Biblioteca{
+    constructor(){
+        this.livros = []
+    }
+
+    adicionarLivro(id, titulo){
+        this.livros.push({id, titulo, nomeLeitor: null})
+        console.log(`Livro adicionado ${titulo}, ID ${id}`)
+    }
+
+    emprestarLivro(id, nomeleitor){
+        const livro = this.livros.find(livro => livro.id === id)
+        if(livro){
+            if(livro.nomeleitor){
+                console.log(`O livro "${livro.titulo}" já está emprestado para ${livro.nomeLeitor}.`);
+            } else {
+                livro.nomeLeitor = nomeleitor
+                console.log(`Livro "${livro.titulo}" emprestado para ${nomeleitor}.`);
+            }
+        } else {
+            console.log(`Livro com ID ${id} não encontrado.`);
+        }
+    }
+
+    devolverLivro(id){
+         const livro = this.livros.find(livro => livro.id === id)
+         if (livro) {
+            if (livro.nomeLeitor) {
+                console.log(`Livro "${livro.titulo}" devolvido por ${livro.nomeLeitor}.`);
+                livro.nomeLeitor = null;
+            } else {
+                console.log(`O livro "${livro.titulo}" já está disponível.`);
+            }
+        } else {
+            console.log(`Livro com ID ${id} não encontrado.`);
+        }
+    }
+
+    exibirLivros(){
+        if(this.livros.length === 0){
+            console.log(`Não há livros armazenados`)
+        } else {
+            for (let i = 0; i < this.livros.length; i++){
+                const livro = this.livros[i];  
+                if (livro.nomeLeitor) {
+                    console.log(`ID: ${livro.id} - ${livro.titulo} | Emprestado para: ${livro.nomeLeitor}`);
+                } else {
+                    console.log(`ID: ${livro.id} - ${livro.titulo} | Disponível`);
+                }
+            }
+        }
+    }
+}
+
+const biblioteca = new Biblioteca();
+
+biblioteca.adicionarLivro(1, "1984");
+biblioteca.adicionarLivro(2, "Dom Casmurro");
+
+biblioteca.emprestarLivro(1, "Ana");
+biblioteca.exibirLivros();
+
+biblioteca.devolverLivro(1);
+biblioteca.exibirLivros();
