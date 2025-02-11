@@ -518,7 +518,7 @@ hotel.exibirReservas()
 hotel.cancelarReserva(1)
 hotel.exibirReservas()
 */
-
+/*
 class Biblioteca{
     constructor(){
         this.livros = []
@@ -583,3 +583,68 @@ biblioteca.exibirLivros();
 
 biblioteca.devolverLivro(1);
 biblioteca.exibirLivros();
+*/
+
+class Produto{
+    constructor(nome, preco, quantidadeEmEstoque){
+        this.nome = nome
+        this.preco = preco
+        this.quantidadeEmEstoque = quantidadeEmEstoque
+    }
+}
+
+class CarrinhoDeCompras {
+    constructor(){
+        this.produtos = []
+    }
+
+    adicionarProduto(produto, quantidade){
+        if(produto.quantidadeEmEstoque >= quantidade){
+            this.produtos.push({produto, quantidade})
+            produto.quantidadeEmEstoque -= quantidade
+            console.log(`Produto adicionado: ${produto.nome}, preço: ${produto.preco}, quantidade: ${quantidade}`)
+        } else {
+            console.log(`Quantidade insufiente em estoque para ${produto}`)
+        }
+    }
+
+    removerProduto(nomeProduto){
+        const index = this.produtos.findIndex(item => item.produto.nome = nomeProduto)
+        if (index !== -1) {
+            const { produto, quantidade} = this.produtos.splice(index, 1)[0]
+            produto.quantidadeEmEstoque += quantidade
+            console.log(`${quantidade} ${produto.nome}(s) removido(s) do carrinho.`)
+        } else {
+            console.log(`Produto ${nomeProduto} não encontrado no carrinho`)
+        }
+    }
+
+    calcularTotal() {
+        return this.produtos.reduce((total, item) => total + item.produto.preco * item.quantidade, 0);
+      }
+    
+      verificarEstoque(nomeProduto) {
+        const produto = this.produtos.find(item => item.produto.nome === nomeProduto);
+        if (produto) {
+          console.log(`Estoque de ${nomeProduto}: ${produto.produto.quantidadeEmEstoque}`);
+        } else {
+          console.log(`Produto ${nomeProduto} não encontrado no carrinho.`);
+        }
+      }
+}
+
+const produto1 = new Produto("Notebook", 3000, 10);
+const produto2 = new Produto("Mouse", 50, 20);
+
+const carrinho = new CarrinhoDeCompras();
+
+carrinho.adicionarProduto(produto1, 2);
+carrinho.adicionarProduto(produto2, 5);
+
+console.log(`Total da compra: R$ ${carrinho.calcularTotal().toFixed(2)}`);
+
+carrinho.removerProduto("Mouse");
+
+console.log(`Total da compra após remoção: R$ ${carrinho.calcularTotal().toFixed(2)}`);
+
+carrinho.verificarEstoque("Notebook");
