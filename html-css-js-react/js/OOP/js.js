@@ -584,67 +584,381 @@ biblioteca.exibirLivros();
 biblioteca.devolverLivro(1);
 biblioteca.exibirLivros();
 */
-
-class Produto{
-    constructor(nome, preco, quantidadeEmEstoque){
-        this.nome = nome
-        this.preco = preco
-        this.quantidadeEmEstoque = quantidadeEmEstoque
+/*
+class Produto {
+    constructor(nome, preco, quantidadeEmEstoque) {
+      this.nome = nome;
+      this.preco = preco;
+      this.quantidadeEmEstoque = quantidadeEmEstoque;
     }
 }
-
-class CarrinhoDeCompras {
-    constructor(){
-        this.produtos = []
+  
+  class CarrinhoDeCompras {
+    constructor() {
+      this.produtos = [];
     }
-
-    adicionarProduto(produto, quantidade){
-        if(produto.quantidadeEmEstoque >= quantidade){
-            this.produtos.push({produto, quantidade})
-            produto.quantidadeEmEstoque -= quantidade
-            console.log(`Produto adicionado: ${produto.nome}, preço: ${produto.preco}, quantidade: ${quantidade}`)
-        } else {
-            console.log(`Quantidade insufiente em estoque para ${produto}`)
-        }
+  
+    adicionarProduto(produto, quantidade) {
+      if (produto.quantidadeEmEstoque >= quantidade) {
+        this.produtos.push({ produto, quantidade });
+        produto.quantidadeEmEstoque -= quantidade;
+        console.log(`Produto adicionado: ${produto.nome}, preço: ${produto.preco}, quantidade: ${quantidade}`);
+      } else {
+        console.log(`Quantidade insuficiente em estoque para ${produto.nome}`);
+      }
     }
-
-    removerProduto(nomeProduto){
-        const index = this.produtos.findIndex(item => item.produto.nome = nomeProduto)
-        if (index !== -1) {
-            const { produto, quantidade} = this.produtos.splice(index, 1)[0]
-            produto.quantidadeEmEstoque += quantidade
-            console.log(`${quantidade} ${produto.nome}(s) removido(s) do carrinho.`)
-        } else {
-            console.log(`Produto ${nomeProduto} não encontrado no carrinho`)
-        }
+  
+    removerProduto(nomeProduto) {
+      const index = this.produtos.findIndex(item => item.produto.nome === nomeProduto);
+      if (index !== -1) {
+        const { produto, quantidade } = this.produtos.splice(index, 1)[0];
+        produto.quantidadeEmEstoque += quantidade;
+        console.log(`${quantidade} ${produto.nome}(s) removido(s) do carrinho.`);
+      } else {
+        console.log(`Produto ${nomeProduto} não encontrado no carrinho`);
+      }
     }
-
+  
     calcularTotal() {
-        return this.produtos.reduce((total, item) => total + item.produto.preco * item.quantidade, 0);
+      return this.produtos.reduce((total, item) => total + item.produto.preco * item.quantidade, 0);
+    }
+  
+    verificarEstoque(nomeProduto) {
+      const produto = this.produtos.find(item => item.produto.nome === nomeProduto);
+      if (produto) {
+        console.log(`Estoque de ${nomeProduto}: ${produto.produto.quantidadeEmEstoque}`);
+      } else {
+        console.log(`Produto ${nomeProduto} não encontrado no carrinho.`);
       }
-    
-      verificarEstoque(nomeProduto) {
-        const produto = this.produtos.find(item => item.produto.nome === nomeProduto);
-        if (produto) {
-          console.log(`Estoque de ${nomeProduto}: ${produto.produto.quantidadeEmEstoque}`);
+    }
+  }
+  
+  // Exemplo de uso:
+  const produto1 = new Produto("Notebook", 3000, 10);
+  const produto2 = new Produto("Mouse", 50, 20);
+  
+  const carrinho = new CarrinhoDeCompras();
+  
+  carrinho.adicionarProduto(produto1, 2);
+  carrinho.adicionarProduto(produto2, 5);
+  
+  console.log(`Total da compra: R$ ${carrinho.calcularTotal().toFixed(2)}`);
+  
+  carrinho.removerProduto("Mouse");
+  
+  console.log(`Total da compra após remoção: R$ ${carrinho.calcularTotal().toFixed(2)}`);
+  
+  carrinho.verificarEstoque("Notebook");
+  */
+/*
+  class Carro{
+    constructor(modelo, ano, diaria, disponivel = true){
+        this.modelo = modelo
+        this.ano = ano
+        this.diaria = diaria
+        this.disponivel = disponivel
+    }
+  }
+
+  class Locadora {
+    constructor(){
+        this.veiculos = []
+    }
+
+
+    adicionarCarro(carro){
+        this.veiculos.push(carro)
+        console.log(`Carro adicionado na locadora ${carro.modelo}`)
+    }
+
+    alugarCarro(modelo, dias){
+        const disponivel = this.veiculos.find(carro => carro.modelo === modelo && carro.disponivel)
+        if(disponivel){
+            disponivel.disponivel = false
+            const valorTotal = dias * disponivel.diaria
+            console.log(`Carro alugado por ${dias} dias. Valor total: R$ ${valorTotal}`);
         } else {
-          console.log(`Produto ${nomeProduto} não encontrado no carrinho.`);
+            console.log(`Carro indisponível`)
         }
-      }
+        
+    }
+
+    devolverCarro(modelo){
+        const alugado = this.veiculos.find(carro => carro.modelo === modelo && !carro.disponivel);
+        if(alugado){
+            alugado.disponivel = true
+            console.log(`Carro devolvido: ${modelo}`)
+        }
+    }
+
+    listarCarrosDisponiveis() {
+        const disponiveis = this.veiculos.filter(carro => carro.disponivel);
+    
+        if (disponiveis.length === 0) {
+            console.log("Não há carros disponíveis");
+        } else {
+            console.log("Carros disponíveis:");
+            disponiveis.forEach(carro => {
+                console.log(`Modelo: ${carro.modelo}, Ano: ${carro.ano}, Diária: R$${carro.diaria}`);
+            });
+        }
+    }
+  }
+
+
+const locadora = new Locadora();
+const carro1 = new Carro("Fiat Uno", 2020, 50);
+const carro2 = new Carro("Gol", 2021, 60);
+const carro3 = new Carro("Onix", 2018, 65)
+const carro4 = new Carro("Hilux", 2023, 75)
+
+locadora.adicionarCarro(carro1);
+locadora.adicionarCarro(carro2);
+locadora.adicionarCarro(carro3)
+locadora.adicionarCarro(carro4)
+
+locadora.alugarCarro("Fiat Uno", 3);
+locadora.devolverCarro("Fiat Uno");
+locadora.listarCarrosDisponiveis()
+*/
+
+// override
+/*
+class Humano{
+    constructor(nome, idade){
+        this.nome = nome
+        this.idade = idade
+    }
 }
 
-const produto1 = new Produto("Notebook", 3000, 10);
-const produto2 = new Produto("Mouse", 50, 20);
+const matheus = new Humano("Matheus", 31)
 
-const carrinho = new CarrinhoDeCompras();
+console.log(matheus)
 
-carrinho.adicionarProduto(produto1, 2);
-carrinho.adicionarProduto(produto2, 5);
+console.log(Humano.prototype.idade)
 
-console.log(`Total da compra: R$ ${carrinho.calcularTotal().toFixed(2)}`);
+Humano.prototype.idade = "Não definida"
 
-carrinho.removerProduto("Mouse");
+console.log(matheus.idade)
 
-console.log(`Total da compra após remoção: R$ ${carrinho.calcularTotal().toFixed(2)}`);
+console.log(Humano.prototype.idade)
+*/
 
-carrinho.verificarEstoque("Notebook");
+// symbol
+/*
+class Aviao {
+    constructor(marca, turbinas) {
+        this.marca = marca
+        this.turbinas = turbinas
+    }
+}
+
+const asas = Symbol()
+const pilotos = Symbol()
+
+Aviao.prototype[asas] = 2
+
+Aviao.prototype[pilotos] = 3
+
+const boeing = new Aviao("Boeing", 10)
+
+console.log(boeing)
+
+console.log(boeing[asas])
+
+console.log(boeing[pilotos])
+*/
+// getter e setter
+/*
+class Post {
+    constructor(titulo, descricao, tags){
+        this.titulo = titulo
+        this.descricao = descricao
+        this.tags = tags
+    }
+
+    get exibirTitulo(){
+        return `Voce esta lendo: ${this.titulo}`
+    }
+
+    set adicionarTags(tags){
+        const tagsArray = tags.split(", ")
+        this.tags = tagsArray
+    }
+}
+
+const myPost = new Post("Algum post", "É um post sobre programação")
+
+console.log(myPost)
+
+console.log(myPost.exibirTitulo)
+
+myPost.adicionarTags = "programação, javascript, js"
+
+console.log(myPost)
+
+
+// herança
+
+class Mamifero {
+    constructor(patas){
+        this.patas = patas
+    }
+}
+
+class Lobo extends Mamifero {
+    constructor(patas, nome){
+        super(patas, patas)
+        this.nome = nome
+    }
+}
+
+const shark = new Lobo(4, "Shark")
+
+console.log(shark)
+
+console.log(shark.patas)
+
+
+// instanceof
+
+console.log(shark instanceof Lobo)
+
+console.log(Lobo instanceof Mamifero)
+
+console.log(new Lobo(4, "Shark") instanceof Mamifero)
+
+console.log(new Post("a", "b") instanceof Lobo)
+*/
+
+// exercios locação de bicletas
+/*
+class Bicicleta {
+    constructor(modelo, ano, diaria, disponivel = true){
+        this._modelo = modelo
+        this._ano = ano
+        this._diaria = diaria
+        this._disponivel = disponivel
+    }
+
+    get modelo(){
+        return this._modelo 
+    }
+
+    get ano(){
+        return this._ano 
+    }
+
+    get diaria(){
+        return this._diaria 
+    }
+
+    get disponivel(){
+        return this._disponivel
+    }
+
+    set diaria(novoValor){
+        if(novoValor > 0){
+            this._diaria = novoValor
+        } else {
+            console.log("Valor da diária inválido")
+        }
+    }
+
+    set disponivel(status){
+        this._disponivel = status  
+    }
+}
+
+class LojaBicicletas{
+    constructor(){
+        this.bicicletas = []
+    }
+
+    adicionarBicicleta(bicicleta){
+        this.bicicletas.push(bicicleta)
+        console.log(`Bicicleta adicionada na locadora ${bicicleta}`)
+    }
+
+    alugarBicicleta(modelo, dias){
+        const bicicleta = this.bicicletas.find(b => b.modelo == modelo && b.disponivel)
+
+        if(bicicleta){
+            bicicleta.disponivel = false
+            const valorTotal = dias * bicicleta.diaria
+            console.log(`Bicicleta ${modelo} alugada por ${dias}, valor total: ${valorTotal}`)
+        } else {
+            console.log("Bicicleta indisponivel")
+        }
+    }
+
+    devolverBicicleta(modelo){
+        const bicicleta = this.bicicletas.find(b => b.modelo == modelo && !b.disponivel)
+        if(bicicleta){
+            bicicleta.disponivel = true
+            console.log(`Bicicleta devolvida`)
+        }
+    }
+    
+    listarBicicletasDisponiveis(){
+        const disponiveis = this.bicicletas.filter(b => b.disponivel)
+        
+        if(disponiveis.length === 0){
+            console.log("Não bicicletas disponiveis")
+        } else {
+            console.log("Bicicletas disponiveis")
+            disponiveis.forEach(b => {
+                console.log(`Modelo: ${b.modelo}, Ano: ${b.ano}, Diária: ${b.diaria}`)
+            })
+        }
+    }
+}
+
+const loja = new LojaBicicletas()
+const bike1 = new Bicicleta("Mountain Bike", 2022, 50)
+const bike2 = new Bicicleta("Speed", 2021, 70)
+const bike3 = new Bicicleta("BMX", 2023, 75)
+const bike4 = new Bicicleta("X", 2020, 50)
+
+
+loja.adicionarBicicleta(bike1);
+loja.adicionarBicicleta(bike2);
+loja.adicionarBicicleta(bike3);
+loja.adicionarBicicleta(bike4);
+loja.listarBicicletasDisponiveis();
+loja.alugarBicicleta("Mountain Bike", 3);
+loja.listarBicicletasDisponiveis();
+loja.devolverBicicleta("Mountain Bike");
+
+// para alterar a diaria
+
+bike1.diaria = 60
+
+loja.listarBicicletasDisponiveis();
+*/
+// exemplo de get e set chat gpt 
+/*
+class Pessoa {
+    constructor(nome, idade) {
+        this._nome = nome;  // Atributo "privado"
+        this._idade = idade; // Atributo "privado"
+    }
+
+    get nome() {
+        return this._nome; // Permite apenas leitura
+    }
+
+    set idade(novaIdade) {
+        if (novaIdade > 0) {
+            this._idade = novaIdade; // Permite alteração controlada
+        } else {
+            console.log("Idade inválida!");
+        }
+    }
+}
+
+const pessoa = new Pessoa("Carlos", 25);
+console.log(pessoa.nome); // "Carlos"
+pessoa.idade = -5; // "Idade inválida!"
+console.log(pessoa._idade); // 25
+*/
