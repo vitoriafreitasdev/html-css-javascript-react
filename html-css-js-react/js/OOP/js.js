@@ -962,3 +962,228 @@ console.log(pessoa.nome); // "Carlos"
 pessoa.idade = -5; // "Idade inválida!"
 console.log(pessoa._idade); // 25
 */
+
+// herança
+// usando classes
+/*
+class Person{
+    talk(){
+        return `Talking`
+    }
+}
+
+const me = new Person()
+console.log(me.talk())
+
+class SuperHuman extends Person {
+    fly(){
+        return `Flying`
+    }
+}
+
+const you = new SuperHuman()
+console.log(you.talk())
+console.log(you.fly())
+
+
+// herança usando objetos
+
+const pessoa = {
+    fala() {
+        return 'Falando'
+    }
+}
+
+const eu = Object.create(pessoa)
+
+console.log(eu.fala())
+
+// outro jeito
+
+const humano = {
+    fala(){
+        return `falando`
+    }
+}
+
+const voce = {}
+Object.setPrototypeOf(voce, humano)
+console.log(voce.fala())
+*/
+// this
+/*
+function talking() {
+    return `I am ${this.name}`
+}
+
+const i = {
+    name: 'Sina'
+}
+
+talking.bind(i)
+
+const iTalk = talking.bind(i)
+
+console.log(iTalk())
+
+console.log(talking.call(i))
+
+function talk(lang, isPolite) {
+    if(isPolite){
+        if (lang === 'en') {
+            return `Hello, i am ${this.name}`
+        } else if (lang === 'it') {
+            return `Ciao bella, sono ${this.name}`
+        }
+    }
+
+    if(!isPolite){
+        if (lang === 'en') {
+            return `${this.name}, what you want?`
+        } else if (lang === 'it') {
+            return `Sono ${this.name}`
+        }
+    }
+     
+}
+
+const me = {
+    name: 'Sina'
+}
+
+console.log(talk.call(me, 'en', true))
+
+const you = {
+    name: 'Qoli'
+}
+
+console.log(talk.call(you, 'it', false))
+
+console.log(talk.apply(me, ['en', true]))
+*/
+// constructor
+/*
+function Person(n) {
+    this.name = n
+    this.talk = function() {
+        console.log(this.name)
+    }
+}
+
+const m = new Person('Sina')
+
+m.talk()
+*/
+// callback
+/*
+function Person(n){
+    this.name = n
+    this.talk = function() {
+        console.log(this.name)
+    }
+    
+    
+    //setTimeout(function(){
+       // console.log(this.name)
+   // }.bind(this), 1000)
+    
+    setTimeout(() => {
+        console.log(this.name)
+    }, 1000)
+
+}
+
+const me = new Person('Sina')
+me.talk()
+*/
+
+// exercicio heranca
+
+class Veiculo {
+    constructor(marca, modelo, ano){
+        this.marca = marca
+        this.modelo = modelo
+        this.ano = ano
+    }
+
+    exibirInfo(){
+        console.log(`Veiculo da marca: ${this.marca}, modelo: ${this.modelo}, ano: ${this.ano}`)
+    }
+}
+
+class Carro extends Veiculo {
+    constructor(marca, modelo, ano, motor, km){
+        super(marca, modelo, ano,)
+        this.motor = motor
+        this.km = km
+    }
+
+    exibirInfo(){
+        super.exibirInfo()
+        console.log(`Este carro tem motor: ${this.motor}, quilometragem: ${this.km}`)
+    }
+}
+
+class Moto extends Veiculo {
+    constructor(marca, modelo, ano, cilindradas, km){
+        super(marca, modelo, ano,)
+        this.cilindradas = cilindradas
+        this.km = km
+    }
+
+    exibirInfo(){
+        super.exibirInfo()
+        console.log(`Essa moto tem cilindradas: ${this.cilindradas}, quilometragem: ${this.km}`)
+    }
+}
+
+const meuCarro = new Carro("Toyota", "Corolla", 2022, 2.0, 25000)
+const minhaMoto = new Moto("Honda", "CB500", 2021, 500, 17500);
+meuCarro.exibirInfo();
+minhaMoto.exibirInfo();
+
+console.log("------------------------")
+
+// 🚀 Exercício: Sistema de Funcionários
+
+class Funcionario {
+    constructor(nome, salario){
+        this.nome = nome
+        this.salario = salario
+    }
+    calcularSalario() {
+        console.log(`${this.nome} tem um salário de R$ ${this.salario}`);
+    }
+}
+
+class Gerente extends Funcionario{
+    constructor(nome, salario, bonus){
+        super(nome, salario)
+        this.bonus = bonus
+    }
+    calcularSalario(){
+        const salarioFinal = this.salario + this.bonus
+        console.log(`Salário: R$ ${salarioFinal} do funcionário (Gerente): ${this.nome}`);
+    }
+    
+}
+
+class Desenvolvedor extends Funcionario{
+    constructor(nome, salario, aumento){
+        super(nome, salario)
+        this.aumento = aumento
+    }
+    calcularSalario(){
+        const salarioFinal = this.salario + this.aumento
+        console.log(`Salário: R$ ${salarioFinal} do funcionário (Desenvolvedor): ${this.nome}`);
+    }
+    
+}
+
+// Criando objetos das classes filhas
+const gerente1 = new Gerente("Carlos", 5000, 1000);
+const dev1 = new Desenvolvedor("Ana", 4000, 500);
+
+// Chamando os métodos
+gerente1.calcularSalario(); 
+dev1.calcularSalario();      
