@@ -518,7 +518,7 @@ hotel.exibirReservas()
 hotel.cancelarReserva(1)
 hotel.exibirReservas()
 */
-/*
+
 class Biblioteca{
     constructor(){
         this.livros = []
@@ -583,7 +583,7 @@ biblioteca.exibirLivros();
 
 biblioteca.devolverLivro(1);
 biblioteca.exibirLivros();
-*/
+
 /*
 class Produto {
     constructor(nome, preco, quantidadeEmEstoque) {
