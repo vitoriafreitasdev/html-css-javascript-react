@@ -109,7 +109,7 @@ a.then((v) => console.log(`O resultado é ${v}`)). catch((err) => console.log(`U
 
 
 // resolvendo varias promises
-
+/*
 const p1 = new Promise((resolve, reject) => {
     setTimeout(function() {
         resolve(10)
@@ -127,3 +127,108 @@ const p3 = new Promise((resolve, reject) => {
 })
 
 Promise.all([p1, p2, p3]).then((values) => console.log(values))
+
+function fazerPedido(comida){
+    
+    return new Promise((resolve, reject) => {
+        console.log(`Pedido recebido: ${comida}. Preparando...`);
+
+        setTimeout(() => {
+            if(Math.random() > 0.2){
+                resolve(`${comida} esta pronto`)
+            } else {
+                reject("Ops! O chef errou o pedido. Tente novamente.");
+            }
+            
+        }, 3000)
+    })
+}
+
+fazerPedido("Pizza")
+    .then(mensagem => console.log(mensagem))
+    .catch(erro => console.log(erro))
+*/
+/*
+// async functions
+
+async function  somarComDelay(a, b) {
+    return a + b
+}
+
+somarComDelay(2, 4).then((value) => {
+    console.log(`O valor da soma é: ${value}`)
+    
+})
+
+console.log("teste async")
+
+// async await
+
+function resolveComDelay() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve("Resolveu a Promise")
+        }, 2000)
+    })
+}
+
+async function chamandaAsync() {
+    console.log("Chamando a Promise e esperando, e esperando o resultado")
+    const result = await resolveComDelay()
+    console.log(`O resultado chegou ${result}`)
+}
+
+chamandaAsync()
+*/
+// generators
+/*
+function* generator(){
+    yield 1
+    yield 2
+    yield 3
+}
+
+const gen = generator()
+
+console.log(gen.next().value)
+console.log(gen.next().value)
+console.log(gen.next().value)
+
+async function buscarUsuario(id) {
+    console.log(`Buscando dados do usuário ${id}...`);
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve({id: id, nome: "João Silva", idade: 25})
+        }, 2000)
+    })
+}
+
+async function exibirUsuario() {
+    try {
+        let usuario = await buscarUsuario(1)
+        console.log(`Usuário encontrado: Nome - ${usuario.nome}, Idade - ${usuario.idade}`)
+    } catch(erro){
+        console.error("Erro ao buscar usuário:", erro);
+    }
+    
+}
+
+exibirUsuario()
+*/
+
+function* generator(limite, soma){
+    let cont = 1
+    while (cont <= limite) {
+        yield cont
+        cont = cont + soma
+    }
+    console.log("Chegou no limite")
+}
+
+const generador = generator(10, 2)
+console.log(generador.next().value)
+console.log(generador.next().value)
+console.log(generador.next().value)
+console.log(generador.next().value)
+console.log(generador.next().value)
+console.log(generador.next().value)
