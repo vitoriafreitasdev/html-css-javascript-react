@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2</title>
+</head>
+<style>
+    p{
+        /*font-family: Arial, Helvetica, sans-serif;*/
+    }
+</style>
+<body>
+    <h1>testes</h1>
+    <p id="texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident asperiores perspiciatis qui nostrum. Perspiciatis dolorum, odio asperiores incidunt eaque eos facere ad explicabo, vero sed, perferendis ipsa. Eum, recusandae quidem!</p>
+    <button id="mudar">
+        mudar cor
+    </button>
+    <br>
+    <label for="inome">coloque seu nome: </label>
+    <input type="text" id="inome" name="nome">
+    <button id="enviar">
+        enviar
+    </button>
+    <div id="mensagem">
+
+    </div>
+<script>
+    let texto = document.getElementById("texto")
+    let mudar = document.getElementById("mudar")
+
+    let nome = document.getElementById("inome")
+    let enviar = document.getElementById("enviar")
+    let mensagem = document.getElementById("mensagem")
+
+    mudar.addEventListener("click", function(){
+        texto.style.fontFamily = "Arial"
+        texto.style.color = "red"
+    })
+
+    enviar.addEventListener("click", function(){
+        let nomeDigitado = nome.value.trim()
+
+        if(nome){
+            mensagem.textContent = "Olá, " + nomeDigitado + "! Seja bem-vindo! 😊";
+            mensagem.style.color = "green";
+        } else {
+            mensagem.textContent = "Por favor, digite um nome válido!";
+            mensagem.style.color = "red";
+        }
+    })
+</script>
+</body>
+</html>

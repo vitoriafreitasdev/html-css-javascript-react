@@ -352,3 +352,93 @@ livroFisico.devolver(); // 1 cópia disponível
 
 ebook.emprestar(); // Sempre pode ser emprestado
 ebook.emprestar(); // Sempre pode ser emprestado
+
+// pesquisa binaria
+
+function pesquisaBinaria(lista, item){
+    let baixo = 0
+    let alto = lista.length - 1
+
+    while(baixo <= alto){
+        let meio = Math.floor((baixo + alto) / 2)
+        let chute = lista[meio]
+
+        if (chute === item) {
+            return meio
+        } else if (chute > item) {
+            alto = meio - 1
+        } else {
+            baixo = meio + 1
+        }
+    }
+    return null
+}
+    
+// recursao
+let minhaLista = [1, 3, 5, 7, 9]
+console.log(pesquisaBinaria(minhaLista, 3))
+console.log(pesquisaBinaria(minhaLista, -1))
+
+
+
+function soma(nums, index = 0){
+    if (index === nums.length){
+        return 0
+    } 
+    return nums[index] + soma(nums, index + 1)
+}
+
+let res = [2, 3, 4, 6]
+console.log(`A soma é ${soma(res)}`)
+
+// usando for
+
+function somaArray(array) {
+    // Inicializa a soma com 0
+    let soma = 0;
+
+    // Itera sobre cada elemento do array e adiciona à soma
+    for (let i = 0; i < array.length; i++) {
+        soma += array[i];
+    }
+
+    // Retorna o resultado da soma
+    return soma;
+}
+
+// Exemplo de uso:
+const numeros = [1, 2, 3, 4, 5];
+console.log(`A soma do array é: ${somaArray(numeros)}`);
+
+// contando os itens de uma listas
+
+function quantItens(itens){
+    if(itens.length === 0){
+        return 0
+    }
+
+    let quantidade = itens.length
+    console.log(quantidade)
+}
+
+const num = [10, 5, 25, 8, 30];
+quantItens(num)
+
+function encontrarMaiorValorRecursivo(array, index = 0, maior = -Infinity) {
+    // Caso base: se o índice atingir o final do array, retorna o maior valor encontrado
+    if (index === array.length) {
+        return maior;
+    }
+
+    // Atualiza o maior valor se o elemento atual for maior
+    if (array[index] > maior) {
+        maior = array[index];
+    }
+
+    // Chamada recursiva para o próximo índice
+    return encontrarMaiorValorRecursivo(array, index + 1, maior);
+}
+
+// Exemplo de uso:
+const numero = [10, 5, 25, 8, 30];
+console.log(`O maior valor do array é: ${encontrarMaiorValorRecursivo(numero)}`);

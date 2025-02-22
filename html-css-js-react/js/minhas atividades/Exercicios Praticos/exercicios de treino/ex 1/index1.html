@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pratica</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+    
+    
+</head>
+<body>
+    <h1>Lista de tarefas</h1>
+    <ul id="lista">
+        <li>Comprar pão</li>
+    </ul>
+    <button id="adicionar">
+        Adicionar Item
+    </button>
+    <button id="substituir">
+        substituir item
+    </button>
+    
+    <script>
+
+        let lista = document.getElementById("lista")
+        let botao = document.getElementById("adicionar")
+        let botao2 = document.getElementById("substituir")
+        let segundoItem = lista.children[1]
+
+        botao.addEventListener("click", function(){
+            let novoItem = document.createElement("li");
+            lista.appendChild(novoItem)
+        })
+
+        botao2.addEventListener("click", function(){
+    
+            let segundoItem = lista.children[1]; 
+            if (segundoItem) { 
+                let novoItem = document.createElement("li");
+                novoItem.textContent = "Estudar Java";
+                lista.replaceChild(novoItem, segundoItem); 
+            } else {
+                alert("Não há um segundo item para substituir!");
+            }
+        })
+
+        let novoItem = document.createElement("li");
+        novoItem.textContent = "Estudar JavaScript";
+        lista.insertBefore(novoItem, segundoItem)
+
+    </script>
+</body>
+</html>

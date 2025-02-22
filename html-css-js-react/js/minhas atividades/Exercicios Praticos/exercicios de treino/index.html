@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media alunos</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+
+        body{
+            background-color: antiquewhite;
+        }
+        main{
+            text-align: center;
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Média de alunos</h1>
+
+        <div>
+           <label for="nota1">Escreva a nota do aluna(o):</label>
+           <input type="number" id="nota1">
+        </div>
+        <div>
+            <label for="nota2">Escreva a nota do aluna(o):</label>
+           <input type="number" id="nota2">
+        </div>
+        <input type="button" value="calcular" id="botao">
+        <div id="res">
+            média:
+        </div>
+
+        <script>
+            
+            const nota1 = document.getElementById("nota1")
+            const mota2 = document.getElementById("nota2")
+            const botao = document.getElementById("botao")
+            const res = document.getElementById("res")
+            
+            botao.addEventListener("click", function(){
+                
+                    const soma = parseFloat(nota1.value) + parseFloat(nota2.value)
+                    const media = soma / 2
+                    res.innerText = media
+            
+            })
+
+        </script>
+    </main>
+</body>
+</html>
