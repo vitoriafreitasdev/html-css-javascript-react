@@ -353,33 +353,9 @@ livroFisico.devolver(); // 1 cópia disponível
 ebook.emprestar(); // Sempre pode ser emprestado
 ebook.emprestar(); // Sempre pode ser emprestado
 
-// pesquisa binaria
 
-function pesquisaBinaria(lista, item){
-    let baixo = 0
-    let alto = lista.length - 1
-
-    while(baixo <= alto){
-        let meio = Math.floor((baixo + alto) / 2)
-        let chute = lista[meio]
-
-        if (chute === item) {
-            return meio
-        } else if (chute > item) {
-            alto = meio - 1
-        } else {
-            baixo = meio + 1
-        }
-    }
-    return null
-}
     
 // recursao
-let minhaLista = [1, 3, 5, 7, 9]
-console.log(pesquisaBinaria(minhaLista, 3))
-console.log(pesquisaBinaria(minhaLista, -1))
-
-
 
 function soma(nums, index = 0){
     if (index === nums.length){
@@ -411,7 +387,7 @@ const numeros = [1, 2, 3, 4, 5];
 console.log(`A soma do array é: ${somaArray(numeros)}`);
 
 // contando os itens de uma listas
-
+// nao usa recursao
 function quantItens(itens){
     if(itens.length === 0){
         return 0
@@ -442,3 +418,241 @@ function encontrarMaiorValorRecursivo(array, index = 0, maior = -Infinity) {
 // Exemplo de uso:
 const numero = [10, 5, 25, 8, 30];
 console.log(`O maior valor do array é: ${encontrarMaiorValorRecursivo(numero)}`);
+
+// pesquisa binaria
+
+function pesquisaBinaria(lista, item){
+    let baixo = 0
+    let alto = lista.length - 1
+
+    while(baixo <= alto){
+        let meio = Math.floor((baixo + alto) / 2)
+        let chute = lista[meio]
+
+        if (chute === item) {
+            return meio
+        } else if (chute > item) {
+            alto = meio - 1
+        } else {
+            baixo = meio + 1
+        }
+    }
+    return null
+}
+let minhaLista = [1, 3, 5, 7, 9]
+console.log(pesquisaBinaria(minhaLista, 3))
+console.log(pesquisaBinaria(minhaLista, -1))
+
+// usando recursao 
+
+function recursaoBinaria(lista, item, baixo = 0, alto = lista.length - 1){
+
+    if (baixo > alto) {
+        return null;
+    }
+
+    let meio = Math.floor((baixo + alto) / 2);
+    let chute = lista[meio];
+
+    if (chute === item) {
+        return meio;
+    } else if (chute > item) {
+        return recursaoBinaria(lista, item, baixo, meio - 1);
+    } else {
+        return recursaoBinaria(lista, item, meio + 1, alto);
+    }
+}
+
+let minhaLista2 = [1, 3, 5, 7, 9]
+console.log(recursaoBinaria(minhaLista2, 3))
+console.log(recursaoBinaria(minhaLista2, -1))
+
+// mais estudos de recursao, que acontece quando uma função chama a si mesma, todo loop pode ser uma recursao 
+
+const countToTen = (num = 1) => {
+    while (num <= 10){
+        console.log(num)
+        num++
+    }
+}
+
+//countToTen() 
+
+// para ter recursao, precisa no minino: a funcao chamar a função e uma condicional para sair
+
+// versao recursiva
+
+const recurToTen = (num = 1) => {
+    if(num > 10) return
+    console.log(num)
+    num++
+    recurToTen(num)
+}
+
+recurToTen()
+
+// lado ruim de usar recursao é que usa mais memoria quando chamamos uma funcao, do q quando chamamos um loop e talvez mais dificil de debug
+
+// exemplo usando fibonacci
+// 0 1 2 3 5 8 13 21
+
+const fibonacci = (num, array = [0, 1]) => {
+    while (num > 2) {
+        const [nextToLast, last] = array.slice(-2)
+        array.push(nextToLast + last)
+        num -= 1
+    }
+    return array
+}
+
+console.log(fibonacci(12))
+
+// usando recursao
+
+const fib = (num, array = [0, 1]) => {
+    if (num <= 2) return array
+    const [nextToLast, last] = array.slice(-2)
+    return fib(num - 1, [...array, nextToLast + last])
+}
+
+console.log(fib(12))
+
+// qual numero esta posicao n na sequencia fibonacci
+
+// sem recursao
+
+const fibonacciPos = (pos) => {
+    if(pos <= 1) return pos
+    const seq = [0, 1]
+
+    for(let i = 2; i <= pos; i++) {
+        const [nextToLast, last] = seq.slice(-2)
+        seq.push(nextToLast + last)
+    }
+    return seq[pos]
+
+}
+
+console.log(fibonacciPos(8))
+
+const fibPos = (pos) => {
+    if(pos < 2) return pos
+    return fibPos(pos - 1) + fibPos(pos - 2)
+}
+
+console.log(fibPos(8))
+
+const fibPoss = pos => pos < 2 ? pos : fibPos(pos - 1) + fibPos(pos - 2)
+console.log(fibPos(8))
+
+console.log(fibPoss(8))
+// exemplo do youtuber dave gray
+// Export from your streaming service like Spotify, YT Music, etc.
+
+const artistsByGenre = {
+    jazz: ["Miles Davis", "John Coltrane"],
+    rock: {
+        classic: ["Bob Seger", "The Eagles"],
+        hair: ["Def Leppard", "Whitesnake", "Poison"],
+        alt: {
+            classic: ["Pearl Jam", "The Killers"],
+            current: ["Joywave", "Sir Sly"]
+        }
+    },
+    unclassified: {
+        new: ["Caamp", "Neil Young"],
+        classic: ["Seal", "Morcheeba", "Chris Stapleton"]
+    }
+}
+
+
+const getArtistNames = (dataObj, arr = []) => {
+    Object.keys(dataObj).forEach(key => {
+        if (Array.isArray(dataObj[key])) {
+            return dataObj[key].forEach(artist => {
+                arr.push(artist);
+            });
+        }
+        getArtistNames(dataObj[key], arr);
+    });
+    return arr;
+}
+
+console.log(getArtistNames(artistsByGenre));
+
+// chat gpt
+const arvore = {
+    nome: "Raiz",
+    filhos: [
+        {nome: "Filho 1", filhos: []},
+        {
+            nome: "Filho 2", filhos: [
+                {nome: "Neto 1", filhos: []},
+                {nome: "Neto 2", filhos: []},
+            ],
+        },
+    ],
+}
+
+
+const percorrerArvore = (node, array = []) => {
+
+    array.push(node.nome); // Adiciona o nome do nó ao array
+
+    if (Array.isArray(node.filhos)) {
+        node.filhos.forEach(filho => percorrerArvore(filho, array));
+    }
+
+    return array;
+};
+
+console.log(percorrerArvore(arvore));
+
+// fatorial sem recursao
+
+
+
+function fatorial(n){
+    let fat = 1
+    for(let c = n; c > 1; c--){
+        fat *= c
+    }
+    return fat
+}
+
+console.log(fatorial(5))
+
+// usando recursao
+
+function fat(num, f = num, acumulado = 1){
+    if( f === 1) return acumulado
+    return fat(num, f - 1, acumulado * f)
+}
+
+fat(5)
+
+// Validação de Palíndromos
+const Palindrome = (str) => {
+    let result = ''
+    for (var i = 0; i<str.length / 2; i++ ) {
+        if (str[i] !== str[str.length -i -1]) return result = false
+        result = true
+    }
+    return result
+}
+
+console.log(Palindrome("palindromo"));
+console.log(Palindrome("radar"));
+console.log(Palindrome("reviver"));
+console.log(Palindrome("antgretdna"));
+// versao com recursao
+const checkPalindrome = (str, left = 0, right = str.length - 1) => {
+    if (left >= right) return true;
+    if (str[left] !== str[right]) return false;
+    return checkPalindrome(str, left + 1, right - 1);
+}
+
+console.log(checkPalindrome("palindromo"));
+console.log(checkPalindrome("radar"));
+console.log(checkPalindrome("reviver"));
+console.log(checkPalindrome("antgretdna"));

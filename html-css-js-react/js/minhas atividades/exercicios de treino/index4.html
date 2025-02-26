@@ -1,0 +1,52 @@
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=, initial-scale=1.0">
+        <title>exercicio</title>
+    </head>
+    <body>
+        <div>
+            <label for="saldoInicial">Coloque o seu saldo</label>
+            <input type="number" id="saldoInicial">
+        </div>
+        <div>
+            <label for="retirar">Digite a quantidade que deseja retirar:</label>
+            <input type="number" id="retirar">
+           <input type="button" value="Confirmar" onclick="retirar()">
+        </div>
+        <div>
+            <label for="depositar">Digite a quantidade que deseja depositar: </label>
+            <input type="number" id="depositar" >
+            <input type="button" value="Confirmar" onclick="depositar()"> 
+        </div>
+        <P>Saldo = </P>
+        <div id="resposta">
+            
+        </div>
+
+        <script>
+            let saldo = document.getElementById("saldoInicial")
+            let retirarValor = document.getElementById("retirar")
+            let depositarValor = document.getElementById("depositar")
+            let resposta = document.getElementById("resposta")
+            let saldoFinal = 0
+            
+            function retirar(){
+                let saldoInicial = parseFloat(saldo.value)
+                let retira = parseFloat(retirarValor.value)
+                saldoFinal = saldoInicial - retira
+                resposta.innerText = saldoFinal
+            }
+
+
+            function depositar(){
+                let deposita = parseFloat(depositarValor.value)
+                saldoFinal = saldoFinal + deposita
+                resposta.innerText = saldoFinal
+            }
+            
+            
+        </script>
+    </body>
+    </html>

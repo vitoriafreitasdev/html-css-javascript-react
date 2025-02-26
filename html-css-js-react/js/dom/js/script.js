@@ -10,7 +10,7 @@ console.log(document.body.childNodes[1].childNodes[1].textContent)*/
 
 const listItens = document.getElementsByTagName("li")
 console.log(listItens)
-/*
+
 // id
 
 const title = document.getElementById("title")
@@ -88,9 +88,9 @@ console.log(footer.offsetHeight)
 
 console.log(footer.clientWidth)
 console.log(footer.clientHeight)
-*/
+
 // posicao do elemento
-const products = document.getElementsByClassName("product")
+//const products = document.getElementsByClassName("product")
 
 console.log(products)
 
@@ -100,7 +100,7 @@ console.log(product1.getBoundingClientRect())
 
 // css com js
 
-const main = document.querySelector("#main-container")
+//const main = document.querySelector("#main-container")
 
 main.style.color = "#333"
 main.style.backgroundColor = "lightblue"
