@@ -83,3 +83,63 @@ mouseEvents.addEventListener("mouseup", () => {
 mouseEvents.addEventListener("dblclick", () => {
     console.log("Clique duplo")
 })
+
+// movimentando o mouse
+
+document.addEventListener("mousedown", (e) => {
+    //console.log(`No eixo X: ${e.x}`)
+    //console.log(`No eixo Y: ${e.y}`)
+})
+
+// evento de scroll
+window.addEventListener("scroll", (e) =>{
+    if(window.scrollY  > 200) {
+        console.log("passando de 200px")
+    }
+})
+
+const input = document.querySelector("#my-input")
+
+input.addEventListener("focus", (e) => {
+    console.log("Entrou no input")
+    input.style.backgroundColor = "lightblue"
+})
+
+input.addEventListener("blur", (e) => {
+    console.log("Saiu do input")
+    input.style.backgroundColor = "white"
+})
+
+// evento de carregamento
+
+window.addEventListener("load", () => {
+    console.log("A página carregou")
+})
+
+window.addEventListener("beforeunload", (e) => {
+    e.preventDefault()
+    e.returnValue = ""
+})
+
+// debounce
+
+const debounce = (f, delay) => {
+
+    let timeout 
+
+    return (...arguments) => {
+        if(timeout) {
+            clearTimeout(timeout)
+        }
+
+        timeout = setTimeout(() => {
+            f.apply(arguments)
+        }, delay)
+    }
+}
+
+window.addEventListener("mousemove", 
+    debounce(() => {
+    console.log("Executando a cada 400ms")
+}, 400)
+)
