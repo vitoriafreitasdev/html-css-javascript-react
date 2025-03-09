@@ -1,0 +1,17 @@
+body{
+    background-color:rgba(246, 230, 210, 0.948) ;
+}
+
+main{
+    margin: 10px;
+    display: flex;
+    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+
+main > img{
+    margin: 15px;
+}

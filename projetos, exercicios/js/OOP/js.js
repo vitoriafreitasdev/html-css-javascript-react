@@ -832,7 +832,7 @@ console.log(new Post("a", "b") instanceof Lobo)
 */
 
 // exercios locação de bicletas
-/*
+
 class Bicicleta {
     constructor(modelo, ano, diaria, disponivel = true){
         this._modelo = modelo
@@ -935,7 +935,7 @@ loja.devolverBicicleta("Mountain Bike");
 bike1.diaria = 60
 
 loja.listarBicicletasDisponiveis();
-*/
+
 // exemplo de get e set chat gpt 
 /*
 class Pessoa {

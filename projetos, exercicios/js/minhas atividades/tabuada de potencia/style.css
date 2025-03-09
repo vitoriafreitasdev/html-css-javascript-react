@@ -1,0 +1,54 @@
+body{
+    background-color: #8661C1;
+    display: flex;
+    justify-content: center;
+    
+}
+
+main{
+    background-color: #f4d4e4;
+    width: 70vw;
+    height: 100%;
+    border-radius: 1rem;
+}
+
+h1{
+    text-align: center;
+}
+
+.numeros{ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    
+}
+#formEntrada, #valoresCalculados{
+    text-align: center;
+}
+
+input{
+    margin: 5px;
+}
+
+#submit{
+    width: 150px;
+    height: 35px;
+    cursor: pointer;
+}
+
+#resultados{
+    border-radius: 5px;
+    background-color: #fff;
+    width: 50%;
+    padding: 15px;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+.row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
