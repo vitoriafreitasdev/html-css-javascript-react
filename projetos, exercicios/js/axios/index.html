@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!--global instance-->
+    <script src="js/global.js"></script>
+    <!--custom instance-->
+    <script src="js/custom.js"></script>
+    <!--interceptors-->
+    <script src="js/interceptors.js"></script>
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <h1>Axios</h1>
+    <!--post-->
+    <h2>Insira um novo post</h2>
+    <form id="post-form">
+        <div>
+            <input type="text" id="title" placeholder="Digite o título">
+        </div>
+        <div>
+            <textarea id="body" ></textarea>
+        </div>
+        <input type="submit" value="Criar post">
+    </form>
+    <!--inserindo dados-->
+    <div id="user-container">
+        
+    </div>
+</body>
+</html>
