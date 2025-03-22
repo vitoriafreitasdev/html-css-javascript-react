@@ -108,7 +108,7 @@ createTable(data);
   el.addEventListener("input", (e) => {
     const updatedValue = validDigits(e.target.value);
     e.target.value = updatedValue;
-  });
+  });  
 });
 
 calcBtn.addEventListener("click", (e) =>{

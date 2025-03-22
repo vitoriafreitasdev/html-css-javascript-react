@@ -30,14 +30,17 @@ async function getWeatherData(city) {
     const response = await fetch(apiUrl) //Fetch é uma API do JavaScript que permite fazer requisições HTTP de forma assíncrona.;
 
     if(!response.ok){
-        throw new Error("Não consegui encontrar os dados do clima")
+        if(response.status === 404) {
+            throw new Error("Cidade não encontrada");
+        }
+        throw new Error("Problema na conexão com a API");
     }
 
     return await response.json()
 };
 
 function displayWeatherInfo(data) {
-
+        console.log(data)
 };
 
 function getWeatherEmoji(weatherId){
@@ -54,3 +57,4 @@ function displayError(message){
     card.style.display = "flex";
     card.appendChild(errorDisplay)
 };
+
