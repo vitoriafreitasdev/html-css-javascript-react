@@ -1,9 +1,98 @@
-#logo img{
-    width: 50px;
-    height: 50px;
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Helvetica, sans-serif;
+}
+body{
+    background-color: #fffefe;
+}
+nav{
+    background-color: #FF4242;
+    
+}
+
+nav ul{
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul li{
+    padding: 10px;
+    list-style: none;
+}
+
+
+li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+nav li a:hover{
+    color: #ddd;
+}
+
+li img{
+    width: 45px;
+    height: 45px;
+    border-radius: 1rem;
 }
 
 #conteudo img{
     width: 250px;
     height: 250px;
+    border-radius: 1rem;
+}
+
+#conteudo{
+    margin: 1rem;
+    padding: 1rem;    
+}
+.sabores{
+    margin-top: 2rem;
+    background-color: #DD7230;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+    
+#conteudo h1{
+    background-color: #50514F;
+    color: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+#conteudo h2{
+    margin: 1rem;
+}
+
+#conteudo p{
+    margin: 0.5rem;
+}
+
+.hide{
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.hide h2{
+    margin: 1rem;
+}
+
+.hide p{
+    margin: 0.5rem;
+}
+
+button{
+    padding: 0.5rem;
+    cursor: pointer;
+    color: #333;
+    background-color: #F2FF49;
+    border: none;
+    border-radius: 1rem;
+}
+
+button:hover{
+    background-color: #f5ff69;
 }

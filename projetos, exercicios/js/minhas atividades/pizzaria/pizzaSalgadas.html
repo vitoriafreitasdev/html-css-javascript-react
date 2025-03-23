@@ -8,40 +8,59 @@
     <script src="js/script.js" defer></script>
 </head>
 <body>
-    <main>
         <header>
             <nav>
                 <ul>
                     <li id="logo"> <img src="img/pizza.avif" alt="logo Pizzaria"></li>
-                    <li>Pizzas Salgadas</li>
-                    <li>Pizzas Doces</li>
-                    <li>Bebidas</li>
-                    <li>Sorvetes</li>
-                    <li>Ajuda</li>
-                    <li>Carrinho</li>
+                    <li><a href="#">Pizzas Salgadas</a></li>
+                    <li><a href="#">Pizzas Doces</a></li>
+                    <li><a href="#">Bebidas</a></li>
+                    <li><a href="#">Sorvetes</a></li>
+                    <li><a href="#">Ajuda</a></li>
+                    <li><a href="#"><img src="img/carrinho.webp" alt="carrinho de compra"></a></li>
                 </ul>
             </nav>
         </header>
         <div id="conteudo">
-            <h1>Sabores de Pizza:</h1>
-               
-            <h2>Calabresa</h2>
-            <img src="img/calabresa.webp" alt="">
-            <p>Preço: 37.80</p>
-            <h2>Portuguesa</h2>
+            <h1>Sabores de Pizza:</h1>     
+
+            <div class="sabores">
+                <h2>Calabresa</h2>
+                <img src="img/calabresa.webp" alt="">
+                <p>Preço: <span  id="calpreco">37.80</span></p>
+                <button>adicionar no carrinho</button>
+            </div>
+
+            <div class="sabores">
+                <h2>Portuguesa</h2>
                 <img src="img/portuguesa.jpeg" alt="">
-            <p>Preço: 37.80</p>
-            <h2>Frango com catupiry</h2>
-                <img src="img/frango-catupiry.png" alt="">
-            <p>Preço: 39.48</p>    
-            <h2>Pepperoni</h2>
-                <img src="img/pepperoni.png" alt="">
-            <p>Preço: 38.99</p>
-            <h2>Carne seca</h2>
-                <img src="img/carneSeca.jpeg" alt="">
-            <p>Preço: 36.77</p>
-    
+                <p>Preço: <span id="porpreco">37.80</span></p>
+                <button>adicionar no carrinho</button>
+            </div>
+            
+            <div class="sabores">
+                <h2>Frango com catupiry</h2>
+                <img src="img/produto_frangocatupiry.jpg" alt="">
+                <p>Preço: <span id="franpreco">39.48</span></p> 
+                <button>adicionar no carrinho</button>  
+            </div>
+
+            <div class="sabores">
+                <h2>Pepperoni</h2>
+                <img src="img/-pepperoni-.webp" alt="">
+                <p>Preço: <span id="peppreco">38.99</span></p>
+                <button>adicionar no carrinho</button>
+            </div>
         </div>
-    </main>
+        <div id="carrinho" class="hide">
+            <h2>Valor total de compra: </h2>
+            <p>Deseja finalizar pedido: </p>
+            <button id="botaosim">SIM</button>
+            <button id="botaonao">NÂO</button>
+            <div class="hide">
+                <p>Valor a ser pago: </p>
+                <button>Finalizar compra</button>
+            </div>
+        </div>
 </body>
 </html>
