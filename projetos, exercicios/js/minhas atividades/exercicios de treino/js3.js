@@ -1,32 +1,21 @@
-let anosVisitados = [];
+// exercicio hash table
 
-while (true) {
-    let ano = prompt("Insira um ano visitado (ou digite 'sair' para finalizar): ");
-    if (ano.toLowerCase() === 'sair') {
-        break;
-    } else {
-        anosVisitados.push(ano);
-        console.log(`Ano ${ano} registrado`);
+class hashTable{
+    constructor(size){
+        this.table = new Array(size)
+        this.size = size
+    }
+
+    hash(nome){
+        let total = 0           
+        for(let i = 0; i < nome.lenght; i++){
+            total = total + nome.charCodeAt(i)
+        }
+        return total % this.size
+    }
+
+    adicionar(nome, telefone){
+        const index = this.hash(nome)
+        const bucket = this.table[index]
     }
 }
-
-console.log("\nAnos visitados");
-anosVisitados.forEach(ano => console.log(ano));
-
-
-let anos = [1822, 1888, 1932];
-
-let intervencoes = {
-    1822: ['jafaisfjaipfj', 'faikfosiafsao'],
-    1888: ['opujpojpo', 'lpjpojo'],
-    1932: ['gdsagdsg', 'sgdsgsd']
-};
-
-let cont = 1;
-
-anos.forEach(ano => {
-    intervencoes[ano].forEach(intervencao => {
-        console.log(`linha temporal ${cont}: no ano ${ano}, ação realizada: ${intervencao}.`);
-        cont++;
-    });
-});
