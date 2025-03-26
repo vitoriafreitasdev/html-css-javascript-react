@@ -96,3 +96,50 @@ button{
 button:hover{
     background-color: #f5ff69;
 }
+
+#carrinho{
+    background-color: #f5ff69;
+
+    border-radius: 1rem;
+}
+
+#carrinho button{
+    background-color: #DD7230;
+    color: #fff;
+}
+
+#carrinho h2{
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+#carrinho button:hover{
+    background-color: #b96a39;
+}
+
+.hide{
+    display: none;
+}
+
+#finalizar{
+    background-color: #f5ff69;
+    border-radius: 1rem;
+    display: none;
+}
+
+#finalizar button{
+    background-color: #DD7230;
+    color: #fff;
+}
+
+#finalizar p{
+    background-color: #fff;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+#finalizar button:hover{
+    background-color: #b96a39;
+}
