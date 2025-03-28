@@ -8,6 +8,7 @@ body{
 }
 nav{
     background-color: #FF4242;
+    margin-bottom: 1rem;
     
 }
 
@@ -47,7 +48,8 @@ li img{
 
 #conteudo{
     margin: 1rem;
-    padding: 1rem;    
+    padding: 1rem;  
+    display: block;  
 }
 .sabores{
     margin-top: 2rem;
@@ -71,18 +73,6 @@ li img{
     margin: 0.5rem;
 }
 
-.hide{
-    margin: 1rem;
-    padding: 1rem;
-}
-
-.hide h2{
-    margin: 1rem;
-}
-
-.hide p{
-    margin: 0.5rem;
-}
 
 button{
     padding: 0.5rem;
@@ -98,9 +88,27 @@ button:hover{
 }
 
 #carrinho{
+    padding: 1rem;
+    width: 500px;
+    text-align: center;
     background-color: #f5ff69;
-
     border-radius: 1rem;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+#valorAtual{
+    background-color: #fff;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    margin: 20px;
+}
+
+#carrinho p{
+    margin-top: 10px;
 }
 
 #carrinho button{
@@ -109,7 +117,7 @@ button:hover{
 }
 
 #carrinho h2{
-    background-color: #fff;
+    background-color: #ddd;
     padding: 1rem;
     border-radius: 1rem;
 }
@@ -118,14 +126,18 @@ button:hover{
     background-color: #b96a39;
 }
 
-.hide{
-    display: none;
-}
-
 #finalizar{
+    
+    padding: 1rem;
+    width: 500px;
+    text-align: center;
     background-color: #f5ff69;
     border-radius: 1rem;
     display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
 }
 
 #finalizar button{
@@ -142,4 +154,23 @@ button:hover{
 
 #finalizar button:hover{
     background-color: #b96a39;
+}
+
+#resultado{
+    display: none;
+    text-align: center;
+    background-color: #DD7230;
+    color: #fff;
+    width: 500px;
+    margin: auto;
+    padding: 50px;
+    border-radius: 1rem;
+}
+
+#resultado h1{
+    font-size: 3rem;
+}
+
+#resultado p{
+    font-size: 1rem;
 }
