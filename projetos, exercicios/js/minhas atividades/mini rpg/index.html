@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mini-rpg</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>MINI RPG</h1>
+    </header>
+    <form class="hideForm">
+        <label for="name" require>Coloque o nome do seu personagem:</label>
+        <input type="text" name="name" id="name">
+        <div id="racaCont">
+            <h2>Escolha sua raça</h2>
+            <select id="raca">
+                <option id="Gnomo" value="Gnomo">Gnomo</option>
+                <option id="Elfo" value="Elfo">Elfo</option>
+                <option id="Orc" value="Orc">Orc</option>
+                <option id="Humano" value="Humano">Humano</option>
+                <option id="Bruxo" value="Bruxo">Bruxo</option>
+                <option id="Feiticeiro" value="Feiticeiro">Feiticeiro</option>
+            </select>
+        </div>
+        <div id="generoCont">
+            <h2>Escolha seu genero</h2>
+            <select id="genero">
+                <option value="Mulher">Mulher</option>
+                <option value="Homem">Homem</option>
+                <option value="Outro">Outro</option>
+            </select>
+        </div>
+        <button id="enviarFormBtn">Enviar</button>
+    </form>
+    <div id="desenvol" >
+        <div id="iniJogo" class="hideIni">
+            <h2 id="h2">Vamos começar sua jornada, </h2>
+            <p>Aperte o botão para rodar o dado, para determinar sua arma</p>
+            <button id="dadoArma">Rodar</button>
+            <div id="resDoDadoArma"></div>
+            <p id="pResDadoArma"></p>
+
+        <div id="desJogo" class="hideDes">
+            <h2>Você ver um inimigo a sua frente, dependendo do dano da sua arma a probabilidade de matá-lo mais fácil é maior, rode o dano para saber!</h2>
+            <button id="dadoDano">Rodar</button>
+            <div id="resDoDano"></div>
+            <p id="pResDado"></p>
+        </div>
+        <div id="quaseFim" class="hideQuaseFim">
+            <h2>Tem dois caminho a sua frente, um esta mais escuro outro mais claro, mas tem bastaste inimigo, qual você segui?</h2>
+            <input type="text" id="caminho">
+            <button id="caminhoBtn">Enviar</button>
+            <div id="caminhoRes"></div>  
+        </div>
+        <div id="Fim" class="hideFim">
+            <h2>Você está se aproximando do fim, basta eliminar apenas um inimigo e você terminou. Rode o dado que vai determinar o fim de sua jornada.</h2>
+            <button id="dadoFim">Rodar</button>
+            <div id="resDoDadoFim"></div>
+            
+        </div>
+    </div>
+    
+</body>
+</html>
