@@ -1,5 +1,5 @@
 // array
-/*
+
 const lista = [1, 2, 3, 4 , 5]
 
 console.log(lista)
@@ -58,9 +58,9 @@ console.log(person.name)
 console.log(person.name.length)
 
 console.log(typeof person)
-*/
+
 // criando e deletando propriedades
-/*
+
 
 const car = {
     engine: 2.0,
@@ -105,10 +105,9 @@ console.log(Object.keys(car))
 
 console.log(Object.entries(car))
 
-*/
 
 // mutacao
-/*
+
 const a ={
     name: "Matheus"
 }
@@ -161,11 +160,11 @@ array.push("z", "x", "y")
 
 console.log(array)
 
-*/
+
 
 // exercicio praticos 
 // soma vetor
-/*
+
 function somaVetor(numeros){
     soma = 0
     for (let i = 0; i < numeros.length; i++){
@@ -178,9 +177,9 @@ function somaVetor(numeros){
 const resultado = somaVetor([1, 2, 3, 4, 5]) // (numeros)
 
 console.log(`O resultado da soma é igual a ${resultado}`)
-*/
+
 // apenas pares 
-/*
+
 
 function apenasPares(pares){
    return{
@@ -207,11 +206,11 @@ const par = apenasPares([2, 3, 4, 5, 6])
 
 console.log(par.pares())
 console.log(par.todos())
-*/
+
 
 // exercicio pratico para objetos
 // carro
-/*
+
 const carro = {
     modelo: "Corolla",
     marca: "Toyata",
@@ -246,9 +245,8 @@ console.log(`Está ligado? ${carro.ligado ? "Sim" : "Não"}`);
 carro.ligar();
 carro.desligar();
 
-*/
 // cadastro de usuario
-/*
+
 let cadastro = {
     nome: "Vitória",
     idade: 21,
@@ -264,10 +262,10 @@ cadastro.apresentar()
 
 cadastro.idade = 22
 cadastro.apresentar()
-*/
+
 
 // shift e unshift
-/*
+
 const letters = ["a", "b", "c"]
 const letter = letters.shift()
 
@@ -294,7 +292,7 @@ console.log(myElements.lastIndexOf("Mamão")) // retorna -1
 console.log(myElements.indexOf("Mamão")) // retorna -1
 
 // slice
-/*
+
 const testeSlice = ["a", "b", "c", "d", "e", "f"]
  
 const subArray = testeSlice.slice(2, 4)
@@ -313,17 +311,17 @@ console.log(subArray3) // retorna lista vazia "[]"
 
 const subArray4 = testeSlice.slice(2)
 
-console.log(subArray4) */
+console.log(subArray4) 
 
 
 // exercicio pratico slice
 
 // Exercício: Pegando Parte de uma Frase
-/*
-const frase = "JavaScript é muito divertido!"
 
-const primeiraPalavra = frase.slice(0, 10)
-const ultimaPalavra = frase.slice(-10, -1)
+const f = "JavaScript é muito divertido!"
+
+const primeiraPalavra = f.slice(0, 10)
+const ultimaPalavra = f.slice(-10, -1)
 
 console.log(primeiraPalavra)
 console.log(ultimaPalavra)
@@ -341,10 +339,10 @@ console.log(indice4a7)
 const ultimos = numeros.slice(-3) // (7, 10)
 console.log(ultimos)
 
-*/
+
 
 // forEach
-/*
+
 const nums = [1, 2, 3, 4, 5]
 
 nums.forEach((numero) =>{
@@ -361,10 +359,10 @@ posts.forEach((post) => {
     console.log(`Exibindo post ${post.title}, da categoria: ${post.category}`)
 })
 
-/*  posts.forEach(function(post) {
+ posts.forEach(function(post) {
     console.log("Exibindo post " + post.title + ", da categoria: " + post.category);
-});*/
-/*
+});
+
 //  usando o for
 const p = [ 
     {title: "Quarto post", category: "Java"},
@@ -375,10 +373,10 @@ const p = [
 for (var i = 0; i < p.length; i++) {
     console.log("Exibindo post " + p[i].title + ", da categoria: " + p[i].category);
 }
-*/
+
 
 // includes
-/*
+
 const brands = ["BMW", "VW", "Fiat"]
 
 console.log(brands.includes("Fiat"))
@@ -404,34 +402,34 @@ if (palavraEncontrada){
 
 console.log("/n")
 
-const lista = ["Ruby", "Java", "Python"]
+const li = ["Ruby", "Java", "Python"]
 
 const linguagem = "Go"
 
-const linguagemEncontrada = lista.includes(linguagem)
+const linguagemEncontrada = li.includes(linguagem)
 
 if (linguagemEncontrada){
     console.log(`Linguagem ${linguagem} foi  encontrada `)
 } else {
     console.log(`Linguagem ${linguagem} não foi  encontrada `)
 }
-*/
+
 
 // reverse
-/*
+
 const reverseTest = [1, 2, 3, 4, 5]
 
 reverseTest.reverse()
 
 console.log(reverseTest)
-*/
+
 
 
 
 // sobre os métodos de string 
 
 // trim
-/*
+
 const trimTest = " testando \n"
 
 console.log(trimTest)
@@ -457,13 +455,12 @@ console.log(testePadEnd)
 
 // split
 
-const frase = "O rato roeu a roupa do rei de roma"
-const arrayDaFrase = frase.split(" ")
+const fra = "O rato roeu a roupa do rei de roma"
+const arrayDaFrase = fra.split(" ")
 
 console.log(arrayDaFrase)
 
-*/
-/*
+
 // exercicios praticos padStart
 
 let num = "5"
@@ -489,11 +486,11 @@ const dataFormatada = `${diaFormatado}/${mesFormatado}/${ano}`;
 
 console.log(`Data formatada: ${dataFormatada}`);
 
-*/
-/*
-const frase = "O rato roeu a roupa do rei de roma"
-const arrayDaFrase = frase.split(" ")
-console.log(arrayDaFrase)
+
+
+const frases = "O rato roeu a roupa do rei de roma"
+const arrayDaFrases = frases.split(" ")
+console.log(arrayDaFrases)
 
 // join
 
@@ -508,12 +505,12 @@ console.log(fraseDeCompra)
 
 // repeat
 
-const palavra = "Testando "
+const palavras = "Testando "
 
-console.log(palavra.repeat(5))
-*/
+console.log(palavras.repeat(5))
+
 // rest operator 
-/*
+
 const somaInfinita = (...args) =>{
     let total = 0
 
@@ -527,11 +524,11 @@ const somaInfinita = (...args) =>{
 console.log(somaInfinita(1, 2, 3))
 
 console.log(somaInfinita(10, 2000, 3435, 1234, 12, 167, 222))
-*/
+
 
 // exercicios usando o metodo assign, keys, entries
 // gerenciamneto de biblioteca
-/*
+
 const livro = {
     titulo: "JavaScript, o guia definitivo",
     autor: "David Flanagan",
@@ -563,8 +560,8 @@ function verificarDisponibilidade(livro){
 }
 
 console.log(verificarDisponibilidade(livroCompleto));
-*/
-/*
+
+
 // Exercício: Manipulando Dados de Cliente
 
 const dados = {
@@ -591,8 +588,7 @@ console.log("Pares chave-valor:");
 Object.entries(tudoJunto).forEach(([chave, valor]) => {
     console.log(`${chave}: ${valor}`);
 })
-*/
-/*
+
 function calcularMedia(...valores){
     let soma = 0
     for (i = 0; i < valores.length; i++){
@@ -625,7 +621,8 @@ function registrarPedido(nome, ...pedido){
 registrarPedido("Vitor", "Camisa", "Tenis", "Blusa")
 console.log("------");
 registrarPedido("João"); // Nenhum produto
-*//*
+
+
 
 function criarContadorDeVendas(...produtos){
     totalVendas = 0
@@ -645,18 +642,17 @@ function criarContadorDeVendas(...produtos){
 const pedidos = criarContadorDeVendas("short", "camisa", "camiseta", "tenis", "pulseira")
 console.log("Total de vendas:", pedidos.incrementar())
 console.log("Produtos:", pedidos.mostrarProdutos())
-*/
 // foreach e push
-/*
-const numeros = [1, 4, 5 , 6, 8]
+
+const nus = [1, 4, 5 , 6, 8]
 const resultados = []
-numeros.forEach(function(numeros){
+nus.forEach(function(numeros){
    const resultado = numeros + 10
 
     resultados.push(resultado)
 }) 
 
-console.log("Array original:", numeros)
+console.log("Array original:", nus)
 console.log("Array com resultado", resultados)
 
 
@@ -672,10 +668,10 @@ function soma10(...num){
 
 const soma1 = soma10(8, 5, 7 , 2, 4)
 console.log(soma1)
-*/
+
 
 // for...of
-/*
+
 const somaInfinita2 = (...args) => {
     let total = 0
 
@@ -688,8 +684,7 @@ const somaInfinita2 = (...args) => {
 
 console.log(somaInfinita2(1, 2, 4))
 console.log(somaInfinita2(5, 6, 1, 23))
-*/
-/*
+
 function produtoEstoque(...produtos){
     for(let i = 0; i < produtos.length; i++){
         console.log(produtos[i])
@@ -697,9 +692,8 @@ function produtoEstoque(...produtos){
     return produtos
 }
 produtoEstoque("Sabão", "Lençol", "Vasilha")
-*/
 
-/*
+
 function produtoEstoque(...produtos) {
     const estoqueUnico = new Set(produtos); // Remove duplicatas
     for (const produto of estoqueUnico) {
@@ -711,8 +705,7 @@ function produtoEstoque(...produtos) {
 const prods = produtoEstoque("Sabão", "Lençol", "Vasilha", "Sabão", "Vasilha");
 console.log(prods); // Exibe ["Sabão", "Lençol", "Vasilha"]
 
-*/
-/*
+
 // destructuring em objetos
 
 const userDetails = {
@@ -738,9 +731,9 @@ const myList = ["Avião", "Submarino", "Carro"]
 const [veiculoA, veiculoB, veiculoC] = myList
 
 console.log(veiculoA, veiculoB, veiculoC)
-*/
+
 // JSON 
-/*
+
 const myJson = '{"name": "matheus", "age": 31, "skills": ["PHP", "JavaScript", "Python"]}'
 console.log(myJson)
 console.log(typeof myJson)
@@ -756,11 +749,11 @@ console.log(myObject)
 const myNewJson = JSON.stringify(myObject)
 console.log(myNewJson)
 console.log(typeof myNewJson)
-*/
+
 
 // 1. Criar um objeto JSON
 // roda apenas no console do navegador localStorage é um recurso exclusivo dos navegadores.
-/*
+
 const usuario = {
     nome: "Carlos Silva",
     idade: 30,
@@ -787,15 +780,14 @@ console.log("Objeto Recuperado:", usuarioObjeto);
 
 // Exibir o nome do usuário
 console.log("Nome do usuário:", usuarioObjeto.nome);
-*/
 
 
 // codigo para o nodeJS
-/*
+
 const fs = require('fs');
 
 // 1. Criar um objeto JSON
-const usuario = {
+const usu = {
     nome: "Carlos Silva",
     idade: 30,
     email: "carlos@email.com",
@@ -806,22 +798,21 @@ const usuario = {
 };
 
 // 2. Converter para string JSON
-const usuarioJSON = JSON.stringify(usuario, null, 2); // Indentação para facilitar a leitura
+const usuJSON = JSON.stringify(usu, null, 2); // Indentação para facilitar a leitura
 
 // 3. Salvar em um arquivo JSON
-fs.writeFileSync("usuario.json", usuarioJSON);
+fs.writeFileSync("usuario.json", usuJSON);
 console.log("Usuário salvo em usuario.json");
 
 // 4. Ler o arquivo JSON
-const usuarioSalvo = fs.readFileSync("usuario.json", "utf-8");
+const usuariooSalvo = fs.readFileSync("usuario.json", "utf-8");
 
 // 5. Converter de volta para objeto
-const usuarioObjeto = JSON.parse(usuarioSalvo);
-console.log("Objeto Recuperado:", usuarioObjeto);
+const usuariooObjeto = JSON.parse(usuariooSalvo);
+console.log("Objeto Recuperado:", usuariooObjeto);
 
 // Exibir o nome do usuário
 console.log("Nome do usuário:", usuarioObjeto.nome);
-*/
 
 // exemplo 2
 
