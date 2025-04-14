@@ -16,8 +16,13 @@ document.addEventListener("DOMContentLoaded", function() {
     let tempoDeDescanso;
 
     function iniciar(){
-        if(!timer && undefined){
+        if(timer) return 
+
+        if(!tempoRestante || isNaN(tempoRestante)){
             let minutoTrabalho = parseInt(workTime.value)
+            if (isNaN(minutoTrabalho)) {
+                minutoTrabalho = 0
+            }
             tempoRestante = minutoTrabalho * 60
         }
         
@@ -51,17 +56,30 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function salvarLocalStorage(){
-
         let minutoTrabalho = parseInt(workTime.value)
         let minutoDescanso = parseInt(breakTime.value)
         tempoRestante = minutoTrabalho * 60
-        localStorage.setItem("WorkTime", JSON.stringify(minutoTrabalho))
-        localStorage.setItem("BreakTime", JSON.stringify(minutoDescanso))
+        localStorage.setItem("WorkTime", minutoTrabalho)
+        localStorage.setItem("BreakTime", minutoDescanso)
         atualizar(tempoRestante)
     }
 
     function carregar(){
-        // quando carregar retornar os dados salvos
+        const tempoDeTrabalho = localStorage.getItem("WorkTime")
+        const tempoDeDescanso = localStorage.getItem("BreakTime")
+        const ciclosSalvos = localStorage.getItem("cycles")
+
+        if(tempoDeTrabalho){
+            workTime.value = tempoDeTrabalho
+        }
+        if(tempoDeDescanso){
+           breakTime.value = tempoDeDescanso
+
+        }
+        if(ciclosSalvos){
+             ciclos = parseInt(ciclosSalvos)
+             cycleCount.textContent = `Ciclos completos = ${ciclos}`
+        }
     }
 
     function atualizar(tempoRestante){
@@ -93,10 +111,11 @@ document.addEventListener("DOMContentLoaded", function() {
                   
                 if(tempoDeDescanso === 0){
                     clearInterval(timerDes)
+                    alarm.play();
+                    timerDes = null
                     ciclos = ciclos + 1
+                    localStorage.setItem("cycles", ciclos) // <-- SALVAR NOVO VALOR
                     cycleCount.textContent = `Ciclos completos = ${ciclos}`
-
-                    // botar o ciclos salvo na local storage
                 }
                 
             }, 1000)
@@ -127,7 +146,9 @@ document.addEventListener("DOMContentLoaded", function() {
         resetar()
     })
 
-    // carregar()
+    // inicialização
+
+    carregar()
 
 })
 
