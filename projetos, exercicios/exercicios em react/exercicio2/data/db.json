@@ -19,6 +19,11 @@
       "id": "499e",
       "name": "monitor",
       "price": "930"
+    },
+    {
+      "id": "c7c2",
+      "name": "teste",
+      "price": "20"
     }
   ]
 }

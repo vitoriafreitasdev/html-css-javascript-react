@@ -11,6 +11,7 @@ function App() {
   const [contador, setContador] = useState(0)
   const [intervalo, setIntervalo] = useState(null)
   const [dados, setDados] = useState([])
+  const {data: items} = useFetch(url)
   
   const click = () => {
     if(intervalo){
@@ -38,16 +39,16 @@ function App() {
 
    
 
-  //  useEffect(() => {
-  //   async function getData() {
-  //     const res = await fetch(url)
-  //     const data = await res.json()
+    // useEffect(() => {
+    //  async function getData() {
+    //    const res = await fetch(url)
+    //    const data = await res.json()
 
-  //     setDados(data)
+    //    setDados(data)
    
-  //   }
-  //   getData()
-  //  }, [])
+    //  }
+    //  getData()
+    // }, [])
 
   const [name, setName] = useState("")
   const [price, setPrice] = useState("")
@@ -77,7 +78,7 @@ function App() {
       <button onClick={clickParar}>Parar</button>
       <ul>
         <p>Dados:</p>
-        {dados.map(dado => (
+        {items && items.map(dado => (
           <li key={dado.id}> {dado.name} - {dado.price}</li>
         ))}
       </ul>
