@@ -24,6 +24,26 @@
       "id": "c7c2",
       "name": "teste",
       "price": "20"
+    },
+    {
+      "id": "5de2",
+      "name": "teste2",
+      "price": "25"
+    },
+    {
+      "id": "abfe",
+      "name": "teste3",
+      "price": "30"
+    },
+    {
+      "id": "6706",
+      "name": "teste4",
+      "price": "35"
+    },
+    {
+      "id": "4b55",
+      "name": "controle PS4",
+      "price": "250"
     }
   ]
 }

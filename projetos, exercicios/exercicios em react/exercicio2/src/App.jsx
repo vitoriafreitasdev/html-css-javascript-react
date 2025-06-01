@@ -11,7 +11,7 @@ function App() {
   const [contador, setContador] = useState(0)
   const [intervalo, setIntervalo] = useState(null)
   const [dados, setDados] = useState([])
-  const {data: items} = useFetch(url)
+  const {data: items, httpConfig, loading} = useFetch(url)
   
   const click = () => {
     if(intervalo){
@@ -59,16 +59,18 @@ function App() {
       name,
       price
     }
-    const res = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(produto)
-    })
-    const produtosAdicionados = await res.json()
 
-    setDados((produtosAnterior) => [...produtosAnterior, produtosAdicionados])
+    httpConfig(produto, "POST")
+    // const res = await fetch(url, {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json"
+    //   },
+    //   body: JSON.stringify(produto)
+    // })
+    // const produtosAdicionados = await res.json()
+
+    // setDados((produtosAnterior) => [...produtosAnterior, produtosAdicionados])
 
    }
   return (
@@ -82,6 +84,7 @@ function App() {
           <li key={dado.id}> {dado.name} - {dado.price}</li>
         ))}
       </ul>
+      {loading && <p>Carregando...</p>}
       <form onSubmit={criar}>
           <label>
             <span>name do produto: </span>
