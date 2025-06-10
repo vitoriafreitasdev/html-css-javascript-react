@@ -44,6 +44,31 @@
       "id": "4b55",
       "name": "controle PS4",
       "price": "250"
+    },
+    {
+      "id": "e798",
+      "name": "mouse gamer",
+      "price": "160.99"
+    },
+    {
+      "id": "fa39",
+      "name": "creme",
+      "price": "54"
+    },
+    {
+      "id": "fcb8",
+      "name": "garrafa ",
+      "price": "15.99"
+    },
+    {
+      "id": "df60",
+      "name": "fone de ouvido",
+      "price": "70"
+    },
+    {
+      "id": "96ee",
+      "name": "caixa de som",
+      "price": "24"
     }
   ]
 }
