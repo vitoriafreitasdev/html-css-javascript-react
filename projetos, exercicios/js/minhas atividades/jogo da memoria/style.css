@@ -1,0 +1,37 @@
+.img{
+    width: 200px;
+    height: 250px;
+}
+
+.carta-container{
+  display: flex;
+  justify-content: flex-start;
+}
+.face {
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transition: transform 0.6s;
+}
+.frente {
+  
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+.verso {
+  transform: rotateY(180deg);
+}
+
+.carta.virada .frente {
+  transform: rotateY(180deg);
+}
+
+.carta.virada .verso {
+  transform: rotateY(360deg);
+}
+
+#divBotoes{
+  display: flex;
+  flex-direction: column;
+}

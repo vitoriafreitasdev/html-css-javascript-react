@@ -3,9 +3,7 @@ const generatePasswordButton = document.querySelector("#generate-password");
 const generatedPasswordElement = document.querySelector("#generated-password");
 
 // Novas funcionalidades
-const openCloseGeneratorButton = document.querySelector(
-  "#open-generate-password"
-);
+const openCloseGeneratorButton = document.querySelector("#open-generate-password");
 const generatePasswordContainer = document.querySelector("#generate-options");
 const lengthInput = document.querySelector("#length");
 const lettersInput = document.querySelector("#letters");
