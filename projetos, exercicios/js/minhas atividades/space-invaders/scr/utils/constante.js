@@ -1,0 +1,1 @@
+export const PATH_SPACESHIP_IMAGE = "scr/assests/images/spaceship.png"
