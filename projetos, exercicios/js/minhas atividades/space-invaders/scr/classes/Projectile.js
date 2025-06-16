@@ -9,7 +9,6 @@ class Projectile {
         ctx.fillStyle = "white"
         ctx.fillRect(this.position.x,  this.position.y, this.width, this.height) // => para desenhar 
     }
-
     update() {
         this.position.y += this.velocity
     }

@@ -1,5 +1,6 @@
 
 import { INICIAL_FRAME, PATH_ENGINE_IMAGE, PATH_ENGINE_SPRITES, PATH_SPACESHIP_IMAGE } from "../utils/constante.js";
+import Projectile from "./Projectile.js";
 
 class Player {
     constructor(canvasWidth, canvasHeight) {
@@ -58,6 +59,8 @@ class Player {
             this.height,
         );
         this.update()
+        
+
     }
     update(){
 
@@ -76,6 +79,15 @@ class Player {
         }
 
         
+    }
+    shoot(projectiles){
+        const p = new Projectile(
+            {
+                x: this.position.x + this.width / 2 - 1,
+                y: this.position.y + 2
+            }, -10 // velocidade negativa o tiro sobi, positiva ele desce
+        )
+        projectiles.push(p)
     }
 }
 
