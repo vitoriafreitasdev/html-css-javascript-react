@@ -34,12 +34,12 @@ calcular.addEventListener("click", () => {
     mediasDiv.innerHTML = "<h3>Médias dos Alunos:</h3>";
     
     for (let index = 0; index < notas1.length; index++) {
-        const nota1 = notas1[index];
-        const nota2 = notas2[index];
-        const n1 = parseFloat(nota1.value);
-        const n2 = parseFloat(nota2.value);
-        const media = (n1 + n2) / 2;
-        mediasDiv.insertAdjacentHTML('beforeend', `<p>Aluno ${index + 1}: ${media.toFixed(2)}</p>`);
+            const nota1 = notas1[index];
+            const nota2 = notas2[index];
+            const n1 = parseFloat(nota1.value);
+            const n2 = parseFloat(nota2.value);
+            const media = (n1 + n2) / 2;
+            mediasDiv.insertAdjacentHTML('beforeend', `<p>Aluno ${index + 1}: ${media.toFixed(2)}</p>`);
     }
     /*notas1.forEach((nota1, index) =>{
        const nota2 = notas2[index]

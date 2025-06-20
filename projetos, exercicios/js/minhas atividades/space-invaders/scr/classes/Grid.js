@@ -20,7 +20,7 @@ class Grid {
                 const invader = new Invader(
                 {
                     x: col * 50 + 20,
-                    y: row * 37 + 20,
+                    y: row * 37 + 120,
                 }, 
                 this.invadersVelocity
                 )
@@ -34,7 +34,7 @@ class Grid {
         this.invaders.forEach(invader => invader.draw(ctx))
     }
 
-    update() {
+    update(playerStatus) {
         if(this.reachedRightBoundery()){
             this.direction = "left"
             this.moveDown = true
@@ -43,6 +43,7 @@ class Grid {
             this.moveDown = false
         }
         
+        if(!playerStatus) this.moveDown = false
         this.invaders.forEach((invader) => {
             if (this.moveDown){
                 invader.moveDown()
@@ -71,6 +72,12 @@ class Grid {
         const index = Math.floor(Math.random() * this.invaders.length);
         return this.invaders[index];
     }
+
+    restart(){
+        this.invaders = this.init()
+        this.direction = "right"
+    }
+
 }
 
 export default Grid;
