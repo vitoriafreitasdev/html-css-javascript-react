@@ -95,6 +95,7 @@ function App() {
       {/*state lift*/}
       <Message msg={message}/>
       <ChangeMessage handleMessage={handleMessage}/>
+      
     </div>
   )
 }

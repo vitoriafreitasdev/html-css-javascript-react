@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", function() {
     const display = document.querySelector("#timer")
     const startBtn = document.querySelector("#startBtn")
@@ -47,12 +48,16 @@ document.addEventListener("DOMContentLoaded", function() {
     function pausar(){
         clearInterval(timer)
         timer = null
-        
+    
     }
 
     function resetar(){
         pausar()
-        display.textContent = `00:00`
+        const tempoDeTrabalho = localStorage.getItem("WorkTime")
+        const tempoDescanso = localStorage.getItem("BreakTime")
+        tempoRestante = tempoDeTrabalho * 60
+        tempoDeDescanso = tempoDescanso * 60
+        atualizar(tempoRestante)
     }
 
     function salvarLocalStorage(){
@@ -70,10 +75,10 @@ document.addEventListener("DOMContentLoaded", function() {
         const ciclosSalvos = localStorage.getItem("cycles")
 
         if(tempoDeTrabalho){
-            workTime.value = tempoDeTrabalho
+            workTime.value = tempoDeTrabalho 
         }
         if(tempoDeDescanso){
-           breakTime.value = tempoDeDescanso
+           breakTime.value = tempoDeDescanso 
 
         }
         if(ciclosSalvos){

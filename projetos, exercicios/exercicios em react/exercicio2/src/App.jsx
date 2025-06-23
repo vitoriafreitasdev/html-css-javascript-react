@@ -27,6 +27,7 @@ function App() {
       <Navbar/>
       <SearchForm/>
       <Outlet/>
+     
     </div>
   )
 }
