@@ -1,1 +1,0 @@
-export const flapBird = "image/bird.png"

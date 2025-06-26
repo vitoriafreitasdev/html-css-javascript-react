@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const workTime = document.querySelector("#workTime")
     const breakTime = document.querySelector("#breakTime")
     const saveSettings = document.querySelector("#saveSettings")
+    const resetCycles = document.querySelector("#resetCycles")
     const cycleCount = document.querySelector("#cycleCount")
     const alarm = document.querySelector("#alarm")
 
@@ -130,6 +131,14 @@ document.addEventListener("DOMContentLoaded", function() {
         
     }
 
+    function resetCyclesBtn(){
+        ciclos = 0
+        let cyclosLocalStorage = localStorage.getItem("cycles")
+        cyclosLocalStorage = ciclos
+        localStorage.setItem("cycles", ciclos)
+        cycleCount.textContent = `Ciclos completos = ${ciclos}`
+    }
+
     // eventos
 
     startBtn.addEventListener("click", () =>{
@@ -149,6 +158,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     resetBtn.addEventListener("click", () =>{
         resetar()
+    })
+
+    resetCycles.addEventListener("click", () => {
+        resetCyclesBtn()
     })
 
     // inicialização

@@ -35,15 +35,9 @@ const loop = setInterval(() => {
         gameover.style.display = 'block'
         clearInterval(loop)
         clearInterval(contadorTimer)
-        if (contador > 15) {
-            gameoverH1.innerText = "GAME-OVER!"
-        }
-        if (contador > 50) {
-            gameoverH1.innerText = "GAME-OVER, ta melhor!"
-        }
-        if (contador > 100) {
-            gameoverH1.innerText = "GAME-OVER, já ta craque!"
-        }
+        gameoverH1.innerText = "GAME-OVER!"
+        
+    
     }
 }, 10)
 
