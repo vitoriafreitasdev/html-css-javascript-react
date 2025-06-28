@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react'
+import { useState,  } from 'react'
 import './App.css'
 import { useFetch } from './hooks/useFetch'
 const url = "http://localhost:3000/products"
 // 
 function App() {
   // resgatando dados
-  const [products, setProducts] = useState([])
+ // const [products, setProducts] = useState([])
 
   // custom hook
   const {data: items, httpConfig, loading, error} = useFetch(url)
