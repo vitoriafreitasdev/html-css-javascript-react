@@ -1,0 +1,18 @@
+body{
+    background-color: #087E8B; 
+    font-size: 18px;
+    padding: 2rem;
+   
+}
+div {
+    background-color: #b0b2b8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto ;
+    padding: 1rem;
+    width: 80%;
+    border-radius: 1rem;
+    
+}

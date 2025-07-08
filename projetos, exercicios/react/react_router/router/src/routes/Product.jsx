@@ -3,7 +3,8 @@ import { useFetch } from "../hooks/useFetch";
 import { useParams, Link } from "react-router-dom";
 
 const Product = () => {
-  //4  - rota dinamica
+  //4  - rota dinamica 
+  // vai extrair dados da url do useParams
   const { id } = useParams();
 
   //5 - carregamento de dados

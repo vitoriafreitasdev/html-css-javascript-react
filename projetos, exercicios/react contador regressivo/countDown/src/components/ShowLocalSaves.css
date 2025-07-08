@@ -1,0 +1,23 @@
+.container-saves{
+   padding: 0.5rem;
+}
+.container-saves h1{
+    margin: 0.5rem;
+    padding: 0.2rem;
+}
+.dates-button{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    padding: 0.8rem;
+    border: none;
+    background-color: #3E5C76;
+    color: #fff;
+    border-radius: 0.3rem;
+    opacity: 1;
+    cursor: pointer;
+}
+
+.dates-button:hover{
+    opacity: 0.9;
+}

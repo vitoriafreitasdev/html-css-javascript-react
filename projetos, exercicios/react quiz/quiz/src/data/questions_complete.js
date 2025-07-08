@@ -1,3 +1,4 @@
+
 const data = [
   {
     category: "HTML",
@@ -29,6 +30,16 @@ const data = [
         options: ["div", "main", "section", "footer"],
         answer: "footer",
       },
+      {
+        question: "Para que a tag <h1> serve?",
+        options: ["tag de cabeçalho para o título principal.", "tag de link", "para descrever um elemento de formulário.", "interação com o usuário."],
+        answer: "tag de cabeçalho para o título principal."
+      },
+      {
+        question: "Qual é a função do placeholder?",
+        options: ["descrever uma funcionalidade de alguma tag do HTML", "fornecer ao usuário uma dica que descreve o valor esperado em um dado campo de entrada", "Definir a quantidade de caracteres que o usuário consegue escrever", "estilizar um campo de entrada"],
+        answer: "fornecer ao usuário uma dica que descreve o valor esperado em um dado campo de entrada"
+      }
     ],
   },
   {
@@ -50,6 +61,11 @@ const data = [
         options: ["static", "absolute", "fixed", "relative"],
         answer: "fixed",
       },
+      {
+        question: "Qual é a função do display flex?",
+        options: ["mudar a cor de fundo de um elemento", "para aumentar o tamanho de uma div", "define um elemento como um contêiner flexível", "posiciona os elementos em forma de coluna."],
+        answer: "define um elemento como um contêiner flexível",
+      }
     ],
   },
   {
@@ -86,6 +102,11 @@ const data = [
         options: ["qty", "length", "items", "index"],
         answer: "length",
       },
+      {
+        question: "Qual método de JavaScript remove o último elemento e retorna ele?",
+        options: ["push", "sort", "forEach", "pop"],
+        answer: "pop"
+      }
     ],
   },
 ];

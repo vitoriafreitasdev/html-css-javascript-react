@@ -1,0 +1,13 @@
+.checkedBtn{
+    margin: 0.5rem;
+    padding: 0.5rem;
+    width: 80px;
+    border: none;
+    background-color: #EDD382;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.checkedBtn:hover {
+    color: #ddd;
+}

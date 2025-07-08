@@ -56,7 +56,7 @@ export const useFetch = (url) => {
 
     // refatorando post
    useEffect(() => {
-        const httpRequest = async() => {
+        const httpRequest = async () => {
             let json;
 
             if(method === "POST") {

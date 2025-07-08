@@ -30,7 +30,7 @@ export default function App() {
     });
   }
 
-  const addMovie = (e) => {
+  const addMovie = () => {
     if(newMovie.title && newMovie.releaseYear && newMovie.imageUrl){
       setMovieData([...movieData, {
         title: newMovie.title,

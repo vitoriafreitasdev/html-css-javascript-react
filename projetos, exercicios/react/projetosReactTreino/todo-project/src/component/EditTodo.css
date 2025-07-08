@@ -1,0 +1,13 @@
+.editarBtn{
+    margin: 0.5rem;
+    padding: 0.5rem;
+    width: 80px;
+    border: none;
+    background-color: #32533D;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.editarBtn:hover {
+    background-color: #405c49;
+}

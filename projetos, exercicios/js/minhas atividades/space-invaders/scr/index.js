@@ -285,6 +285,7 @@ window.addEventListener("keydown",  (event) => {
     if (key === "a") keys.left = true
     if (key === "d") keys.right = true
     if (key === "enter") keys.shoot.pressed = true
+    console.log(key)
 })
 
 window.addEventListener("keyup",  (event) => {
