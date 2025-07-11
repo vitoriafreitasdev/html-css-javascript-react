@@ -6,18 +6,11 @@ import App from './App.jsx'
 
 import Contact from './routes/Contact.jsx'
 import Home from './routes/Home.jsx'
-
-// 2 -criando o provider
-import { CounterContextProvider } from './context/CounterContext.jsx'
-
-// 5 - contexto mais complexo
-import { TitleColorContextProvider } from './context/TitleColorContext.jsx'
-// treino colocando mais um context
-
-import { NameAgeContextProvider } from "./context/NameAgeContext"
+import Tests from './routes/Tests.jsx'
 
 import { createBrowserRouter, RouterProvider, Route, Navigate } from "react-router-dom"
 
+import {HookUseContext} from './components/HookUseContext.jsx'
 
 const router = createBrowserRouter([
   {
@@ -32,6 +25,10 @@ const router = createBrowserRouter([
         path: "contact",
         element: <Contact/>,
       },
+      {
+        path: "tests",
+        element: <Tests/>,
+      },
     ]
   },
   
@@ -39,13 +36,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <CounterContextProvider>
-      <TitleColorContextProvider>
-        <NameAgeContextProvider>
-          <RouterProvider router={router}/>
-        </NameAgeContextProvider>
-      </TitleColorContextProvider>
-    </CounterContextProvider>
+    <HookUseContext>
+      <RouterProvider router={router}/>
+    </HookUseContext>
   </StrictMode>,
 )
-

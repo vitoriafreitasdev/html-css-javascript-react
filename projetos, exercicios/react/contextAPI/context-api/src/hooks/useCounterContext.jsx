@@ -9,7 +9,5 @@ export const useCounterContext = () => {
         return
     }
 
-
-    console.log(context)
     return context
 }
