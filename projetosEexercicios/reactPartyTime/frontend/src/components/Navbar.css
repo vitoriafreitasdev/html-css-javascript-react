@@ -1,7 +1,6 @@
 #navbar {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     padding: 1rem 2rem;
     margin-bottom: 1rem;
 }
@@ -9,4 +8,8 @@
 #navbar h2 {
     color: #7703fc;
     font-weight: 900;
+}
+
+#navbar ul {
+    align-items: center;
 }

@@ -32,3 +32,5 @@ Portanto: /api + `` (nada) + /services = /api/services
 -- msm coisa com parties
 
 -- mongoDB id se chama  _id
+
+++ melhoras para o projeto => - autentificação (festas para pessoas cadastradas) - painel administrativo(cadastratar serviços e fazer o CRUD deles) - mudar o tema - adicionar outros campos em serviços (exemplo: limitação de serviços) ou na festa que criem alguma regra de negocio. - upload de imagem (usando arquivo)

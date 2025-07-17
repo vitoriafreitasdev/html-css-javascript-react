@@ -1,9 +1,12 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable no-unused-vars */
 import partyFetch from '../axios/config'
 
 import { useState, useEffect } from "react"
 
 import { useNavigate } from "react-router-dom"
+
+import useToast from '../hook/useToast'
 
 import "./Form.css"
 
@@ -43,27 +46,31 @@ const CreateParty = () => {
     } else {
       setPartyServices((services) => services.filter((s) => s._id !== value) )
     }
-
-    console.log(partyServices)
   }
 
   // add services
   const createParty = async (e) => {
     e.preventDefault();
 
-    const party = {
-      title, 
-      author,
-      description, 
-      budget,
-      image,
-      services: partyServices
-    }
-    // revisar como fez a postagem de dado no projeto anterior
-    const res = await partyFetch.post("/parties", party)
+    try {
+        const party = {
+        title, 
+        author,
+        description, 
+        budget,
+        image,
+        services: partyServices
+      }
+      // revisar como fez a postagem de dado no projeto anterior
+      const res = await partyFetch.post("/parties", party)
 
-    if (res.status === 201) {
-      navigate("/")
+      if (res.status === 201) {
+        navigate("/")
+
+        useToast(res.data.msg)
+      }
+    } catch (error) {
+      useToast(error.response.data.msg, "error")
     }
   }
 
