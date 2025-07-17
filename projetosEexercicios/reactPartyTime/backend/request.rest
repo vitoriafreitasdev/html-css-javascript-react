@@ -1,0 +1,92 @@
+POST http://localhost:3000/api/services
+Content-Type: application/json
+
+{
+    "name": "Banda",
+    "description": "Contrate a nossa banda para escolher a trilha sonora.",
+    "price": 2750,
+    "image": "https://images.unsplash.com/photo-1521547418549-6a31aad7c177?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+}
+
+###
+
+GET http://localhost:3000/api/services
+
+###
+GET http://localhost:3000/api/services/68769ab4653182299a43fe8b
+
+###
+DELETE  http://localhost:3000/api/services/68769ab4653182299a43fe8b
+
+###
+
+PUT http://localhost:3000/api/services/6876b0f68f1c226b64e35fd3
+Content-Type: application/json
+
+{
+    "name": "TESTE ATUALIZACÃO",
+    "description": "Alguma descrição",
+    "price": 2500,
+    "image": "https://images.pexels.com/photos/27167243/pexels-photo-27167243.jpeg"
+}
+
+
+###
+
+POST http://localhost:3000/api/parties
+Content-Type: application/json
+
+{
+    "title": "Meu evento 2",
+    "author": "Vitória",
+    "description": "Uma festa de aniversário",
+    "budget": 3000,
+    "image": "https://images.pexels.com/photos/27167243/pexels-photo-27167243.jpeg",
+    "services": [
+            {
+                "name": "Algum serviço 1",
+                "description": "Alguma descrição",
+                "price": 3000,
+                "image": "https://images.pexels.com/photos/27167243/pexels-photo-27167243.jpeg"
+            },
+            {
+                "name": "Algum serviço 2",
+                "description": "Alguma descrição",
+                "price": 1600,
+                "image": "https://images.pexels.com/photos/27167243/pexels-photo-27167243.jpeg"
+            }
+    ]
+}
+###
+GET http://localhost:3000/api/parties
+
+###
+GET http://localhost:3000/api/parties/6876c167d10b786c64f4387a
+
+###
+DELETE http://localhost:3000/api/parties/6876c167d10b786c64f4387a
+###
+PUT http://localhost:3000/api/parties/6876c214d10b786c64f4387c
+Content-Type: application/json
+
+{
+    "title": "Meu evento 2",
+    "author": "Vitória",
+    "description": "Uma festa de aniversário",
+    "budget": 10000,
+    "image": "https://images.pexels.com/photos/27167243/pexels-photo-27167243.jpeg",
+    "services": [
+            {
+                "name": "Algum serviço 1",
+                "description": "Alguma descrição",
+                "price": 3000,
+                "image": "https://images.pexels.com/photos/27167243/pexels-photo-27167243.jpeg"
+            },
+            {
+                "name": "Algum serviço 2",
+                "description": "Alguma descrição",
+                "price": 1600,
+                "image": "https://images.pexels.com/photos/27167243/pexels-photo-27167243.jpeg"
+            }
+    ]
+}

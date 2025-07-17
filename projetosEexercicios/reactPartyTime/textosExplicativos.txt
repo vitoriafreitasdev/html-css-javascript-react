@@ -1,0 +1,34 @@
+-- npm init -y => aplicação seja iniciada com o npm node para poder instalar os pacotes
+-- pacotes instalados => -express, framework para o backend. -mongoose, é uma biblioteca JavaScript para MongoDB que facilita a interação entre aplicações Node.js e o banco de dados. -cors para não ter problema de requisição no mesmo domínio, por ter dois projetos na msm máquina(backend/frontend). -nodemon, para o servidor estar reiniciando a cada alteração. 
+-- npm i -D => dependência do desenvolvimento.
+
+# divisão das pastas o que cada uma vai fazer.
+
+controllers => vai as funções que vão chamar os fios que lidam diretamente com o banco de dados para fazer as operações. -Quem acessa os controllers são as rotas. Ex: usuário envia uma requisição na rota, vai pro controller, dps pro model e ai retorna a informação 
+
+models => entidade que tem contato com o banco de dados, vai descrever os modelos de aplicação com o mongoose. dita como a aplicação vai funcionar
+
+db => conexão com o banco de dados 
+
+routes => centralizar as rotas da aplicação
+
+# arquivos
+
+app.js => arquivo inicial da aplicação. Vai centralizar todas as configurações da minha aplicação.
+
+package.json => adiciona scripts, como start para iniciar o nodemon no app.js
+
+--- as rotas são definidas no service.js e no parties.js, no router adiciona "/", no caso nada. E no app.js adiciona o api e roda tudo.
+==> A hierarquia completa fica assim:
+
+app.js define o prefixo /api
+
+router.js adiciona / (neste caso, nada)
+
+services.js adiciona /services
+
+Portanto: /api + `` (nada) + /services = /api/services
+
+-- msm coisa com parties
+
+-- mongoDB id se chama  _id
