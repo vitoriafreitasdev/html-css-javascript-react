@@ -1,0 +1,6 @@
+                                        ## instalações ##
+-bcrypt => criptografia de senhas e decodificar - dotenv => arquivo de configuração na maquina (pega dados sensiveis) como chaves de API, dominios do banco de dados, usuario e senha do banco - express - jsonwebtoken (verificação de token) - mongoose
+
+- nodemon como dependencia de desenvolvimento 
+
+-- nunca mande .env para o repositorio pois contem dados sensives

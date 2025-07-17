@@ -1,6 +1,6 @@
 -- npm init -y => aplicação seja iniciada com o npm node para poder instalar os pacotes
 -- pacotes instalados => -express, framework para o backend. -mongoose, é uma biblioteca JavaScript para MongoDB que facilita a interação entre aplicações Node.js e o banco de dados. -cors para não ter problema de requisição no mesmo domínio, por ter dois projetos na msm máquina(backend/frontend). -nodemon, para o servidor estar reiniciando a cada alteração. 
--- npm i -D => dependência do desenvolvimento.
+-- npm i -D (exemplo: npm i -D nodemon) => dependência do desenvolvimento.
 
 # divisão das pastas o que cada uma vai fazer.
 
