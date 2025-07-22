@@ -1,0 +1,24 @@
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    margin-bottom: 1rem;
+}
+
+.nav-container h2 {
+    color: #28478a;
+    font-weight: 900;
+    font-family: 2rem;
+}
+
+.links {
+    text-decoration: none;
+    color: #648DE5;
+    font-size: 18px;
+}
+
+
+.links:hover {
+    text-decoration: none;
+    color: #3a69ce;
+}

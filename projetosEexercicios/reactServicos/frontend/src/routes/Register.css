@@ -1,0 +1,42 @@
+.form-div{
+    width: 50%;
+    margin: 0 auto;
+    width: 50%;
+    margin: 0 auto;
+}
+.btn{
+  width: 150px;
+  cursor: pointer;
+  background-color: #f3f2f2;
+}
+.btn:hover{
+  background-color: #f5f5f5;
+}
+.form-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 1rem;
+    padding: 0.5rem;
+    background-color: #FFF;
+    border-radius: 10px;
+}
+
+.form-container label {
+    margin: 1rem;
+    background-color: #FFF;
+}
+
+input {
+    padding: 0.3rem;
+    border-color: #dddddd28;
+    background-color: #FFF;
+}
+.form-container span {
+    font-weight: 800;
+    margin: 0.5rem;
+    padding: 0.2rem;
+    font-size: large;
+    background-color: #FFF;
+}

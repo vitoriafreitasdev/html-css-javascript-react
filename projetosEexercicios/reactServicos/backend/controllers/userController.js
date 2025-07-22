@@ -1,6 +1,16 @@
+
 const {User: UserModel} = require("../models/User.js")
+
+const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
-const userController = {
+require("dotenv").config(); 
+const secret = process.env.SECRET
+
+
+
+
+const userController = {    
+
     register: async (req, res) => {
         
         try {
@@ -42,8 +52,8 @@ const userController = {
     login: async (req, res) => {
         const {email, password} = req.body
 
-        const userExist = await UserModel.findOne({email: email})
-        if(!userExist) {
+        const user = await UserModel.findOne({email: email})
+        if(!user) {
             return res.status(404).json({msg: "Usuário não encontrado!"})
         }
 
@@ -53,8 +63,31 @@ const userController = {
             return res.status(422).json({ msg: "Senha inválida!" });
         }
 
-        // continuar o login e fazer as verificações
+        try {
+            const id = user._id
+            const token = jwt.sign(
+                {
+                    id: user._id,
+                },
+                secret
+            )
 
+            res.status(200).json({msg: 'Autenticação realizada com sucesso', token, id})
+        } catch (error) {
+            console.log(error)
+            res.status(500).json({msg: 'Aconteceu algum erro tente novamente mais tarde!'})
+        }
+    },
+    userRoute: async(req, res) => {
+        const id = req.params.id 
+
+        const user = await UserModel.findById(id, '-password')
+
+        if(!user) {
+            return res.status(404).json({msg: "Usuário não encontrado"})
+        }
+
+        res.status(200).json({user})
     }
 }
 

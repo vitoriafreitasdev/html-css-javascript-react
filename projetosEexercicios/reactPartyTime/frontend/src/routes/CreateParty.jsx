@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-/* eslint-disable no-unused-vars */
+
 import partyFetch from '../axios/config'
 
 import { useState, useEffect } from "react"
