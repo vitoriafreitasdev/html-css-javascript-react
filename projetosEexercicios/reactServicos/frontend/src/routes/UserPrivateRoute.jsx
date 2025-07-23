@@ -1,8 +1,9 @@
-
 import { useLayoutEffect, useState} from "react"
 import { useParams } from "react-router-dom"
-import "./UserPrivateRoute.css"
 import programFetch from "../axios/config"
+
+import "./UserPrivateRoute.css"
+
 
 
 const UserPrivateRoute = () => {
@@ -14,25 +15,32 @@ const UserPrivateRoute = () => {
       const privateRoute = async () => {
         const res = await programFetch.get(`/user/${id}`)
         setUser(res.data.user)
-        console.log(user)
-        
       }
       privateRoute()
       
     }, [])
-    // fazer o logged out, usa isLogged do useContext, se for false mostre o botão login, se verdadeiro mostra o de sair 
+   // colocar os serviços disponiveis na home, e fazer a o usuario conseguir adicionar serviços, foto de seu carro etc dinamicamente.
   return (
-  <div>
-    <div>
-    {user && (
-      <div key={user._id}>
-        <p>{user.name}</p>
-        <p>{user.email}</p>
-        <p>{user._id}</p>
-      </div>
-    )}
-    </div>
-  </div>
+      <div className="div-container">
+        {user && (
+          <div key={user._id} className="user-div">
+            <h2>Proprietária: {user.name}</h2>
+            <p>Email: {user.email}</p>
+            <p>Orçamento: {user.budget}</p>
+            <p>Seu carro logado: </p>
+            <p><img src={user.image} alt={user.image} className="user-image"/></p>
+            <p>Serviços contratados:</p>
+            <div>{user.services.map((service) => (
+              <div key={user._id}>
+                <p>Nome: {service.name}.</p>
+                <p>Preço: {service.price} R$</p>
+                <p>Descrição: {service.description}</p>
+                <img src={service.image} alt={service.name} className="service-image"/> 
+              </div>
+            ))}</div>
+          </div>
+        )}
+        </div>
 )
 }
 

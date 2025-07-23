@@ -40,19 +40,19 @@ const Register = () => {
         <form className='form-container' onSubmit={(e) => handleSubmit(e)}>
             <label>
                 <span>Seu nome: </span>
-                <input type="text" placeholder='Digite seu nome' value={name} onChange={(e) => setName(e.target.value)}/>
+                <input type="text" placeholder='Digite seu nome' value={name} onChange={(e) => setName(e.target.value)} required/>
             </label>
             <label>
                 <span>Seu e-mail: </span>
-                <input type="text" placeholder='Digite seu e-mail' value={email} onChange={(e) => setEmail(e.target.value)}/>
+                <input type="text" placeholder='Digite seu e-mail' value={email} onChange={(e) => setEmail(e.target.value)} required/>
             </label>
             <label>
                 <span>Sua senha: </span>
-                <input type='password' placeholder='Digite sua senha' value={password} onChange={(e) => setPassword(e.target.value)}/>
+                <input type='password' placeholder='Digite sua senha' value={password} onChange={(e) => setPassword(e.target.value)} required/>
             </label>
             <label>
                 <span>Confirme sua senha: </span>
-                <input type='password' placeholder='Confirme sua senha' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}/>
+                <input type='password' placeholder='Confirme sua senha' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required/>
             </label>
             <input type="submit" value={"Enviar"} className='btn'/>
         </form>

@@ -25,5 +25,7 @@ const checkToken = (req, res, next) => {
 router.route("/cadastro").post((req, res) => userController.register(req, res))
 router.route("/login").post((req, res) => userController.login(req, res))
 router.route("/user/:id").get(checkToken, (req, res) => userController.userRoute(req, res))
+router.route("/user/:id").put((req, res) => userController.addServices(req, res))
+
 
 module.exports = router;

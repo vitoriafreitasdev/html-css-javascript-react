@@ -1,0 +1,32 @@
+.div-container {
+    display: flex;
+    margin: 1rem;
+}
+.div-container h2{
+    font-size: 30px;
+    font-weight: 800;
+    margin: 0.5rem;
+}
+.div-container p{
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0.5rem;
+}
+.div-container img{
+    margin: 1rem;
+    border-radius: 10px;
+}
+.user-image{
+    
+    width: 600px;
+}
+.service-image{
+    width: 450px;
+}
+
+.user-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

@@ -3,22 +3,29 @@
     justify-content: space-between;
     padding: 1rem 2rem;
     margin-bottom: 1rem;
+    background-color: #f3f2f2;
 }
 
 .nav-container h2 {
+    background-color: #f3f2f2;
     color: #28478a;
     font-weight: 900;
     font-family: 2rem;
 }
-
+.links-container p{
+    background-color: #f3f2f2;
+}
 .links {
+    background-color: #f3f2f2;
     text-decoration: none;
     color: #648DE5;
     font-size: 18px;
+    
 }
 
 
 .links:hover {
     text-decoration: none;
     color: #3a69ce;
+    
 }

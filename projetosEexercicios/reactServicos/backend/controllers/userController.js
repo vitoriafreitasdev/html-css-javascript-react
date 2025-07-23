@@ -88,6 +88,18 @@ const userController = {
         }
 
         res.status(200).json({user})
+    },
+    addServices: async(req, res) => {
+        const id = req.params.id
+        const user = await UserModel.findByIdAndUpdate(id, {
+            budget: req.body.budget,
+            image: req.body.image,
+            services: req.body.services
+        })
+        if(!user) {
+            return res.status(404).json({msg: "Usuário não encontrado"})
+        }
+        res.status(200).json({msg: "Adicionado com sucesso!", user})
     }
 }
 

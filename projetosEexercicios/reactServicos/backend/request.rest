@@ -22,3 +22,50 @@ Content-Type: application/json
 
 GET  http://localhost:3000/api/user/687e873b3825999474666ca9
 Content-Type: application/json
+
+
+###
+POST  http://localhost:3000/api/service
+Content-Type: application/json
+
+{
+    "name": "Vistoria veicular",
+    "description": "Contrate a nossa banda para escolher a trilha sonora.",
+    "price": 245,
+    "image": "https://contagemmotorpecas.com.br/wp-content/uploads/2024/02/vistoria-veicular.jpg"
+}
+
+###
+GET  http://localhost:3000/api/service
+
+###
+GET http://localhost:3000/api/service/6880e3635a8292fc012a9c4d
+
+###
+PUT http://localhost:3000/api/service/6880e3635a8292fc012a9c4d
+Content-Type: application/json
+
+{
+    "name": "Vistoria veicular",
+    "description": "Para fazer a checagem completa para o seu carro.",
+    "price": 250,
+    "image": "https://contagemmotorpecas.com.br/wp-content/uploads/2024/02/vistoria-veicular.jpg"
+}
+
+### 
+PUT http://localhost:3000/api/user/687cf8c7b9361404c23fce99
+Content-Type: application/json
+
+{
+    "budget": 3500,
+    "image": "https://images.pexels.com/photos/810357/pexels-photo-810357.jpeg",
+    "description": "Uma festa de aniversário",
+    "services": [
+                {
+                    "name": "Vistoria veicular",
+                    "description": "Para fazer a checagem completa para o seu carro.",
+                    "price": 250,
+                    "image": "https://contagemmotorpecas.com.br/wp-content/uploads/2024/02/vistoria-veicular.jpg"
+                }
+                ]
+}

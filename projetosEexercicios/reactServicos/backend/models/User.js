@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-
+const {serviceSchema} = require("./Services")
 const { Schema } = mongoose
 
 const userSchema = new Schema(
@@ -15,6 +15,17 @@ const userSchema = new Schema(
         password:{
             type: String,
             require: true
+        },
+        budget: {
+            type: String,
+            require: true
+        },
+        image: {
+            type: String,
+            require: true
+        },
+        services: {
+            type: [serviceSchema]
         }
 
     },
