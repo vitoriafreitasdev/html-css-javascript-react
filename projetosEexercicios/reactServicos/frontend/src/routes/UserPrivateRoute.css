@@ -1,16 +1,22 @@
 .div-container {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     margin: 1rem;
+    
 }
 .div-container h2{
     font-size: 30px;
     font-weight: 800;
     margin: 0.5rem;
+    
 }
 .div-container p{
     font-size: 18px;
     font-weight: 700;
     margin: 0.5rem;
+    background-color: #E8E5DA;
 }
 .div-container img{
     margin: 1rem;
@@ -23,10 +29,27 @@
 .service-image{
     width: 450px;
 }
-
 .user-div {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+.btn-div{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.btn-delete{
+    padding: 0.5rem;
+    width: 230px;
+    border: none;
+    background-color: #386fa4;
+    color: #fff;
+    border-radius: 5px;
+    opacity: 1;
+    cursor: pointer;
+}
+.btn-delete:hover{
+    opacity: 0.9;
 }

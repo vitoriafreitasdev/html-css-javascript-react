@@ -8,6 +8,7 @@ import Register from './routes/Register.jsx'
 import Login from './routes/Login.jsx'
 import UserPrivateRoute from './routes/UserPrivateRoute.jsx'
 import Provider from './context/Provider.jsx'
+import AdminPanel from './routes/AdminPanel.jsx'
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,14 @@ const router = createBrowserRouter([
         path: "/user/:id",
         element: <UserPrivateRoute/>
       },
+      {
+        path: "/user/:id",
+        element: <UserPrivateRoute/>
+      },
+      {
+        path: "/administration",
+        element: <AdminPanel/>
+      }
     ]
   }
 ])

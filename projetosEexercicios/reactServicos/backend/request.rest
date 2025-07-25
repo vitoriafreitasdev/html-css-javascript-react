@@ -5,7 +5,9 @@ Content-Type: application/json
     "name": "Alan",
     "email": "alan@empresarial.com",
     "password": "teste",
-    "confirmpassword": "teste"
+    "confirmpassword": "teste",
+    "budget": 4750,
+    "image": "https://images.pexels.com/photos/244206/pexels-photo-244206.jpeg"
 }
 
 ###
@@ -20,7 +22,7 @@ Content-Type: application/json
 }
 ###
 
-GET  http://localhost:3000/api/user/687e873b3825999474666ca9
+GET  http://localhost:3000/api/user/$2b$12$zfGZ4VhiPk8k5aRACYh2G.XQh.qgesXEjmRhDrfDEYAWsxyeRzgo.
 Content-Type: application/json
 
 
@@ -29,17 +31,17 @@ POST  http://localhost:3000/api/service
 Content-Type: application/json
 
 {
-    "name": "Vistoria veicular",
-    "description": "Contrate a nossa banda para escolher a trilha sonora.",
-    "price": 245,
-    "image": "https://contagemmotorpecas.com.br/wp-content/uploads/2024/02/vistoria-veicular.jpg"
+    "name": "Trocar todos os pneus",
+    "description": "Troca os seus pneus pelos melhores do mercado.",
+    "price": 2000,
+    "image": "https://images.pexels.com/photos/244553/pexels-photo-244553.jpeg"
 }
 
 ###
 GET  http://localhost:3000/api/service
 
 ###
-GET http://localhost:3000/api/service/6880e3635a8292fc012a9c4d
+GET http://localhost:3000/api/service/$2b$12$RyjCXdvIqzMeQp7WJYdqduBbCiNGmYv7jx7fvcgX5/MVbv4l2Or/e
 
 ###
 PUT http://localhost:3000/api/service/6880e3635a8292fc012a9c4d
@@ -48,24 +50,36 @@ Content-Type: application/json
 {
     "name": "Vistoria veicular",
     "description": "Para fazer a checagem completa para o seu carro.",
-    "price": 250,
+    "price": 240,
     "image": "https://contagemmotorpecas.com.br/wp-content/uploads/2024/02/vistoria-veicular.jpg"
 }
 
 ### 
-PUT http://localhost:3000/api/user/687cf8c7b9361404c23fce99
+PUT http://localhost:3000/api/user/addServices/6882735429e35f288d88ce94
 Content-Type: application/json
 
 {
-    "budget": 3500,
-    "image": "https://images.pexels.com/photos/810357/pexels-photo-810357.jpeg",
-    "description": "Uma festa de aniversário",
     "services": [
+                {
+                    "name": "Lavagem",
+                    "description": "Lavagem completa para o seu carro.",
+                    "price": 350,
+                    "image": "https://images.pexels.com/photos/372810/pexels-photo-372810.jpeg"
+                },
                 {
                     "name": "Vistoria veicular",
                     "description": "Para fazer a checagem completa para o seu carro.",
-                    "price": 250,
+                    "price": 240,
                     "image": "https://contagemmotorpecas.com.br/wp-content/uploads/2024/02/vistoria-veicular.jpg"
                 }
                 ]
+}
+
+###
+
+DELETE http://localhost:3000/api/user/deleteUserServices/6882735429e35f288d88ce94
+Content-Type: application/json
+
+{
+    "serviceId": "6880d8d4a215a6a738b0221c"
 }

@@ -16,7 +16,7 @@
 
 /* Estilo de cada card */
 .service-card {
-  width: 300px; /* Largura fixa para cada card */
+  width: 380px; /* Largura fixa para cada card */
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 1rem;

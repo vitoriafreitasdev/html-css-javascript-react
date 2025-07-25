@@ -71,7 +71,7 @@ const serviceController = {
             res.status(404).json({msg: "Serviço não encontrado"})
             return 
         }
-        res.status(200).json({updateService, msg: "Serviço atualizado com sucesso!"})
+        res.status(200).json({service, msg: "Serviço atualizado com sucesso!"})
     }
 }
 

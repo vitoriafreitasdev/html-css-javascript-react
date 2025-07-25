@@ -14,7 +14,7 @@ const userController = {
     register: async (req, res) => {
         
         try {
-            const { name, email, password, confirmpassword  } = req.body;
+            const { name, email, password, confirmpassword, budget, image  } = req.body;
 
             const userExist = await UserModel.findOne({email: email})
 
@@ -36,6 +36,8 @@ const userController = {
                 name: name,
                 email: email,
                 password: passwordCrypt,
+                budget: budget,
+                image: image,
             }
 
             const response = await UserModel.create(user)
@@ -91,15 +93,37 @@ const userController = {
     },
     addServices: async(req, res) => {
         const id = req.params.id
-        const user = await UserModel.findByIdAndUpdate(id, {
-            budget: req.body.budget,
-            image: req.body.image,
-            services: req.body.services
-        })
+        const user = await UserModel.findByIdAndUpdate(
+        id,
+        { services: req.body.services },
+        { new: true } // ← Isso faz retornar o usuário ATUALIZADO
+        );
         if(!user) {
             return res.status(404).json({msg: "Usuário não encontrado"})
         }
         res.status(200).json({msg: "Adicionado com sucesso!", user})
+    },
+    deleteUserService: async(req, res) => {
+        try {
+            const {serviceId} = req.body
+            const userId = req.params.id
+
+            const userFind = await UserModel.findById(userId)
+            if(!userFind){
+                res.status(404).json({msg: "Usuario não encontrado"})
+            }
+            const servicesUptade = userFind.services.filter((s) => s._id.toString() !== serviceId)
+            
+            const user = await UserModel.findByIdAndUpdate(
+            userId,
+            { services: servicesUptade },
+            { new: true } // ← Isso faz retornar o usuário ATUALIZADO
+            );
+
+            res.status(200).json({msg: "Deletado com sucesso!", user})
+        } catch (error) {
+            console.log(error)
+        }
     }
 }
 

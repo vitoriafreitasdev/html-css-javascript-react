@@ -12,6 +12,10 @@ const Register = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [confirmPassword, setConfirmPassword] = useState("")
+    const [budget, setBudget] = useState()
+    const [image, setImage] = useState()
+
+
    const navigate = useNavigate()
 
     const handleSubmit = async (e) => {
@@ -22,7 +26,9 @@ const Register = () => {
                 name: name,
                 email: email,
                 password: password,
-                confirmpassword: confirmPassword
+                confirmpassword: confirmPassword,
+                budget: budget,
+                image: image
             }
 
             const res = await programFetch.post("/cadastro", newUser)
@@ -53,6 +59,14 @@ const Register = () => {
             <label>
                 <span>Confirme sua senha: </span>
                 <input type='password' placeholder='Confirme sua senha' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required/>
+            </label>
+            <label>
+                <span>Orçamento: </span>
+                <input type='number' placeholder='Orçamento' value={budget} onChange={(e) => setBudget(e.target.value)} required/>
+            </label>
+            <label>
+                <span>Imagem do seu veículo: </span>
+                <input type='string' placeholder='Imagem do seu veículo' value={image} onChange={(e) => setImage(e.target.value)} required/>
             </label>
             <input type="submit" value={"Enviar"} className='btn'/>
         </form>

@@ -14,9 +14,8 @@ const Home = () => {
     }
     
     loadData()
-  }, [])
-  /* agora fazer os usuario adicionar dinamicamente os serviços items. */
-  console.log(services)
+  }, [services])
+  
   return (
     <div className='home-container'>
         <h1>Cadastre-se e tenha acesso a diversos tipos de serviços, como os abaixo, para o seu veículo! </h1>

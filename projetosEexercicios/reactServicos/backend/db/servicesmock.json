@@ -1,31 +1,31 @@
 [
   {
     "name": "Lavagem",
-    "description": "Lavagem completa para o seu carro.",
+    "description": "Lavagem completa para o seu veículo.",
     "price": 350,
     "image": "https://images.pexels.com/photos/372810/pexels-photo-372810.jpeg"
   },
   {
     "name": "Trocar todos os pneus",
-    "description": "Esquema de segurança completo para a sua festa.",
+    "description": "Troca os seus pneus pelos melhores do mercado.",
     "price": 2000,
     "image": "https://images.pexels.com/photos/244553/pexels-photo-244553.jpeg"
   },
   {
     "name": "Troca de óleo",
-    "description": "Deixe a sua festa mais divertida para as crianças.",
+    "description": "Trocagem de óleo para o seu veículo.",
     "price": 250,
     "image": "https://images.pexels.com/photos/2244746/pexels-photo-2244746.jpeg"
   },
   {
     "name": "Pintura",
-    "description": "Anime a sua festa com música eletrôniepseekca!",
+    "description": "Tenha acesso as melhores pinturas!",
     "price": 5800,
     "image": "https://lirp.cdn-website.com/6115b85c/dms3rep/multi/opt/car%2Bpaint%2Bshop%2Bbryan%2Btx-640w.jpg"
   },
   {
     "name": "Vistoria veicular",
-    "description": "Contrate a nossa banda para escolher a trilha sonora.",
+    "description": "Para fazer a checagem completa para o seu carro.",
     "price": 245,
     "image": "https://contagemmotorpecas.com.br/wp-content/uploads/2024/02/vistoria-veicular.jpg"
   }

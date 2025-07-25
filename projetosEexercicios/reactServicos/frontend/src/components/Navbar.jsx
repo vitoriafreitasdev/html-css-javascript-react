@@ -16,8 +16,7 @@ const Navbar = () => {
             <p><NavLink to="/" className="links">Home</NavLink></p>
             <p><NavLink to="/register" className="links" onClick={logOut}>Cadastrar</NavLink></p>
             {isLogged ? <p><NavLink to="/" className="links" onClick={logOut}>Sair</NavLink></p> : <p><NavLink to="/login" className="links">Login</NavLink></p>}
-            {/* <p><NavLink to="/login" className="links">Login</NavLink></p>
-            <p><NavLink to="/" className="links">Sair</NavLink></p> */}
+            
           </div>
       </nav>
   )
