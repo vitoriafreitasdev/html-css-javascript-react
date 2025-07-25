@@ -1,0 +1,42 @@
+.admin-container form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0.5rem;
+}
+.admin-container form label{
+    margin: 0.5rem;
+}
+.admin-container form input {
+    padding: 0.5rem;
+}
+.admin-container h2{
+    text-align: center;
+}
+.add-services-btn{
+    padding: 0.5rem;
+    margin: 1rem;
+    background-color: #003B36;
+    color: #fff;
+    cursor: pointer;
+}
+.edit-services-btn{
+    background-color: #EFF2C0;
+    padding: 0.3rem;
+    margin: 0.5rem;
+    cursor: pointer;
+}
+.delete-services-btn{
+    background-color: #A52422;
+    padding: 0.3rem;
+    margin: 0.5rem;
+    color: #fff;
+    cursor: pointer;
+}
+.delete-services-btn:hover{
+    background-color: #9c3a38;
+}
+.edit-services-btn:hover{
+    background-color: #edf0cc;
+}

@@ -34,7 +34,7 @@ const UserPrivateRoute = () => {
           console.log(res.status.msg)
 
           if(res.status === 200){
-            useToast("Deletado com sucesso");
+            useToast(res.data.msg);
             setUser(prev => ({
             ...prev,
             services: prev.services.filter(s => s._id !== servId)
@@ -48,33 +48,34 @@ const UserPrivateRoute = () => {
     }
     
   return (
-      <div className="div-container">
-       {user?._id === "68839c7f6c586bbc21280f9f" ? <buttom><NavLink to="/administration" className="links">Painel administrativo</NavLink></buttom> : ""} 
-        {user && (
-          <div key={user._id} className="user-div">
-           <p>{user._id}</p>
-            <h2>Proprietário: {user.name}</h2>
-            <p>Email: {user.email}</p>
-            <p>Orçamento: {user.budget}</p>
-            <p>Seu carro logado: </p>
-            <p><img src={user.image} alt={user.image} className="user-image"/></p>
-            <p>Serviços contratados:</p>
-            <div>{user.services.map((service) => (
-              <div key={service._id}>
-                <p>Nome: {service.name}.</p>
-                <p>Preço: {service.price} R$</p>
-                <p>Descrição: {service.description}</p>
-                <img src={service.image} alt={service.name} className="service-image"/> 
-                <div className="btn-div">
-                  <button className="btn-delete" onClick={() => handleDelete(service._id)}>Excluir</button>
+      <div>
+          {user?._id === "68839c7f6c586bbc21280f9f" ? <buttom className="adminPanel-btn"><NavLink to="/administration" className="admin-link">Painel administrativo</NavLink></buttom> : ""}
+          <div className="div-container">
+          {user && (
+            <div key={user._id} className="user-div">
+              <h2>Proprietário: {user.name}</h2>
+              <p>Email: {user.email}</p>
+              <p>Orçamento: {user.budget}</p>
+              <p>Seu carro logado: </p>
+              <p><img src={user.image} alt={user.image} className="user-image"/></p>
+              <p>Serviços contratados:</p>
+              <div>{user.services.map((service) => (
+                <div key={service._id}>
+                  <p>Nome: {service.name}.</p>
+                  <p>Preço: {service.price} R$</p>
+                  <p>Descrição: {service.description}</p>
+                  <img src={service.image} alt={service.name} className="service-image"/> 
+                  <div className="btn-div">
+                    <button className="btn-delete" onClick={() => handleDelete(service._id)}>Excluir</button>
+                  </div>
                 </div>
-              </div>
-            ))}</div>
+              ))}</div>
+            </div>
+          )}
+          <h3>Para adicionar clique no botão abaixo!</h3>
+              <AddServices id={id} user={user}/>
           </div>
-        )}
-        <h3>Para adicionar clique no botão abaixo!</h3>
-            <AddServices id={id} user={user}/>
-        </div>
+      </div>
 )
 }
 

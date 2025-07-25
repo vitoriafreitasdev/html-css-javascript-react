@@ -53,3 +53,20 @@
 .btn-delete:hover{
     opacity: 0.9;
 }
+.adminPanel-btn{
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 1rem;
+    padding: 0.5rem;
+    opacity: 1;
+}
+.adminPanel-btn:hover{
+    opacity: 0.9;
+}
+.admin-link{
+    background-color: #28478a;
+    color: #fff;
+    padding: 0.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+}

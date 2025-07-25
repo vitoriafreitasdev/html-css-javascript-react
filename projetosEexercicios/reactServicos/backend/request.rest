@@ -31,10 +31,10 @@ POST  http://localhost:3000/api/service
 Content-Type: application/json
 
 {
-    "name": "Trocar todos os pneus",
-    "description": "Troca os seus pneus pelos melhores do mercado.",
-    "price": 2000,
-    "image": "https://images.pexels.com/photos/244553/pexels-photo-244553.jpeg"
+    "name": "Adição de central multimídia",
+    "description": "adicione uma central multimidia no seu carro.",
+    "price": 1500,
+    "image": "https://images.pexels.com/photos/13535542/pexels-photo-13535542.jpeg"
 }
 
 ###
