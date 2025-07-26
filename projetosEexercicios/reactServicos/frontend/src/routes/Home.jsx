@@ -21,7 +21,7 @@ const Home = () => {
         <h1>Cadastre-se e tenha acesso a diversos tipos de serviços, como os abaixo, para o seu veículo! </h1>
         <div className='services-container'>
           {services ? services.map((service) => (
-            <div key={service.id} className='service-card'>
+            <div key={service._id} className='service-card'>
               <h2>Serviço: {service.name}</h2>
               <p>Descrição: {service.description}</p>
               <p>Preço: {service.price} R$</p>

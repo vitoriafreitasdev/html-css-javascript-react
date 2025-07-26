@@ -23,11 +23,16 @@
     border-radius: 10px;
 }
 .user-image{
-    
-    width: 600px;
+    width: 400px;
 }
 .service-image{
-    width: 450px;
+    width: 400px;
+}
+.service-div{
+    margin: 30px;
+}
+.service-div div{
+    margin-left: 10px;
 }
 .user-div {
     display: flex;

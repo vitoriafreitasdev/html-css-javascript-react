@@ -59,7 +59,7 @@ const UserPrivateRoute = () => {
               <p>Seu carro logado: </p>
               <p><img src={user.image} alt={user.image} className="user-image"/></p>
               <p>Serviços contratados:</p>
-              <div>{user.services.map((service) => (
+              <div className="service-div">{user.services.map((service) => (
                 <div key={service._id}>
                   <p>Nome: {service.name}.</p>
                   <p>Preço: {service.price} R$</p>

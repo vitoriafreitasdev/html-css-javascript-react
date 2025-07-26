@@ -5,7 +5,7 @@ import useToast from '../hooks/useToast'
 import programFetch from '../axios/config'
 import { useState, useContext } from 'react'
 import ServiceContext from '../context/ServiceContext'
-
+import "./login.css"
 
 const Login = () => {
   const {setLogged} = useContext(ServiceContext)
@@ -39,7 +39,7 @@ const Login = () => {
 
 
   return (
-    <div className='form-div'>
+    <div className='form-div login'>
       <form className='form-container' onSubmit={(e) => handleSubmit(e)}>
         <label>
             <span>Seu e-mail: </span>
