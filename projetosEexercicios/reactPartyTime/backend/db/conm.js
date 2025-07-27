@@ -1,6 +1,8 @@
 // importa o mongoose
 const mongoose = require("mongoose");
-
+require("dotenv").config()
+const dbUser = process.env.DBUSER
+const dbPassword = process.env.DBPASS
 async function main() {
     //para fazer a conexão com o banco de dados
     try{
@@ -8,7 +10,7 @@ async function main() {
         mongoose.set("strictQuery", true);
 
         await mongoose.connect(
-        "mongodb+srv://vitoria:QZqaZBmDverhwW37E@cluster0.m8qk4l1.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
+        `mongodb+srv://${dbUser}:${dbPassword}@cluster0.m8qk4l1.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`);
 
         console.log("Conectado ao banco")
     } catch (error) {
@@ -16,11 +18,3 @@ async function main() {
     }
 }
 module.exports = main;
-
-// QZqaZBmDverhwW37E
-
-//mongodb+srv://vitoria:<db_password>@cluster0.m8qk4l1.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
-
-//npm install mongodb
-
-// https://cloud.mongodb.com/v2/68755fc4daf4243e6ddd24b0#/overview

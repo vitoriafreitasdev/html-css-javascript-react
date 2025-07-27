@@ -54,21 +54,21 @@ const CreateParty = () => {
 
     try {
         const party = {
-        title, 
-        author,
-        description, 
-        budget,
-        image,
-        services: partyServices
-      }
-      // revisar como fez a postagem de dado no projeto anterior
-      const res = await partyFetch.post("/parties", party)
+          title, 
+          author,
+          description, 
+          budget,
+          image,
+          services: partyServices
+        }
+        // revisar como fez a postagem de dado no projeto anterior
+        const res = await partyFetch.post("/parties", party)
 
-      if (res.status === 201) {
-        navigate("/")
+        if (res.status === 201) {
+          navigate("/")
 
-        useToast(res.data.msg)
-      }
+          useToast(res.data.msg)
+        }
     } catch (error) {
       useToast(error.response.data.msg, "error")
     }

@@ -159,14 +159,3 @@ mongoose.connect(`mongodb+srv://${dbUser}:${dbPassword}@cluster0.ekr6roc.mongodb
     console.log("Conectou ao banco")
 }).catch((err) => console.log(err))
 
-
-// passoword ubIAZdreOY4WEd5B
-
-// usename vitoriafreitas110903
-
-// 168.197.26.46/32
-
-// mongodb+srv://vitoriafreitas110903:<db_password>@cluster0.ekr6roc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
-
-// npm install mongodb
-
