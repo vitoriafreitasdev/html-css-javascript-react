@@ -32,17 +32,15 @@ const userController = {
             const passwordCrypt = await bcrypt.hash(password, salt)
 
 
-            const user = {
-                name: name,
-                email: email,
-                password: passwordCrypt,
-                budget: budget,
-                image: image,
-            }
-
-            const response = await UserModel.create(user)
-
             if(emailVerificacao && emailVerificacao2){
+                const user = {
+                    name: name,
+                    email: email,
+                    password: passwordCrypt,
+                    budget: budget,
+                    image: image,
+                }
+                const response = await UserModel.create(user)
                 res.status(201).json({response, msg: "Usuário criado com sucesso!"})
             } else {
                 return res.status(422).json({msg: "Email não permitido!"})
@@ -80,6 +78,7 @@ const userController = {
             res.status(500).json({msg: 'Aconteceu algum erro tente novamente mais tarde!'})
         }
     },
+
     userRoute: async(req, res) => {
         const id = req.params.id 
 
@@ -91,6 +90,7 @@ const userController = {
 
         res.status(200).json({user})
     },
+
     addServices: async(req, res) => {
         const id = req.params.id
         const user = await UserModel.findByIdAndUpdate(
@@ -103,6 +103,7 @@ const userController = {
         }
         res.status(200).json({msg: "Adicionado com sucesso!", user})
     },
+    
     deleteUserService: async(req, res) => {
         try {
             const {serviceId} = req.body

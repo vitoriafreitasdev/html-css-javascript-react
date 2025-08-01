@@ -1,0 +1,119 @@
+POST http://localhost:3000/api/cadastro
+Content-Type: application/json
+
+{
+    "name": "vitoria",
+    "email": "vitoria@gmail.com",
+    "password": "1234",
+    "confirmpassword": "1234"
+}
+
+###
+
+POST http://localhost:3000/api/login
+Content-Type: application/json
+
+{
+    "email": "vitoria@gmail.com",
+    "password": "1234"
+}
+
+###
+GET http://localhost:3000/api/user/688a2a429f3d8a2c2c2cf1a8
+
+// adicionar as receitas e ver se adiciona tambemno Recipes do mongoDB
+
+###
+
+PUT http://localhost:3000/api/user/addRecipes
+Content-Type: multipart/form-data; boundary=MyBoundary
+
+--MyBoundary
+Content-Disposition: form-data; name="title"
+
+Macarrão com molho especial 
+--MyBoundary
+Content-Disposition: form-data; name="ingredients"
+
+
+500 g de macarrão parafuso ou fidelinho, 2 litros de água, colher de sal,1  colher (sopa) de óleo. Molho: 1 tomate picado e sem sementes, 1 cebola picada, 1/2 pimentão picado, extrato de tomate (opcional), 4 ovos, queijo parmesão ralado, 6 dentes de alho amassados.
+
+--MyBoundary
+Content-Disposition: form-data; name="preparation"
+
+Coloque a água para ferver, quando estiver fervendo, coloque o sal e 1 colher de óleo. Quando o macarrão estiver mole, tire do fogo e escorra a água no escorredor de macarrão. Lave o macarrão. Faça o molho de sua preferência em outra panel. Molho: Coloque a margarina, o tomate, a cebola e o pimentão em uma panela. Por fim, refogue e coloque uma colherzinha de sal.
+--MyBoundary
+Content-Disposition: form-data; name="preparationTime"
+
+25 minutos
+--MyBoundary
+Content-Disposition: form-data; name="image"; filename="foto.jpg"
+Content-Type: image/jpeg
+
+< C:/Users/vitor/OneDrive/Imagens/Saved Pictures/macarrao.jpg
+--MyBoundary--
+ 
+
+###
+
+GET http://localhost:3000/api/receitas
+Content-Type: application/json
+
+###
+
+GET http://localhost:3000/api/receitas/688b98aaf54ffafecabe5b5a
+Content-Type: application/json
+
+###
+
+DELETE  http://localhost:3000/api/receitas/delete/688d028d9c4433b98135588f
+Content-Type: application/json
+###
+
+PATCH  http://localhost:3000/api/user/editrecipes/688d028d9c4433b98135588f
+Content-Type: multipart/form-data; boundary=MyBoundary
+
+--MyBoundary
+Content-Disposition: form-data; name="title"
+
+Macarrão
+--MyBoundary
+Content-Disposition: form-data; name="ingredients"
+
+500 g de macarrão parafuso ou fidelinho, 2 litros de água, colher de sal,1  colher (sopa) de óleo. Molho: 1 tomate picado e sem sementes, 1 cebola picada, 1/2 pimentão picado, extrato de tomate (opcional), 4 ovos, queijo parmesão ralado, 6 dentes de alho amassados.
+--MyBoundary
+Content-Disposition: form-data; name="preparation"
+
+Coloque a água para ferver, quando estiver fervendo, coloque o sal e 1 colher de óleo. Quando o macarrão estiver mole, tire do fogo e escorra a água no escorredor de macarrão. Lave o macarrão. Faça o molho de sua preferência em outra panel. Molho: Coloque a margarina, o tomate, a cebola e o pimentão em uma panela. Por fim, refogue e coloque uma colherzinha de sal.
+--MyBoundary
+Content-Disposition: form-data; name="preparationTime"
+
+25 minutos
+
+--MyBoundary
+Content-Disposition: form-data; name="recipeID"
+
+688b9e1d3401dae3e13f674d
+
+--MyBoundary
+Content-Disposition: form-data; name="image"; filename="foto.jpg"
+Content-Type: image/jpeg
+
+< C:/Users/vitor/OneDrive/Imagens/Saved Pictures/macarraoNovo.jpg
+--MyBoundary--
+
+### 
+
+PATCH http://localhost:3000/api/receitas/addlike/688bad66699c4a16d0154875
+
+###
+
+PATCH http://localhost:3000/api/receitas/addcomment/688bad66699c4a16d0154875
+Content-Type: application/json
+
+{
+    "name": "Maite",
+    "text": "Uma delicia"
+}
+
+

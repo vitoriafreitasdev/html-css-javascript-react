@@ -1,0 +1,79 @@
+POST http://localhost:3000/memories
+Content-Type: multipart/form-data; boundary=MyBoundary
+
+--MyBoundary
+Content-Disposition: form-data; name="title"
+
+Minha memória 3
+--MyBoundary
+Content-Disposition: form-data; name="description"
+
+Descrição desta memória especial 3
+--MyBoundary
+Content-Disposition: form-data; name="image"; filename="foto.jpg"
+Content-Type: image/jpeg
+
+< C:/Users/vitor/OneDrive/Imagens/Saved Pictures/arthurmorgan-200.png
+--MyBoundary--
+
+
+###
+
+GET http://localhost:3000/memories
+###
+
+GET http://localhost:3000/memories/688792af1396ff53f75cd927
+
+###
+
+DELETE  http://localhost:3000/memories/688792af1396ff53f75cd927
+###
+
+PATCH   http://localhost:3000/memories/688795341396ff53f75cd934
+Content-Type: multipart/form-data; boundary=MyBoundary
+
+--MyBoundary
+Content-Disposition: form-data; name="title"
+
+Minha memória 3
+--MyBoundary
+Content-Disposition: form-data; name="description"
+
+Descrição desta memória especial 3
+--MyBoundary
+Content-Disposition: form-data; name="image"; filename="foto.jpg"
+Content-Type: image/jpeg
+
+< C:\Users\vitor\OneDrive\Imagens\Saved Pictures\arthurmorgan-400.png
+
+--MyBoundary--
+
+###
+
+PATCH http://localhost:3000/memories/688795341396ff53f75cd934
+Content-Type: multipart/form-data; boundary=MyBoundary
+
+--MyBoundary
+Content-Disposition: form-data; name="title"
+
+Minha memória 3
+--MyBoundary
+Content-Disposition: form-data; name="description"
+
+Descrição desta memória especial 3
+--MyBoundary--
+
+
+###
+
+PATCH http://localhost:3000/memories/favorite/688795341396ff53f75cd934
+
+###
+
+PATCH http://localhost:3000/memories/688795341396ff53f75cd934/comment
+Content-Type: application/json
+
+{
+    "name": "Vitória",
+    "text": "Alguma coisa"
+}
