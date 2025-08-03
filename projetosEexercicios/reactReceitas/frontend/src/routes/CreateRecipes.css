@@ -1,0 +1,47 @@
+.user-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 1rem;
+    padding: 0.5rem;
+}
+
+.user-div h3{
+    margin: 1rem;
+}
+
+.form-recipe{
+    margin: 0.5rem;
+}
+
+.form-recipe label {
+    margin: 0.5rem;
+    padding: 0.5rem;
+
+}
+
+.form-recipe p {
+    margin: 0.2rem;
+    padding: 0.2rem;
+    font-size: large;
+}
+
+.form-recipe input[type="text"] {
+    width: 250px;
+    height: 30px;
+    text-align: center;
+}
+.form-recipe input[type="submit"]{
+    width: 150px;
+    height: 30px;
+    margin: 1rem;
+    background-color: #ddd;
+    border: none;
+    border-radius: 5px;
+}
+
+.form-recipe input[type="submit"]:hover{
+    opacity: 0.9;
+    cursor: pointer;
+}

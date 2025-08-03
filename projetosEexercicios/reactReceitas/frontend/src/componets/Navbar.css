@@ -1,0 +1,24 @@
+.navbar {
+    background-color: #ca2c18;
+    padding: 1rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar div {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar p {
+    font-size: larger;
+}
+.navbar h2 {
+    font-size: 32px;
+}

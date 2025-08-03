@@ -29,7 +29,7 @@ router.route("/cadastro").post((req, res) => siteController.register(req, res))
 router.route("/login").post((req, res) => siteController.login(req, res))
 router.route("/user/:id").get(checkToken, (req, res) => siteController.userRoute(req, res))
 router.route("/user/addRecipes")
-  .put(upload.single("image"), (req, res, next) => {
+  .post(upload.single("image"), (req, res, next) => {
     const image = req.file;
     
     if(!image) {

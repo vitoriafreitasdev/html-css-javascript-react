@@ -1,0 +1,36 @@
+.formcadastro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+.formcadastro label{
+    margin: 0.5rem;
+    font-weight: bolder;
+    font-size: larger;
+}
+
+.formcadastro h1 {
+    margin: 4rem 0 6rem 0;
+    text-align: center;
+}
+
+.formcadastro input {
+    width: 350px;
+    height: 30px;
+    margin: 0.5rem;
+}
+
+.formcadastro input[type="submit"]{
+    width: 180px;
+    height: 30px;
+    margin: 1rem;
+    background-color: #ddd;
+    border: none;
+}
+
+.formcadastro input[type="submit"]:hover{
+    opacity: 0.9;
+    cursor: pointer;
+}

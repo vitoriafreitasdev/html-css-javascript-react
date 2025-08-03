@@ -19,6 +19,12 @@ const Home = () => {
 
     getMemories()
   }, [])
+
+  if(memories){
+    memories.map((memory) => (
+      console.log(`${axios.defaults.baseURL}${memory.src}`)
+    ))
+  }
   return (
     <div className="home">
       <h2>Confira as últimas Memórias</h2>

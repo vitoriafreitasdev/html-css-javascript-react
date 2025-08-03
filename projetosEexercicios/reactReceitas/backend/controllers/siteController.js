@@ -94,7 +94,7 @@ const siteController = {
                 return res.status(404).json({msg: "Usuário não encontrado."})
             }
 
-            res.status(200).json({user})
+            res.status(200).json(user)
         } catch (error) {
             console.log(error)
             res.status(500).send("Ocorreu um erro!")
@@ -259,8 +259,6 @@ const siteController = {
             res.status(500).send("Ocorreu um erro!")
         }
     },
-
-    //  adicionar os comentarios
     
     
 }

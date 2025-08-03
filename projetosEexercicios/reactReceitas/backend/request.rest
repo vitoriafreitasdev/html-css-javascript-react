@@ -14,7 +14,7 @@ POST http://localhost:3000/api/login
 Content-Type: application/json
 
 {
-    "email": "vitoria@gmail.com",
+    "email": "aline@gmail.com",
     "password": "1234"
 }
 
@@ -25,7 +25,7 @@ GET http://localhost:3000/api/user/688a2a429f3d8a2c2c2cf1a8
 
 ###
 
-PUT http://localhost:3000/api/user/addRecipes
+POST http://localhost:3000/api/user/addRecipes
 Content-Type: multipart/form-data; boundary=MyBoundary
 
 --MyBoundary
@@ -61,7 +61,7 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:3000/api/receitas/688b98aaf54ffafecabe5b5a
+GET http://localhost:3000/api/receitas/688bad66699c4a16d0154875
 Content-Type: application/json
 
 ###
