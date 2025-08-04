@@ -19,15 +19,7 @@ const Recipe = () => {
       load()
     }, [])
 
-    const deleteBtn = async () => {
-      
-    }
 
-    const editBtn = async () => {
-
-    }
-
-    /* Fazer o botão de editar e deletar funcionar */
   return (
     <div className="recipescontainer recipe">
       {
@@ -44,8 +36,6 @@ const Recipe = () => {
               <img className="img" src={`http://localhost:3000/${recipe.src}`} alt={recipe.title} />
         </div>
       }
-      <button onClick={deleteBtn} className="delete-btn btn">Deletar</button>
-      <button onClick={editBtn} className="edit-btn btn">Editar</button>
     </div>
   )
 }

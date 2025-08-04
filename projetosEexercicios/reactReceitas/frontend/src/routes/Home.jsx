@@ -5,15 +5,25 @@ import { Link } from "react-router-dom"
 import "./Home.css"
 const Home = () => {
   const [recipes, setRecipes] = useState(null)
+  //const [users, setUsers] = useState(null)
+
   useEffect(() => {
     const load = async () => {
       const res = await programFetch.get("/receitas")
       setRecipes(res.data)
     }
+    // const loadUsers = async () => {
+    //   const res = await programFetch.get("/users")
+    //   setUsers(res.data)
+    // }
+    // loadUsers()
     load()
   }, [])
+ 
   return (
+    
     <div className="home">
+      
       <div className="div">
         <h2>Cadastre-se e poste suas proprias receitas.</h2>
         <p>Aqui você encontra as melhores receitas para deliciosos pratos. Como as abaixo, já cadastradas: </p>
@@ -43,6 +53,7 @@ const Home = () => {
           </div>
         ))
         }
+        
       </div>
     </div>
   )

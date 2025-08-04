@@ -8,7 +8,8 @@ import Home from './routes/Home.jsx'
 import Cadastrar from './routes/Cadastrar.jsx'
 import Login from './routes/Login.jsx'
 import Recipe from './routes/Recipe.jsx'
-import CreateRecipes from './routes/createRecipes.jsx'
+import CreateRecipes from './routes/CreateRecipes.jsx'
+import EditRecipe from './routes/EditRecipe.jsx'
 const route = createBrowserRouter([
   {
     path: "/",
@@ -34,6 +35,10 @@ const route = createBrowserRouter([
         path: "/criarreceita/:id",
         element: <CreateRecipes/>
       },
+      {
+        path: "/editar",
+        element: <EditRecipe/>
+      }
     ]
   }
 ])

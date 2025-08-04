@@ -18,7 +18,8 @@ const checkToken = (req, res, next) => {
         return res.status(401).json({msg: "Acesso negado!"})
     }
     try {
-        jwt.verify(token, secret)
+        const decoded = jwt.verify(token, secret)
+        req.userId = decoded.id
         next()
     } catch (error) {
         console.log(error)
@@ -29,7 +30,7 @@ router.route("/cadastro").post((req, res) => siteController.register(req, res))
 router.route("/login").post((req, res) => siteController.login(req, res))
 router.route("/user/:id").get(checkToken, (req, res) => siteController.userRoute(req, res))
 router.route("/user/addRecipes")
-  .post(upload.single("image"), (req, res, next) => {
+  .post(checkToken, upload.single("image"), (req, res, next) => {
     const image = req.file;
     
     if(!image) {
@@ -41,8 +42,9 @@ router.route("/user/addRecipes")
 
 router.route("/receitas").get((req, res) => siteController.getRecipes(req, res))
 router.route("/receitas/:id").get((req, res) => siteController.getRecipe(req, res))
-router.route("/receitas/delete/:id").delete((req, res) => siteController.deleteRecipe(req, res))
-router.route("/user/editrecipes/:id").patch(upload.single("image"), (req, res, next) => {
+router.route("/receitas/delete/:id")
+  .delete(checkToken, siteController.deleteRecipe);
+router.route("/user/editrecipes/:id").patch(checkToken, upload.single("image"), (req, res, next) => {
     const image = req.file;
     
     if(!image) {
@@ -53,4 +55,5 @@ router.route("/user/editrecipes/:id").patch(upload.single("image"), (req, res, n
   }, siteController.uptadeRecipe)
 router.route("/receitas/addlike/:id").patch((req, res) => siteController.addLike(req, res))
 router.route("/receitas/addcomment/:id").patch((req, res) => siteController.addComents(req, res))
+router.route("/users").get((req, res) => siteController.getUser(req, res))
 module.exports = router

@@ -21,39 +21,33 @@ Content-Type: application/json
 ###
 GET http://localhost:3000/api/user/688a2a429f3d8a2c2c2cf1a8
 
-// adicionar as receitas e ver se adiciona tambemno Recipes do mongoDB
-
 ###
-
 POST http://localhost:3000/api/user/addRecipes
-Content-Type: multipart/form-data; boundary=MyBoundary
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGY3YWQ2Zjc5ZGQ3NDE1ZmQ3MGZlMSIsImlhdCI6MTc1NDMyNjUwMH0.N69hKKQ4FOkFeYiEzqLcYzpURnZk7hpT-9ynjP-ykL4
+Content-Type: multipart/form-data; boundary=----MyBoundary
 
---MyBoundary
+------MyBoundary
 Content-Disposition: form-data; name="title"
 
-Macarrão com molho especial 
---MyBoundary
+Bolinho de chuva
+------MyBoundary
 Content-Disposition: form-data; name="ingredients"
 
-
-500 g de macarrão parafuso ou fidelinho, 2 litros de água, colher de sal,1  colher (sopa) de óleo. Molho: 1 tomate picado e sem sementes, 1 cebola picada, 1/2 pimentão picado, extrato de tomate (opcional), 4 ovos, queijo parmesão ralado, 6 dentes de alho amassados.
-
---MyBoundary
+2 ovos, 1 xícara de açúcar, 1 xícara (chá) de leite, 2 e 1/2 xícaras de farinha de trigo, 1 colher (sopa) de fermento em pó, 3 colheres (sopa) de açúcar para polvilhar, 1 colher (sopa) de canela para polvilhar, 1 litro de óleo para fritar.
+------MyBoundary
 Content-Disposition: form-data; name="preparation"
 
-Coloque a água para ferver, quando estiver fervendo, coloque o sal e 1 colher de óleo. Quando o macarrão estiver mole, tire do fogo e escorra a água no escorredor de macarrão. Lave o macarrão. Faça o molho de sua preferência em outra panel. Molho: Coloque a margarina, o tomate, a cebola e o pimentão em uma panela. Por fim, refogue e coloque uma colherzinha de sal.
---MyBoundary
+Misture todos os ingredientes até obter uma massa cremosa e homogênea. Deixe aquecer uma panela com bastante óleo para que os bolinhos possam boiar. Quando o óleo estiver bem quente (180º C), com uma colher, comece a colocar pequenas quantidades de massa, e frite até que dourem por inteiro. Coloque os bolinhos sobre papel absorvente e depois passe-os no açúcar com canela.	
+------MyBoundary
 Content-Disposition: form-data; name="preparationTime"
 
 25 minutos
---MyBoundary
-Content-Disposition: form-data; name="image"; filename="foto.jpg"
+------MyBoundary
+Content-Disposition: form-data; name="image"; filename="macarraoNovo.jpg"
 Content-Type: image/jpeg
 
-< C:/Users/vitor/OneDrive/Imagens/Saved Pictures/macarrao.jpg
---MyBoundary--
- 
-
+< C:/Users/vitor/OneDrive/Imagens/Saved Pictures/bolinho.jpeg
+------MyBoundary--
 ###
 
 GET http://localhost:3000/api/receitas
@@ -65,43 +59,32 @@ GET http://localhost:3000/api/receitas/688bad66699c4a16d0154875
 Content-Type: application/json
 
 ###
+PATCH http://localhost:3000/api/user/editrecipes/6890ee06bed719e671782c4c
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGY3YWQ2Zjc5ZGQ3NDE1ZmQ3MGZlMSIsImlhdCI6MTc1NDMyNjUwMH0.N69hKKQ4FOkFeYiEzqLcYzpURnZk7hpT-9ynjP-ykL4
+Content-Type: multipart/form-data; boundary=----MyBoundary
 
-DELETE  http://localhost:3000/api/receitas/delete/688d028d9c4433b98135588f
-Content-Type: application/json
-###
-
-PATCH  http://localhost:3000/api/user/editrecipes/688d028d9c4433b98135588f
-Content-Type: multipart/form-data; boundary=MyBoundary
-
---MyBoundary
+------MyBoundary
 Content-Disposition: form-data; name="title"
 
 Macarrão
---MyBoundary
+------MyBoundary
 Content-Disposition: form-data; name="ingredients"
 
-500 g de macarrão parafuso ou fidelinho, 2 litros de água, colher de sal,1  colher (sopa) de óleo. Molho: 1 tomate picado e sem sementes, 1 cebola picada, 1/2 pimentão picado, extrato de tomate (opcional), 4 ovos, queijo parmesão ralado, 6 dentes de alho amassados.
---MyBoundary
+500 g de macarrão parafuso ou fidelinho, 2 litros de água, colher de sal,1 colher (sopa) de óleo. Molho: 1 tomate picado e sem sementes, 1 cebola picada, 1/2 pimentão picado, extrato de tomate (opcional), 4 ovos, queijo parmesão ralado, 6 dentes de alho amassados.
+------MyBoundary
 Content-Disposition: form-data; name="preparation"
 
 Coloque a água para ferver, quando estiver fervendo, coloque o sal e 1 colher de óleo. Quando o macarrão estiver mole, tire do fogo e escorra a água no escorredor de macarrão. Lave o macarrão. Faça o molho de sua preferência em outra panel. Molho: Coloque a margarina, o tomate, a cebola e o pimentão em uma panela. Por fim, refogue e coloque uma colherzinha de sal.
---MyBoundary
+------MyBoundary
 Content-Disposition: form-data; name="preparationTime"
 
 25 minutos
-
---MyBoundary
-Content-Disposition: form-data; name="recipeID"
-
-688b9e1d3401dae3e13f674d
-
---MyBoundary
-Content-Disposition: form-data; name="image"; filename="foto.jpg"
+------MyBoundary
+Content-Disposition: form-data; name="image"; filename="macarraoNovo.jpg"
 Content-Type: image/jpeg
 
-< C:/Users/vitor/OneDrive/Imagens/Saved Pictures/macarraoNovo.jpg
---MyBoundary--
-
+< C:/Users/vitor/OneDrive/Imagens/Saved Pictures/macarrao.jpg
+------MyBoundary--
 ### 
 
 PATCH http://localhost:3000/api/receitas/addlike/688bad66699c4a16d0154875
@@ -116,4 +99,13 @@ Content-Type: application/json
     "text": "Uma delicia"
 }
 
+
+###
+
+GET http://localhost:3000/api/users
+
+###
+// 
+DELETE http://localhost:3000/api/receitas/delete/6890ec16bed719e671782c36
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OGY3YWQ2Zjc5ZGQ3NDE1ZmQ3MGZlMSIsImlhdCI6MTc1NDMyNjUwMH0.N69hKKQ4FOkFeYiEzqLcYzpURnZk7hpT-9ynjP-ykL4
 

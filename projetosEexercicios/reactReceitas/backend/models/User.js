@@ -1,3 +1,5 @@
+
+
 const mongoose = require("mongoose")
 
 const {Schema} = mongoose
@@ -15,7 +17,8 @@ const userSchema = new Schema(
         password:{
             type: String,
             required: true,
-        }
+        },
+        recipes: [{type: mongoose.Schema.Types.ObjectId, ref: 'Recipe'}]
     },
     {timestamps: true}
 )

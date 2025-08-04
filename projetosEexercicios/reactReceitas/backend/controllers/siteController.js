@@ -85,6 +85,15 @@ const siteController = {
             res.status(500).send("Ocorreu um erro!")
         }
     },
+    getUser: async (req, res) => {
+        const users = await User.find()
+
+        if(!users){
+            return res.status(404).json({msg: "Nada encontrado."})
+        }
+            res.status(200).json(users)
+
+    },
     userRoute: async (req, res) => {
         try {
             const id = req.params.id 
@@ -105,6 +114,7 @@ const siteController = {
             
             const {title, ingredients, preparation, preparationTime} = req.body 
             const src = `images/${req.file.filename}`
+            const userId = req.userId // vem do token
 
             if(!title, !ingredients, !preparation, !preparationTime){
                 return res.status(400).json({msg: "Por favor, preencha todos campos."})
@@ -115,11 +125,13 @@ const siteController = {
                 ingredients: ingredients,
                 preparation: preparation,
                 preparationTime: preparationTime,
-                src: src
+                src: src,
+                author: userId
             }
 
-            const recipesAdd = await Recipes.create(recipes)
-            res.status(200).json({msg: "Adiocionado com sucesso.", recipesAdd})
+            const savedRecipe  = await Recipes.create(recipes)
+            const user = await User.findByIdAndUpdate(userId, {$push: { recipes: savedRecipe._id}}, {new: true})
+            res.status(200).json({msg: "Adiocionado com sucesso.", recipe: savedRecipe, user})
         } catch (error) {
             console.log(error)
             res.status(500).send("Ocorreu um erro!")
@@ -159,14 +171,20 @@ const siteController = {
     },
     deleteRecipe: async (req, res) => {
         try {
-            const id = req.params.id 
-
-            const deleted = await Recipes.findByIdAndDelete(id)
-
-            if(!deleted){
-                res.status(404).json({msg: "Receita não encontradas"})
+            const recipeId = req.params.id 
+            const userId = req.userId
+            
+            // Verifica se a receita pertence ao usuário
+            const recipe = await Recipes.findOne({ _id: recipeId, author: userId })
+            if(!recipe){
+                return res.status(404).json({msg: "Receita não encontrada ou não autorizada."})
             }
-
+            const deleted = await Recipes.findByIdAndDelete(recipeId)
+            // Remove a referência no usuário
+            await User.findByIdAndUpdate(
+            userId,
+            { $pull: { recipes: recipeId } }
+        )
             removeOldImage(deleted)
 
             res.status(200).json({msg: "Deletado com sucesso.", deleted})
@@ -177,20 +195,18 @@ const siteController = {
     },
     uptadeRecipe: async (req, res) => {
         try {
-
+            const recipeId = req.params.id 
+            const userId = req.userId
             const {title, ingredients, preparation, preparationTime} = req.body 
-            
+            // Verifica se a receita pertence ao usuário
+            const recipe = await Recipes.findOne({ _id: recipeId, author: userId })
+            if(!recipe){
+                return res.status(404).json({msg: "Receita não encontrada ou não autorizada."})
+            }
             let src = null 
   
             if(req.file) {
                 src = `images/${req.file.filename}`
-            }
-
-            const id = req.params.id 
-            const recipe = await Recipes.findById(id)
-
-            if(!recipe){
-                res.status(404).json({msg: "Receita não encontradas"})
             }
 
             if(src) {
@@ -205,7 +221,7 @@ const siteController = {
             if (preparationTime) updateData.preparationTime = preparationTime
             if (src) updateData.src = src
 
-            const uptadeRecipe = await Recipes.findByIdAndUpdate(id, updateData, {new: true})
+            const uptadeRecipe = await Recipes.findByIdAndUpdate(recipeId, updateData, {new: true})
 
             res.status(200).json({msg: "Atualizado com sucesso.", uptadeRecipe})
 

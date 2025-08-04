@@ -1,3 +1,5 @@
+
+
 const mongoose = require("mongoose")
 
 const {Schema} = mongoose
@@ -42,7 +44,8 @@ const recipeSchema = new Schema(
           required: true,
           default: 0
         },
-        comments: [commentSchema]
+        comments: [commentSchema],
+        author: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
     }
 )
 const Recipes = mongoose.model("Recipes", recipeSchema)
