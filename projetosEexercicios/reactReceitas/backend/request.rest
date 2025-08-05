@@ -91,7 +91,7 @@ PATCH http://localhost:3000/api/receitas/addlike/688bad66699c4a16d0154875
 
 ###
 
-PATCH http://localhost:3000/api/receitas/addcomment/688bad66699c4a16d0154875
+PATCH http://localhost:3000/api/receitas/addcomment/6890ff82bed719e671786cfb
 Content-Type: application/json
 
 {

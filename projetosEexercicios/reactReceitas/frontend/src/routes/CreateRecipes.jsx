@@ -115,7 +115,7 @@ const CreateRecipes = () => {
                 <h3>Imagem:</h3>
                 <img className="img" src={`http://localhost:3000/${recipe.src}`} alt={recipe.title} />
                 <div>
-                    <button className="btn edit-btn"><Link className="link" to="/editar">Editar</Link></button>
+                    <button className="btn edit-btn"><Link className="link" to={`/editar/${recipe._id}`}>Editar</Link></button>
                     <button className="btn delete-btn" onClick={() => handleDelete(recipe._id)}>Deletar</button>
                 </div>
           </div> : ""}

@@ -36,7 +36,7 @@ const route = createBrowserRouter([
         element: <CreateRecipes/>
       },
       {
-        path: "/editar",
+        path: "/editar/:id",
         element: <EditRecipe/>
       }
     ]

@@ -1,9 +1,50 @@
 .recipe{
     max-width: 80vw;
-    height: 100vh;
+    height: 100%;
     margin: 0 auto;
 }
 .recipe img {
     height: 200px;
     width: 200px;
+}
+.comments-container{
+    width: 500px;
+    margin: 0 auto;
+    
+}
+.comment{
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+}
+.comment-name {
+    font-weight: bold;
+    color: #555;
+}
+.comment-form form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 1rem;
+    padding: 0.5rem;
+}
+label span, input {
+    margin: 0.5rem;
+    font-weight: bolder;
+    
+}
+
+label input {
+    width: 250px;
+    height: 25px;
+}
+
+.btn-like{
+    width: 50px;
+    height: 30px;
+    min-height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
 }

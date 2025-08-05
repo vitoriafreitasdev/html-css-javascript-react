@@ -12,11 +12,6 @@ const Home = () => {
       const res = await programFetch.get("/receitas")
       setRecipes(res.data)
     }
-    // const loadUsers = async () => {
-    //   const res = await programFetch.get("/users")
-    //   setUsers(res.data)
-    // }
-    // loadUsers()
     load()
   }, [])
  
@@ -26,7 +21,7 @@ const Home = () => {
       
       <div className="div">
         <h2>Cadastre-se e poste suas proprias receitas.</h2>
-        <p>Aqui você encontra as melhores receitas para deliciosos pratos. Como as abaixo, já cadastradas: </p>
+        <p>Aqui você encontra as melhores receitas para deliciosos pratos. Como as abaixo, já cadastradas, clique nelas para mais detalhes.</p>
         {recipes &&
         recipes.map((recipe) => (
           <div>
