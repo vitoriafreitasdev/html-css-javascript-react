@@ -25,7 +25,6 @@ const Home = () => {
         {recipes &&
         recipes.map((recipe) => (
           <div>
-            {/* vai ser um link que vai levar o usuario para a pagina individual da receita */}
             <Link className="link" to={`/receita/${recipe._id}`}><h4>{recipe.title}</h4></Link>    
           </div>
         ))}
