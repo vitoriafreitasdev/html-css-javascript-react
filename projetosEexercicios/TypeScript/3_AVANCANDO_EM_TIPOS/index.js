@@ -53,5 +53,14 @@ function showNumbers(a, b, c) {
     }
 }
 showNumbers(1, 2, 3);
+//  9 - validando argumento opcional
+function advancedGreeting(firstName, lastName) {
+    if (lastName !== undefined) {
+        return `Olá, ${firstName} ${lastName}, tudo bem?`;
+    }
+    return `Olá, ${firstName}, tudo bem?`;
+}
+console.log(advancedGreeting("Joaquim", "Marques"));
+console.log(advancedGreeting("Mariana"));
 export {};
 //# sourceMappingURL=index.js.map
