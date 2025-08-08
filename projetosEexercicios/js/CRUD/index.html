@@ -6,7 +6,7 @@
     <title>Controle de gastos</title>
 </head>
 
-<body>
+<body class="centralize">
     <form>
         <div class="form-field">
             <div><label>Email</label></div>
@@ -20,7 +20,7 @@
             <div class="error" id="password-required-error">Senha é obrigatória</div>
         </div>
         <div>
-            <button type="button" class="clear" id="recover-password-button" disabled="true">Recuperar senha</button>
+            <button type="button" class="clear" id="recover-password-button" onclick="recoverPassword()" disabled="true">Recuperar senha</button>
         </div>
         <div>
             <button type="button" class="solid" id="login-button" disabled="true" onclick="login()">Entrar</button>
@@ -34,23 +34,14 @@
 <link rel="stylesheet" href="index.css">
 <link rel="stylesheet" href="global.css">
 
+<script src="https://www.gstatic.com/firebasejs/12.1.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/12.1.0/firebase-auth-compat.js"></script>
+
+<script src="firebase-init.js"></script>
+
 <script src="index.js"></script>
 <script src="validations.js"></script>
-
-<script src="https://www.gstatic.com/firebasejs/12.0.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/12.0.0/firebase-auth-compat.js"></script>
-
-<script>
-    const firebaseConfig = {
-        apiKey: "AIzaSyD1gS28_IgPq-88efTvORINpPEf0nTjfl4",
-        authDomain: "controle-de-gastos-61567.firebaseapp.com",
-        projectId: "controle-de-gastos-61567",
-        storageBucket: "controle-de-gastos-61567.firebasestorage.app",
-        messagingSenderId: "47864995582",
-        appId: "1:47864995582:web:47bc41221e0019803d8faf"
-    };
-    firebase.initializeApp(firebaseConfig)
-</script>
+<script src="loading.js"></script>
 
 </html>
 <!-- https://console.firebase.google.com/project/controle-de-gastos-61567/authentication/providers?hl=pt-br -->

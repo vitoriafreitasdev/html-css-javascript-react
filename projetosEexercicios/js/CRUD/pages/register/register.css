@@ -10,3 +10,6 @@ input {
 button {
     margin-bottom: 10px;
 }
+.confirm-password input {
+    margin-bottom: 10px;
+}
