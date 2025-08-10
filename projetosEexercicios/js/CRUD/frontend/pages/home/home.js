@@ -108,3 +108,5 @@ function formatDate(date) {
 function formatMoney(money) {
     return `${money.currency} ${money.value.toFixed(2)}`
 }
+
+

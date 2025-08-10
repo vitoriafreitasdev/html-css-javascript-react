@@ -1,11 +1,13 @@
-import express from  'express'
-import { authenticateToken } from '../middleware/authenticate-jwt.js'
-import { TransactionController } from './controller.js'
 
-const app = express()
 
-const transactionController = new TransactionController()
+import express from 'express';
+import {authenticateToken} from "../middleware/authenticate-jwt.js"
+import { TransactionController } from './controller.js';
 
-app.get('/', authenticateToken, transactionController.findByUser)
+const app = express();
 
-export const transactionRouter = app
+const transactionController = new TransactionController();
+
+app.get('/', authenticateToken, transactionController.findByUser);
+
+export const transactionsRouter = app;

@@ -1,20 +1,18 @@
 
-import { Transaction } from './model';
-import admin from 'firebase-admin';
+
+import { Transaction } from './model.js';
 
 export class TransactionController {
 
     findByUser(request, response) {
-        const transaction = new Transaction()
-        transaction.user = request.user 
+        const transaction = new Transaction();
+        transaction.user = request.user;
 
-        transaction.findByUser().then(transaction => {
-            response.json(transaction)
+        transaction.findByUser().then(transactions => {
+            response.json(transactions);
         }).catch(error => {
-            response.status(error.code).json(error)
+            response.status(error.code).json(error);
         })
     }
 
 }
-
-// testar pra ver se ta funcionando

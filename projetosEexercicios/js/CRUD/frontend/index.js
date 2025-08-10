@@ -93,3 +93,5 @@ const form = {
     passwordRequiredError: () => document.getElementById("password-required-error"),
     recoverPasswordButton: () => document.getElementById("recover-password-button"),
 } 
+
+
