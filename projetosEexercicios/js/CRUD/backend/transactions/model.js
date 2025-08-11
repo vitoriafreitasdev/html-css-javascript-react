@@ -1,5 +1,4 @@
 
-
 import { TransactionRepository } from "./repository.js";
 
 export class Transaction {

@@ -1,8 +1,7 @@
-
-
 import express from 'express';
 import admin from 'firebase-admin';
 import { transactionsRouter } from './transactions/routes.js';
+
 const app = express();
 
 admin.initializeApp({
@@ -12,7 +11,6 @@ admin.initializeApp({
 app.use('/transactions', transactionsRouter);
 
 app.listen(3000, () => console.log('API rest iniciada em http://localhost:3000'));
-
 
 
 // REST API http://api.controle-de-gastos.com/transactions

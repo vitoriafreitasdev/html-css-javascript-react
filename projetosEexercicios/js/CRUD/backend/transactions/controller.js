@@ -1,5 +1,4 @@
 
-
 import { Transaction } from './model.js';
 
 export class TransactionController {

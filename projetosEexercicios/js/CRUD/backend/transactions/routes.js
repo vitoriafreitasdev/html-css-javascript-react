@@ -1,7 +1,5 @@
-
-
 import express from 'express';
-import {authenticateToken} from "../middleware/authenticate-jwt.js"
+import { authenticateToken } from '../middleware/authenticate-jwt.js';
 import { TransactionController } from './controller.js';
 
 const app = express();

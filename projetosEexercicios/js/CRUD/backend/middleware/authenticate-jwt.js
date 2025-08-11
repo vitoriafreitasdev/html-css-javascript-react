@@ -21,5 +21,3 @@ export async function authenticateToken(request, response, next) {
 
     next();
 }
-
-// verificar o porque ta dando usuario nao autorizado
