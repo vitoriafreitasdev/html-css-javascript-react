@@ -9,6 +9,7 @@ import Destructuring, {Category } from './components/Destructuring';
 // 6 - useState
 import State from './components/State';
 import { createContext } from 'react';
+import Context from './components/Context';
 
 
 // 8 - type
@@ -21,6 +22,7 @@ interface IAppContext {
   framework: string,
   projects: number
 }
+
 export const AppContext = createContext<IAppContext | null>(null)
 
 function App() {
@@ -51,21 +53,25 @@ function App() {
  
 
   return (
-    <div className='App'>
-      <h1>Typescript com react</h1>
-      <h2>Nome: {name}</h2>
-      <h2>Idade: {age}</h2>
-      <h2>Esta trabalhando: {isWorking ? "Sim" : "Não"}</h2>
-      <p>{isWorking && (<p>Está trabalhando!</p>)}</p>
-      <p>{userGreeting(name)}</p>
-      <FirstComponent/>
-      <SecondComponent name="Segundo"/>
-      <Destructuring title='Primeiro post' content='Alguma coisa' commentsQty={20} tags={["ts", "js", "react"]} category={Category.TS}/>
-      <Destructuring title='Segundo post' content='Outra coisa' commentsQty={10} tags={["java", "GO", "php"] } category={Category.G}/>
-      <State/>
-      {myText && <p>Tem texto na variável</p>}
-      {mySecondText && <p>Tem texto na variável</p>}
-    </div>
+    <AppContext.Provider value={contextValue}> 
+      <div className='App'>
+        <h1>Typescript com react</h1>
+        <h2>Nome: {name}</h2>
+        <h2>Idade: {age}</h2>
+        <h2>Esta trabalhando: {isWorking ? "Sim" : "Não"}</h2>
+        <p>{isWorking && (<p>Está trabalhando!</p>)}</p>
+        <p>{userGreeting(name)}</p>
+        <FirstComponent/>
+        <SecondComponent name="Segundo"/>
+        <Destructuring title='Primeiro post' content='Alguma coisa' commentsQty={20} tags={["ts", "js", "react"]} category={Category.TS}/>
+        <Destructuring title='Segundo post' content='Outra coisa' commentsQty={10} tags={["java", "GO", "php"] } category={Category.G}/>
+        <State/>
+        {myText && <p>Tem texto na variável</p>}
+        {mySecondText && <p>Tem texto na variável</p>}
+        <Context/>
+      </div>
+    </AppContext.Provider>
+    
   );
 }
 
